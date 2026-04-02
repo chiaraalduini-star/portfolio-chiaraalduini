@@ -1,9 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(node -e \"\nconst fs = require\\('fs'\\);\nlet content = fs.readFileSync\\('C:/Users/CHIARA/Desktop/PORTFOLIO_CORRETTO/sito-corretto/pages/case-ultrafab.html','utf8'\\);\n\nfunction fixBlock\\(content, selector, ratio\\) {\n  const esc = selector.replace\\(/[-\\\\[\\\\]{}\\(\\)*+?.,\\\\\\\\\\\\\\\\^\\\\$|#\\\\s]/g, '\\\\\\\\\\\\\\\\\\\\$&'\\);\n  console.log\\('esc:', esc\\);\n  const re = new RegExp\\('\\(' + esc + '\\\\\\\\\\\\\\\\s*\\\\\\\\\\\\\\\\{[^}]*?\\)aspect-ratio:\\\\\\\\\\\\\\\\s*[\\\\\\\\\\\\\\\\d]+\\\\\\\\\\\\\\\\/[\\\\\\\\\\\\\\\\d]+', 'gs'\\);\n  console.log\\('re:', re\\);\n  const result = content.replace\\(re, '\\\\$1aspect-ratio: ' + ratio\\);\n  console.log\\('changed:', result !== content\\);\n  return result;\n}\n\nfixBlock\\(content, '.case-cover', '21/9'\\);\n\")",
-      "Bash(cd \"C:/Users/CHIARA/Desktop/PORTFOLIO_CORRETTO/sito-corretto\" && node fix_images.js)",
-      "Bash(cd \"C:/Users/CHIARA/Desktop/PORTFOLIO_CORRETTO/sito-corretto\" && node add_privacy.js && rm add_privacy.js)"
-    ]
-  }
-}
