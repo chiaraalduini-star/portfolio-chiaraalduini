@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discover Petra with Ahmad — Chiara Alduini</title>
+  <link rel="stylesheet" href="../css/reset.css?v=2">
+  <link rel="stylesheet" href="../css/variables.css?v=2">
+  <link rel="stylesheet" href="../css/typography.css?v=2">
+  <link rel="stylesheet" href="../css/layout.css?v=2">
+  <link rel="stylesheet" href="../css/components.css?v=2">
+  <link rel="stylesheet" href="../css/animations.css?v=2">
+  <link rel="stylesheet" href="../css/responsive.css?v=2">
+  <style>
+    .case-hero {
+      min-height: 70vh;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      padding: calc(var(--header-h) + 80px) var(--padding) 80px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .case-hero-content { align-self: end; }
+    .case-hero-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 40px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border-light);
+      margin-top: 40px;
+    }
+    .case-meta-item span {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      display: block;
+      margin-bottom: 8px;
+    }
+    .case-meta-item p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
+    .case-cover {
+      width: 100%;
+      aspect-ratio: 21/9;
+      object-fit: cover;
+      display: block;
+    }
+
+    .case-body-section {
+      padding: var(--space-lg) var(--padding);
+      border-bottom: 1px solid var(--border-light);
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .case-section-label {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      padding-top: 6px;
+      position: sticky;
+      top: calc(var(--header-h) + 24px);
+    }
+    .case-section-content h2 {
+      font-family: var(--font-display);
+      font-size: 42px;
+      font-weight: 400;
+      color: var(--text);
+      text-transform: uppercase;
+      line-height: 1.0;
+      margin-bottom: 24px;
+    }
+    .case-section-content p {
+      font-size: 16px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .case-section-content p:last-child { margin-bottom: 0; }
+
+    /* IMAGE LAYOUTS */
+    .case-img-full { border-bottom: 1px solid var(--border-light); }
+    .case-img-full img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+      background: var(--surface);
+    }
+    .case-img-full img.square {
+      aspect-ratio: 1/1;
+      object-fit: contain;
+      background: #2a1f0e;
+    }
+    .case-img-full img.tall {
+      aspect-ratio: 3/2;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .grid-2 img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+      background: var(--surface);
+    }
+    .grid-2 img.landscape {
+      aspect-ratio: 16/9;
+    }
+    .grid-2 img.book {
+      aspect-ratio: 4/3;
+      object-fit: cover;
+    }
+    .grid-2 img.portrait {
+      aspect-ratio: 3/4;
+      object-fit: cover;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .grid-3 img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+      background: var(--surface);
+    }
+
+    /* QUOTE */
+    .case-quote {
+      padding: var(--space-lg) var(--padding);
+      border-bottom: 1px solid var(--border-light);
+      background: var(--surface);
+    }
+    .case-quote blockquote {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 3vw, 52px);
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.15;
+      max-width: 900px;
+      font-style: italic;
+    }
+
+    /* NAV */
+    .case-nav {
+      padding: 56px var(--padding);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border-light);
+    }
+    .case-nav a {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: color 0.2s ease, gap 0.2s ease;
+      text-decoration: none;
+    }
+    .case-nav a:hover { color: var(--text); gap: 16px; }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <a href="../index.html" class="logo">Chiara Alduini <span>Independent Creative Director</span></a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="profilo.html">About</a>
+      <a href="contatti.html" class="nav-cta">Contact</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </header>
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="../index.html">Home</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="profilo.html">About</a>
+    <a href="contatti.html">Contact</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="case-hero">
+    <div class="case-hero-content">
+      <div class="section-label">Case Study · 03 — Editorial & Illustration</div>
+      <h1 class="hero-title">Discover Petra<br><em>with Ahmad</em></h1>
+    </div>
+    <div class="case-hero-meta">
+      <div class="case-meta-item">
+        <span>Client</span>
+        <p>Petra Archaeological Park<br>Fondation Ta'agara<br>Jordan</p>
+      </div>
+      <div class="case-meta-item">
+        <span>Scope</span>
+        <p>Character Design · Art Direction · Bilingual Book IT/AR · Museum Collateral · Interactive Experience</p>
+      </div>
+      <div class="case-meta-item">
+        <span>Year</span>
+        <p>2023–2024</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COVER — Poster in Petra + full poster side by side -->
+  <div class="grid-2 reveal">
+    <img src="../img/petra-presentation.png" alt="Discover Petra with Ahmad — presentation poster in situ" class="landscape">
+    <img src="../img/petra-poster.png" alt="Discover Petra with Ahmad — full poster bilingual" class="landscape">
+  </div>
+
+  <!-- CONCEPT -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">01 — Concept</div>
+    <div class="case-section-content">
+      <h2>A City Through a Child's Eyes</h2>
+      <p>
+        "Discover Petra with Ahmad" is an interactive project designed to bring the ancient Nabataean city to life for children and families visiting the archaeological park. The brief was to create an engaging, bilingual experience — in Arabic and English — that could transform a museum visit into an adventure.
+      </p>
+      <p>
+        Ahmad is a young Bedouin boy whose family has lived among the rocks of Petra for generations. He becomes the guide — curious, brave, and rooted in the land — who leads visitors through the wonders of the city: the Nabataean hydraulic system, the pink sandstone carvings, the desert ecology, the stories of the Bedouin people.
+      </p>
+      <p>
+        The visual language draws from Jordanian craft tradition — embroidery patterns, desert colors, Nabataean script — translated into a warm, Pixar-inspired 3D aesthetic that children immediately connect with.
+      </p>
+    </div>
+  </div>
+
+  <!-- CHARACTERS — Ahmad + family portrait -->
+  <div class="grid-2 reveal">
+    <img src="../img/petra-ahmad.jpg" alt="Ahmad — main character, riding a camel in the desert">
+    <img src="../img/petra-characters-all.jpg" alt="The full cast of characters from Ahmad's family">
+  </div>
+
+  <!-- CHARACTER DESIGN -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">02 — Character Design</div>
+    <div class="case-section-content">
+      <h2>A Cast of Ten</h2>
+      <p>
+        I designed a complete cast of ten characters, each with a distinct personality, role, and visual identity rooted in Bedouin culture. Ahmad's family spans three generations: his mother Raya, his father Salame, his grandmother Ageleh, his grandfather Hawmel, his paternal uncle Dakhlallah, his maternal uncle Mousa, his grandmother Naima — and his sister Fatma.
+      </p>
+      <p>
+        And then there is the Ghula — a mysterious creature from Jordanian folklore, dressed in black, whose red eyes peer through the dark. A touch of legend in a world of history.
+      </p>
+      <p>
+        Every character was created through AI generation and extensive post-production — refining proportions, expressions, costume details, and cultural accuracy in multiple iterations to achieve a coherent visual family.
+      </p>
+    </div>
+  </div>
+
+  <!-- CHARACTER TRIO — 3 individual portraits -->
+  <div class="grid-3 reveal">
+    <img src="../img/petra-char-grandma-cat.jpg" alt="Ageleh — Ahmad's grandmother with her black cat">
+    <img src="../img/petra-char-naima.jpg" alt="Naima — Ahmad's maternal grandmother">
+    <img src="../img/petra-char-old-man.jpg" alt="Character — Bedouin elder at Petra">
+  </div>
+
+  <!-- QUOTE -->
+  <div class="case-quote reveal">
+    <blockquote>
+      "A world built from scratch — characters, story, design, bilingual text — so that a child in Petra can feel at home."
+    </blockquote>
+  </div>
+
+  <!-- BOOK -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">03 — The Book</div>
+    <div class="case-section-content">
+      <h2>An Activity Book</h2>
+      <p>
+        The centerpiece of the project is a bilingual activity book — Arabic and English — designed for children aged 6 to 12. It accompanies visitors through the park with games, puzzles, illustrated maps, and stories told by Ahmad and his family.
+      </p>
+      <p>
+        The book features the Nabataean alphabet as a learning element, illustrated scenes from Petra's history, and QR codes placed around the park that unlock additional digital content. The visual system is consistent throughout: warm ochres and terracotta, graphic borders inspired by Jordanian tatreez embroidery, and the Nabataean geometric script as decorative motif.
+      </p>
+      <p>
+        Every page of text was written and laid out bilingually — Arabic on one side, English on the other — maintaining visual balance between two scripts with opposite reading directions.
+      </p>
+    </div>
+  </div>
+
+  <!-- BOOK SPREADS -->
+  <div class="grid-2 reveal">
+    <img src="../img/petra-book-cover.jpg" alt="Book cover — Discover Petra with Ahmad" class="book">
+    <img src="../img/petra-book-interno.jpg" alt="Book interior spread — bilingual Arabic and English" class="book">
+  </div>
+
+  <div class="grid-2 reveal">
+    <img src="../img/petra-book-01.jpg" alt="Activity book — child using it at the museum" class="book">
+    <img src="../img/petra-book-02.jpg" alt="Activity book — children in the museum with artefacts" class="book">
+  </div>
+
+  <!-- RESULT -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">04 — Result</div>
+    <div class="case-section-content">
+      <h2>In the Hands of Children</h2>
+      <p>
+        The project was deployed across Petra Archaeological Park — books distributed at the entrance, posters in Arabic and English installed along the visitor route, QR codes embedded at key sites throughout the ancient city.
+      </p>
+      <p>
+        Seeing children use the book inside the museum — sitting next to Nabataean artefacts, scribbling answers, following Ahmad through the millennia — is the result that matters. Heritage made accessible, a cultural legacy brought within reach of a new generation.
+      </p>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <div class="case-nav">
+    <a href="case-ambasciata.html">← Previous Case Study</a>
+    <a href="../index.html">Back to Work →</a>
+  </div>
+
+  <footer>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Chiara Alduini — All rights reserved</span>
+      <a href="privacy.html" style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted);">Privacy Policy</a>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

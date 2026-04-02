@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poetry Book Covers — Chiara Alduini</title>
+  <link rel="stylesheet" href="../css/reset.css?v=2">
+  <link rel="stylesheet" href="../css/variables.css?v=2">
+  <link rel="stylesheet" href="../css/typography.css?v=2">
+  <link rel="stylesheet" href="../css/layout.css?v=2">
+  <link rel="stylesheet" href="../css/components.css?v=2">
+  <link rel="stylesheet" href="../css/animations.css?v=2">
+  <link rel="stylesheet" href="../css/responsive.css?v=2">
+  <style>
+    .case-hero {
+      min-height: 70vh;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      padding: calc(var(--header-h) + 80px) var(--padding) 80px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .case-hero-content { align-self: end; }
+    .case-hero-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 40px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border-light);
+      margin-top: 40px;
+    }
+    .case-meta-item span {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      display: block;
+      margin-bottom: 8px;
+    }
+    .case-meta-item p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
+    /* COVER */
+    .case-cover {
+      width: 100%;
+      aspect-ratio: 21/9;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* TEXT SECTIONS */
+    .case-body-section {
+      padding: var(--space-lg) var(--padding);
+      border-bottom: 1px solid var(--border-light);
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .case-section-label {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      padding-top: 6px;
+      position: sticky;
+      top: calc(var(--header-h) + 24px);
+    }
+    .case-section-content h2 {
+      font-family: var(--font-display);
+      font-size: 42px;
+      font-weight: 400;
+      color: var(--text);
+      text-transform: uppercase;
+      line-height: 1.0;
+      margin-bottom: 24px;
+    }
+    .case-section-content p {
+      font-size: 16px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .case-section-content p:last-child { margin-bottom: 0; }
+
+    /* FULL WIDTH IMAGE */
+    .case-img-full {
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    /* 3-COL GRID */
+    .poetry-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .poetry-grid-3 img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+      background: var(--surface);
+    }
+
+    /* QUOTE */
+    .case-quote {
+      padding: var(--space-lg) var(--padding);
+      border-bottom: 1px solid var(--border-light);
+      display: flex;
+      justify-content: center;
+    }
+    .case-quote blockquote {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 400;
+      color: var(--text);
+      text-align: center;
+      max-width: 700px;
+      line-height: 1.3;
+    }
+
+    /* NAV */
+    .case-nav {
+      padding: 56px var(--padding);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border-light);
+    }
+    .case-nav a {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: color 0.2s ease, gap 0.2s ease;
+      text-decoration: none;
+    }
+    .case-nav a:hover { color: var(--text); gap: 16px; }
+
+    @media (max-width: 768px) {
+      .poetry-grid-3 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <a href="../index.html" class="logo">Chiara Alduini <span>Independent Creative Director</span></a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="profilo.html">About</a>
+      <a href="contatti.html" class="nav-cta">Contact</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </header>
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="../index.html">Home</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="profilo.html">About</a>
+    <a href="contatti.html">Contact</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="case-hero">
+    <div class="case-hero-content">
+      <div class="section-label">Illustration &amp; Editorial · 07 — Book Design</div>
+      <h1 class="hero-title">Poetry Book Covers<br><em>Poets You Need to Know</em></h1>
+    </div>
+    <div class="case-hero-meta">
+      <div class="case-meta-item">
+        <span>Client</span>
+        <p>LEG Edizioni<br>Libreria Editrice Goriziana</p>
+      </div>
+      <div class="case-meta-item">
+        <span>Scope</span>
+        <p>Cover Design · Collage Illustration · Editorial Design · Two-volume Series</p>
+      </div>
+      <div class="case-meta-item">
+        <span>Year</span>
+        <p>2022</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COVER -->
+  <img src="../img/Mayakovsky_cover.jpg" alt="Poetry Book Covers — Poets You Need to Know" class="case-cover">
+
+  <!-- 01 — BRIEF -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">01 — Brief</div>
+    <div class="case-section-content">
+      <h2>Two Traditions, One Visual Language</h2>
+      <p>
+        LEG Edizioni commissioned a series of poetry anthologies introducing international readers to poets from two distinct traditions: Russian poetry of the early twentieth century, and Arab poetry spanning the modern era. Each volume needed a cover that could communicate literary weight and cultural identity while working as a cohesive series across six titles.
+      </p>
+      <p>
+        The challenge was to design a visual system flexible enough to carry very different cultural aesthetics — the revolutionary energy of Russian futurism and imagism alongside the lyrical, politically charged voice of Arab poetry — while remaining immediately recognisable as a single editorial family.
+      </p>
+    </div>
+  </div>
+
+  <!-- 02 — THE SYSTEM -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">02 — The System</div>
+    <div class="case-section-content">
+      <h2>Collage as Editorial Language</h2>
+      <p>
+        Each cover is built around a black-and-white photographic portrait of the poet, integrated into a layered collage of painted brushstrokes, geometric forms, and texture. The portrait is never simply placed — it is embedded into the composition, partially obscured or framed by the painterly elements, creating a tension between document and interpretation.
+      </p>
+      <p>
+        The two series are distinguished by their palette: the Russian volumes use a bold red and black — revolutionary, raw, confrontational. The Arab volumes shift to ochre yellow and cobalt blue — warmer, more lyrical, referencing the visual culture of the Mediterranean and the Middle East. Same system, two distinct emotional registers.
+      </p>
+    </div>
+  </div>
+
+  <!-- 03 — RUSSIAN POETS -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">03 — Russian Poets</div>
+    <div class="case-section-content">
+      <h2>Majakovskij · Esenin · Achmatova</h2>
+      <p>
+        Three foundational voices of Russian poetry, each with a radically different relationship to language, politics, and the body. Majakovskij's futurist fury, Esenin's peasant lyricism, Achmatova's classical restraint under Soviet pressure — three distinct emotional worlds unified by the same red-and-black visual grammar.
+      </p>
+    </div>
+  </div>
+
+  <div class="poetry-grid-3 reveal">
+    <img src="../img/Mayakovsky_Book-1024x683.jpg" alt="Vladimir Majakovskij — poetry book cover and interior">
+    <img src="../img/SERGEJ_ESENIN-1024x683.jpg" alt="Sergej Esenin — poetry book cover and interior">
+    <img src="../img/Anna-Akhmatova-1024x683.jpg" alt="Anna Achmatova — poetry book cover and interior">
+  </div>
+
+  <!-- 04 — ARAB POETS -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">04 — Arab Poets</div>
+    <div class="case-section-content">
+      <h2>Al Masri · Qabbani · Mosteghanemi</h2>
+      <p>
+        Three Arab poets whose work crosses borders — geographical, political, and cultural. Maram Al Masri's intimate voice from Syria to Paris, Nizar Qabbani's defiant celebration of womanhood, Ahlam Mosteghanemi's pioneering presence as the first woman to write Arabic poetry. The ochre and blue palette carries a different warmth — Mediterranean light against a darker political reality.
+      </p>
+    </div>
+  </div>
+
+  <div class="poetry-grid-3 reveal">
+    <img src="../img/Al_masri-1024x683.jpg" alt="Maram Al Masri — poetry book cover and interior">
+    <img src="../img/QABBANI-1024x683.jpg" alt="Nizar Qabbani — poetry book cover and interior">
+    <img src="../img/Mayakovsky_mockup-1024x683.jpg" alt="Ahlam Mosteghanemi — poetry book cover and interior">
+  </div>
+
+  <!-- QUOTE -->
+  <div class="case-quote reveal">
+    <blockquote>"Two traditions, six poets, one visual language — collage as a way of reading between cultures."</blockquote>
+  </div>
+
+  <!-- NAVIGATION -->
+  <div class="case-nav">
+    <a href="case-railab.html">← Railab</a>
+    <a href="case-cali.html">Linea Calì Calendar →</a>
+  </div>
+
+  <footer>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Chiara Alduini — All rights reserved</span>
+      <a href="privacy.html" style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted);">Privacy Policy</a>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

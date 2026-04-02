@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vincenzo Capirola High School — Chiara Alduini</title>
+  <link rel="stylesheet" href="../css/reset.css?v=2">
+  <link rel="stylesheet" href="../css/variables.css?v=2">
+  <link rel="stylesheet" href="../css/typography.css?v=2">
+  <link rel="stylesheet" href="../css/layout.css?v=2">
+  <link rel="stylesheet" href="../css/components.css?v=2">
+  <link rel="stylesheet" href="../css/animations.css?v=2">
+  <link rel="stylesheet" href="../css/responsive.css?v=2">
+  <style>
+    .case-hero {
+      min-height: 70vh;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      padding: calc(var(--header-h) + 80px) var(--padding) 80px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .case-hero-content { align-self: end; }
+    .case-hero-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 40px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border-light);
+      margin-top: 40px;
+    }
+    .case-meta-item span {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      display: block;
+      margin-bottom: 8px;
+    }
+    .case-meta-item p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
+    /* COVER — full width landscape */
+    .case-cover {
+      width: 100%;
+      aspect-ratio: 21/9;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* TEXT SECTIONS */
+    .case-body-section {
+      padding: var(--space-lg) var(--padding);
+      border-bottom: 1px solid var(--border-light);
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .case-section-label {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      padding-top: 6px;
+      position: sticky;
+      top: calc(var(--header-h) + 24px);
+    }
+    .case-section-content h2 {
+      font-family: var(--font-display);
+      font-size: 42px;
+      font-weight: 400;
+      color: var(--text);
+      text-transform: uppercase;
+      line-height: 1.0;
+      margin-bottom: 24px;
+    }
+    .case-section-content p {
+      font-size: 16px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .case-section-content p:last-child { margin-bottom: 0; }
+
+    /* SINGLE FULL IMAGE */
+    .case-img-full {
+      border-bottom: 1px solid var(--border-light);
+    }
+    .case-img-full img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+      background: #f0ede8;
+    }
+
+    /* 2-COL GRID */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .grid-2 img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+      background: #f0ede8;
+    }
+
+    /* QUOTE */
+    .case-quote {
+      padding: var(--space-lg) var(--padding);
+      border-bottom: 1px solid var(--border-light);
+      background: var(--surface);
+    }
+    .case-quote blockquote {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 3vw, 52px);
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.15;
+      max-width: 900px;
+      font-style: italic;
+    }
+
+    /* TAGS */
+    .case-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 24px;
+    }
+    .case-tag {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      border: 1px solid var(--border);
+      padding: 5px 12px;
+    }
+
+    /* NAV */
+    .case-nav {
+      padding: 56px var(--padding);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border-light);
+    }
+    .case-nav a {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: color 0.2s ease, gap 0.2s ease;
+      text-decoration: none;
+    }
+    .case-nav a:hover { color: var(--text); gap: 16px; }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <a href="../index.html" class="logo">Chiara Alduini <span>Independent Creative Director</span></a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="profilo.html">About</a>
+      <a href="contatti.html" class="nav-cta">Contact</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </header>
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="../index.html">Home</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="profilo.html">About</a>
+    <a href="contatti.html">Contact</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="case-hero">
+    <div class="case-hero-content">
+      <div class="section-label">Institutional · Brand Identity · Logo Design</div>
+      <h1 class="hero-title">Vincenzo Capirola<br><em>High School</em></h1>
+      <p style="font-family: var(--font-body); font-size: 18px; color: var(--text-muted); margin-top: 16px; font-style: italic;">Inter leones et coram populo</p>
+    </div>
+    <div class="case-hero-meta">
+      <div class="case-meta-item">
+        <span>Client</span>
+        <p>Istituto Superiore Vincenzo Capirola<br>Leno, Brescia</p>
+      </div>
+      <div class="case-meta-item">
+        <span>Scope</span>
+        <p>Logo Design · Visual Identity · Wayfinding · Stationery</p>
+      </div>
+      <div class="case-meta-item">
+        <span>Year</span>
+        <p>2022</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">Overview</div>
+    <div class="case-section-content">
+      <h2>Two Lions,<br>One School</h2>
+      <p>
+        The logo of Vincenzo Capirola High School combines a wordmark with the pictogram of two stylophorous lions — ancient stone sculptures standing in front of the Abbey in the town of Leno, near Brescia. More than decorative elements, these lions carry deep historical and cultural significance.
+      </p>
+    </div>
+  </div>
+
+  <!-- SECTION 1 -->
+  <div class="case-img-full reveal">
+    <img src="../img/logo_capirola_01.jpg" alt="Vincenzo Capirola — The Concept">
+  </div>
+
+  <div class="case-body-section reveal">
+    <div class="case-section-label">01 — Concept</div>
+    <div class="case-section-content">
+      <h2>The Concept</h2>
+      <p>
+        The design process began with the stylophorous lions of Leno Abbey — guardians of knowledge and symbols of the town's identity. Their distinctive manes, rendered with diamond-shaped wave patterns, became the visual signature of the pictogram: a geometric abstraction of heritage, strength and institutional authority.
+      </p>
+    </div>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div class="case-img-full reveal">
+    <img src="../img/capirola_cover.jpg" alt="Vincenzo Capirola — The Logo System">
+  </div>
+
+  <div class="grid-2 reveal">
+    <img src="../img/logo_capirola_02.jpg" alt="Vincenzo Capirola — logo application">
+    <img src="../img/logo_capirola_03.jpg" alt="Vincenzo Capirola — colour system">
+  </div>
+
+  <div class="case-body-section reveal">
+    <div class="case-section-label">02 — Logo System</div>
+    <div class="case-section-content">
+      <h2>The Logo System</h2>
+      <p>
+        The logo works across scales and contexts — from wall-mounted signage in the school's conference room to outdoor billboard applications. The colour system combines institutional navy blue with a bold academic yellow, nodding to the historical portrait of Vincenzo Capirola himself.
+      </p>
+    </div>
+  </div>
+
+  <!-- SECTION 3 -->
+  <div class="grid-2 reveal">
+    <img src="../img/logo_capirola_04.jpg" alt="Vincenzo Capirola — stationery">
+    <img src="../img/logo_capirola_05.jpg" alt="Vincenzo Capirola — wayfinding">
+  </div>
+
+  <div class="case-body-section reveal">
+    <div class="case-section-label">03 — Stationery & Wayfinding</div>
+    <div class="case-section-content">
+      <h2>Stationery &amp; Wayfinding</h2>
+      <p>
+        The identity extends into a complete stationery system — business cards, letterhead, envelopes and Open Day brochures. A wayfinding icon system was also developed to help students and visitors navigate the school's different academic programmes: Liceo Scientifico, Liceo Linguistico and Liceo delle Scienze Umane.
+      </p>
+      <div class="case-tags">
+        <span class="case-tag">Institutional</span>
+        <span class="case-tag">Logo Design</span>
+        <span class="case-tag">Brand Identity</span>
+        <span class="case-tag">Wayfinding</span>
+        <span class="case-tag">Education</span>
+        <span class="case-tag">Brescia</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <div class="case-nav">
+    <a href="../index.html">← Back to Work</a>
+    <a href="portfolio.html">View Full Portfolio →</a>
+  </div>
+
+  <footer>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Chiara Alduini — All rights reserved</span>
+      <a href="privacy.html" style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted);">Privacy Policy</a>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

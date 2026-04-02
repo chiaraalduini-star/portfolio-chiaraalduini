@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Italy–Jordan 75 Years — Chiara Alduini</title>
+  <link rel="stylesheet" href="../css/reset.css?v=2">
+  <link rel="stylesheet" href="../css/variables.css?v=2">
+  <link rel="stylesheet" href="../css/typography.css?v=2">
+  <link rel="stylesheet" href="../css/layout.css?v=2">
+  <link rel="stylesheet" href="../css/components.css?v=2">
+  <link rel="stylesheet" href="../css/animations.css?v=2">
+  <link rel="stylesheet" href="../css/responsive.css?v=2">
+  <style>
+    .case-hero {
+      min-height: 70vh;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      padding: calc(var(--header-h) + 80px) var(--padding) 80px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .case-hero-content { align-self: end; }
+    .case-hero-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 40px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border-light);
+      margin-top: 40px;
+    }
+    .case-meta-item span {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      display: block;
+      margin-bottom: 8px;
+    }
+    .case-meta-item p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
+    .case-cover {
+      width: 100%;
+      aspect-ratio: 21/9;
+      object-fit: cover;
+      display: block;
+    }
+
+    .case-body-section {
+      padding: var(--space-lg) var(--padding);
+      border-bottom: 1px solid var(--border-light);
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .case-section-label {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      padding-top: 6px;
+      position: sticky;
+      top: calc(var(--header-h) + 24px);
+    }
+    .case-section-content h2 {
+      font-family: var(--font-display);
+      font-size: 42px;
+      font-weight: 400;
+      color: var(--text);
+      text-transform: uppercase;
+      line-height: 1.0;
+      margin-bottom: 24px;
+    }
+    .case-section-content p {
+      font-size: 16px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .case-section-content p:last-child { margin-bottom: 0; }
+
+    /* IMAGE LAYOUTS */
+    .case-img-full { border-bottom: 1px solid var(--border-light); }
+    .case-img-full img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+      background: var(--surface);
+    }
+    .case-img-full img.wide {
+      aspect-ratio: 21/9;
+    }
+    .case-img-full img.contain {
+      object-fit: contain;
+      background: #f8f8f6;
+      padding: 40px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .grid-2 img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+      background: var(--surface);
+    }
+    .grid-2 img.portrait {
+      aspect-ratio: 3/4;
+      object-fit: contain;
+      background: #f8f8f6;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .grid-3 img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+      background: var(--surface);
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      background: var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .grid-4 img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: contain;
+      background: #f8f8f6;
+      display: block;
+    }
+
+    /* QUOTE */
+    .case-quote {
+      padding: var(--space-lg) var(--padding);
+      border-bottom: 1px solid var(--border-light);
+      background: var(--surface);
+    }
+    .case-quote blockquote {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 3vw, 52px);
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.15;
+      max-width: 900px;
+      font-style: italic;
+    }
+
+    /* NAV */
+    .case-nav {
+      padding: 56px var(--padding);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border-light);
+    }
+    .case-nav a {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: color 0.2s ease, gap 0.2s ease;
+      text-decoration: none;
+    }
+    .case-nav a:hover { color: var(--text); gap: 16px; }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <a href="../index.html" class="logo">Chiara Alduini <span>Independent Creative Director</span></a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="profilo.html">About</a>
+      <a href="contatti.html" class="nav-cta">Contact</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </header>
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="../index.html">Home</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="profilo.html">About</a>
+    <a href="contatti.html">Contact</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="case-hero">
+    <div class="case-hero-content">
+      <div class="section-label">Case Study · 02 — Institutional</div>
+      <h1 class="hero-title">Italy–Jordan<br><em>75 Years</em></h1>
+    </div>
+    <div class="case-hero-meta">
+      <div class="case-meta-item">
+        <span>Client</span>
+        <p>Italian Embassy<br>Amman, Jordan<br>Ministry of Foreign Affairs</p>
+      </div>
+      <div class="case-meta-item">
+        <span>Scope</span>
+        <p>Logo Design · Brand Guidelines · Exhibition Design · Bilingual IT/AR · Collateral · Rollup · Brochure</p>
+      </div>
+      <div class="case-meta-item">
+        <span>Year</span>
+        <p>2024</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COVER — Billboard Amman metro -->
+  <img src="../img/amb-cover.jpg" alt="Italy–Jordan 75 Years — Billboard in Amman" class="case-cover">
+
+  <!-- BACKGROUND -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">01 — Background</div>
+    <div class="case-section-content">
+      <h2>A Unique Brief</h2>
+      <p>
+        The Italian Embassy in Amman was looking for a designer who could work simultaneously in Italian, English, and Arabic — not just translate text, but handle Arabic typography with cultural sensitivity and graphic fluency. That is a rare combination.
+      </p>
+      <p>
+        I had lived and worked in Jordan for many years, collaborating with local NGOs and the Società Dante Alighieri in Amman. The Embassy had seen that work and reached out directly. The project was to create a visual identity celebrating the 75th anniversary of diplomatic relations between Italy and Jordan — a milestone with deep institutional weight on both sides.
+      </p>
+    </div>
+  </div>
+
+  <!-- LOGO CONCEPT -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">02 — The Symbol</div>
+    <div class="case-section-content">
+      <h2>The Infinity of Dialogue</h2>
+      <p>
+        The core of the identity is a custom monogram merging the numerals "7" and "5" into a single, continuous infinity-like shape. The loop represents the enduring nature of bilateral relations — a dialogue with no beginning or end, but a constant cycle of mutual growth.
+      </p>
+      <p>
+        Inside the "7," a red triangle contains the seven-pointed star of the Jordanian flag — a respectful anchor to Jordanian national identity within the celebratory mark. The color system is a diplomatic synthesis: Italian institutional blue for the body of the monogram, Jordanian red for the triangle, and the infinity loop transitioning from green through white to red — the colors shared by both flags.
+      </p>
+    </div>
+  </div>
+
+  <!-- TYPOGRAPHIC SYSTEM -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">03 — Typography</div>
+    <div class="case-section-content">
+      <h2>A Bilingual System</h2>
+      <p>
+        In diplomatic branding, visual parity between languages is essential. The typographic system ensures equal prominence for both Italian and Arabic — carefully balancing two scripts with opposite reading directions (left-to-right and right-to-left) without letting either one dominate.
+      </p>
+      <p>
+        Mohave SemiBold anchors the "JUBILEE" wordmark with institutional authority. Gill Sans Condensed carries the Italian descriptor with elegant efficiency. For Arabic, Tajawal was chosen for its contemporary character and typographic clarity — its proportions echo the Latin typefaces, creating visual consistency and equivalent weight across both writing systems.
+      </p>
+    </div>
+  </div>
+
+  <!-- LOGO LEADERS -->
+  <div class="case-img-full reveal">
+    <img src="../img/amb-logo-leaders.jpg" alt="Logo with political leaders across three generations">
+  </div>
+
+  <!-- EXHIBITION -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">04 — Exhibition</div>
+    <div class="case-section-content">
+      <h2>75 Years on the Walls</h2>
+      <p>
+        The visual identity was extended to the photographic exhibition "Italy and Jordan: 75 Years of Friendship and Cooperation," inaugurated at the Jordan National Gallery of Fine Arts in Amman. I curated the complete visual, graphic, and textual design of the exhibition — panels, typographic layout, and overall visual narrative.
+      </p>
+      <p>
+        The exhibition is divided into three sections: Institutional Relations, tracing meetings between heads of state; Lifestyle and Culture, exploring everyday and artistic connections; and Landscapes and Heritage, celebrating the natural and architectural beauty of both countries. All texts are bilingual in Italian and Arabic.
+      </p>
+    </div>
+  </div>
+
+  <!-- EXHIBITION PANELS — rows of 3 -->
+  <div class="grid-3 reveal">
+    <img src="../img/amb-pannelli-01.jpg" alt="Exhibition panels — institutional section">
+    <img src="../img/amb-pannelli-02.jpg" alt="Exhibition panels — timeline">
+    <img src="../img/amb-pannelli-04.jpg" alt="Exhibition panels — 2023, 2024">
+  </div>
+
+  <div class="grid-3 reveal">
+    <img src="../img/amb-pannelli-06.jpg" alt="Exhibition panels — monuments and nature">
+    <img src="../img/amb-pannelli-07.jpg" alt="Exhibition panels — mostra overview">
+    <img src="../img/amb-pannelli-08.jpg" alt="Exhibition panels — detail">
+  </div>
+
+  <div class="case-img-full reveal">
+    <img src="../img/amb-mostra-overview.png" alt="Exhibition overview" class="contain">
+  </div>
+
+  <!-- QUOTE -->
+  <div class="case-quote reveal">
+    <blockquote>
+      "A visual identity that speaks two languages, honors two cultures, and carries the weight of 75 years of history."
+    </blockquote>
+  </div>
+
+  <!-- COLLATERAL -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">05 — Collateral</div>
+    <div class="case-section-content">
+      <h2>Everything Applied</h2>
+      <p>
+        The identity system was applied across all exhibition collateral: rollup banners, totem displays, billboard posters in Arabic and Italian, the official invitation with envelope, and the bilingual brochure distributed at the Jordan National Gallery of Fine Arts.
+      </p>
+      <p>
+        Every touchpoint — from the printed invitation to the large-format outdoor poster in Amman — maintains the same typographic discipline and color logic, projecting a coherent institutional identity across two countries and three languages.
+      </p>
+    </div>
+  </div>
+
+  <!-- COLLATERAL IMAGES -->
+  <div class="grid-2 reveal">
+    <img src="../img/amb-manifesto-rollup.jpg" alt="Rollup banner Arabic version">
+    <img src="../img/amb-postcard.jpg" alt="Official invitation and envelope">
+  </div>
+
+  <div class="case-img-full reveal">
+    <img src="../img/amb-brochure.jpg" alt="Exhibition brochure bilingual">
+  </div>
+
+  <!-- NAVIGATION -->
+  <div class="case-nav">
+    <a href="case-prati.html">← Previous Case Study</a>
+    <a href="case-petra.html">Next Case Study →</a>
+  </div>
+
+  <footer>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Chiara Alduini — All rights reserved</span>
+      <a href="privacy.html" style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted);">Privacy Policy</a>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Illustrated Maps — Chiara Alduini</title>
+  <link rel="stylesheet" href="../css/reset.css?v=2">
+  <link rel="stylesheet" href="../css/variables.css?v=2">
+  <link rel="stylesheet" href="../css/typography.css?v=2">
+  <link rel="stylesheet" href="../css/layout.css?v=2">
+  <link rel="stylesheet" href="../css/components.css?v=2">
+  <link rel="stylesheet" href="../css/animations.css?v=2">
+  <link rel="stylesheet" href="../css/responsive.css?v=2">
+  <style>
+    .case-hero {
+      min-height: 70vh;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      padding: calc(var(--header-h) + 80px) var(--padding) 80px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .case-hero-content { align-self: end; }
+    .case-hero-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 40px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border-light);
+      margin-top: 40px;
+    }
+    .case-meta-item span {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      display: block;
+      margin-bottom: 8px;
+    }
+    .case-meta-item p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
+    /* COVER */
+    .case-cover {
+      width: 100%;
+      aspect-ratio: 21/9;
+      object-fit: cover;
+      max-height: 600px;
+      display: block;
+      background: #f0ede8;
+    }
+
+    /* TEXT SECTIONS */
+    .case-body-section {
+      padding: var(--space-lg) var(--padding);
+      border-bottom: 1px solid var(--border-light);
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .case-section-label {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      padding-top: 6px;
+      position: sticky;
+      top: calc(var(--header-h) + 24px);
+    }
+    .case-section-content h2 {
+      font-family: var(--font-display);
+      font-size: 42px;
+      font-weight: 400;
+      color: var(--text);
+      text-transform: uppercase;
+      line-height: 1.0;
+      margin-bottom: 24px;
+    }
+    .case-section-content p {
+      font-size: 16px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .case-section-content p:last-child { margin-bottom: 0; }
+
+    /* 2-COL GRID */
+    .maps-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .maps-grid-2 img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      max-height: 600px;
+      display: block;
+    }
+
+    /* NAV */
+    .case-nav {
+      padding: 56px var(--padding);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border-light);
+    }
+    .case-nav a {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: color 0.2s ease, gap 0.2s ease;
+      text-decoration: none;
+    }
+    .case-nav a:hover { color: var(--text); gap: 16px; }
+
+    @media (max-width: 768px) {
+      .maps-grid-2 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <a href="../index.html" class="logo">Chiara Alduini <span>Independent Creative Director</span></a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="profilo.html">About</a>
+      <a href="contatti.html" class="nav-cta">Contact</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </header>
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="../index.html">Home</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="profilo.html">About</a>
+    <a href="contatti.html">Contact</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="case-hero">
+    <div class="case-hero-content">
+      <div class="section-label">Illustration &amp; Editorial · 09 — Information Design</div>
+      <h1 class="hero-title">Illustrated Maps<br><em>C'est La Classe!</em></h1>
+    </div>
+    <div class="case-hero-meta">
+      <div class="case-meta-item">
+        <span>Client</span>
+        <p>Loescher Editore — Torino<br>(founded 1861)</p>
+      </div>
+      <div class="case-meta-item">
+        <span>Scope</span>
+        <p>Illustrated Map Design · Information Design · Educational Publishing · Editorial Illustration</p>
+      </div>
+      <div class="case-meta-item">
+        <span>Year</span>
+        <p>2017–2019</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COVER -->
+  <img src="../img/mappa_citta_parigi.jpg" alt="Illustrated Maps — C'est La Classe!" class="case-cover">
+
+  <!-- 01 — BRIEF -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">01 — Brief</div>
+    <div class="case-section-content">
+      <h2>Geography as a Learning Tool</h2>
+      <p>
+        Loescher Editore, an Italian educational publisher founded in 1861 and specialised in language learning and school publications, commissioned a series of illustrated maps for their French language course book <em>C'est La Classe!</em> Each map needed to work simultaneously as an educational tool and as a visually engaging illustration — functional information design that could hold the attention of secondary school students.
+      </p>
+      <p>
+        The challenge was to translate complex geographic and cultural data — festival locations, city information, francophone distribution worldwide — into clear, charming visual systems that matched the playful, colourful tone of the language course while remaining informationally precise.
+      </p>
+    </div>
+  </div>
+
+  <!-- 02 — THE SYSTEM -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">02 — The System</div>
+    <div class="case-section-content">
+      <h2>Flat Illustration Meets Information Architecture</h2>
+      <p>
+        Each map was built in Adobe Illustrator using a consistent flat illustration language: a warm parchment background evoking classic cartography, custom-drawn architectural and cultural icons for each location, a red and navy colour palette referencing the French tricolore, and a clear typographic hierarchy distinguishing place names from descriptive labels.
+      </p>
+      <p>
+        The icon system was designed to be immediately readable at textbook scale — each city or location identifiable through a single representative illustration rather than generic pins. Paris has the Eiffel Tower and the Seine; Strasbourg its cathedral; Lyon its gastronomy. The maps read as illustrations first, data second.
+      </p>
+    </div>
+  </div>
+
+  <!-- 03 — THE MAPS -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">03 — The Maps</div>
+    <div class="case-section-content">
+      <h2>Paris · France · Festivals · Le Cliché</h2>
+      <p>
+        The series includes five maps covering different scales and subjects: the Top 15 Places to Visit in Paris, the France Cities Map, the Festival Map of France, the Francophone Countries Map, and <em>Le Cliché sur les Français</em> — a playful infographic exploring French cultural stereotypes as a language learning exercise.
+      </p>
+    </div>
+  </div>
+
+  <div class="maps-grid-2 reveal">
+    <img src="../img/mappa_citta_parigi.jpg" alt="Paris — Top 15 Places to Visit illustrated map">
+    <img src="../img/mappa_citta_francia_particolari.jpg" alt="France Cities Map — illustrated map detail">
+    <img src="../img/france_festivals.jpg" alt="Carte de France des Festivals — festival map">
+    <img src="../img/le_cliche_francesi.jpg" alt="Le Cliché sur les Français — cultural infographic">
+  </div>
+
+  <!-- NAVIGATION -->
+  <div class="case-nav">
+    <a href="case-poster-dante.html">← Iconic Posters</a>
+    <a href="case-archangels.html">The Archangels →</a>
+  </div>
+
+  <footer>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Chiara Alduini — All rights reserved</span>
+      <a href="privacy.html" style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted);">Privacy Policy</a>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

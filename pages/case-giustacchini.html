@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giustacchini Calendar 2025 — Chiara Alduini</title>
+  <link rel="stylesheet" href="../css/reset.css?v=2">
+  <link rel="stylesheet" href="../css/variables.css?v=2">
+  <link rel="stylesheet" href="../css/typography.css?v=2">
+  <link rel="stylesheet" href="../css/layout.css?v=2">
+  <link rel="stylesheet" href="../css/components.css?v=2">
+  <link rel="stylesheet" href="../css/animations.css?v=2">
+  <link rel="stylesheet" href="../css/responsive.css?v=2">
+  <style>
+    .case-hero {
+      min-height: 70vh;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      padding: calc(var(--header-h) + 80px) var(--padding) 80px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .case-hero-content { align-self: end; }
+    .case-hero-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 40px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border-light);
+      margin-top: 40px;
+    }
+    .case-meta-item span {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      display: block;
+      margin-bottom: 8px;
+    }
+    .case-meta-item p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
+    /* COVER */
+    .case-cover {
+      width: 100%;
+      aspect-ratio: 21/9;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* TEXT SECTIONS */
+    .case-body-section {
+      padding: var(--space-lg) var(--padding);
+      border-bottom: 1px solid var(--border-light);
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .case-section-label {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      padding-top: 6px;
+      position: sticky;
+      top: calc(var(--header-h) + 24px);
+    }
+    .case-section-content h2 {
+      font-family: var(--font-display);
+      font-size: 42px;
+      font-weight: 400;
+      color: var(--text);
+      text-transform: uppercase;
+      line-height: 1.0;
+      margin-bottom: 24px;
+    }
+    .case-section-content p {
+      font-size: 16px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .case-section-content p:last-child { margin-bottom: 0; }
+
+    /* CALENDAR GRID */
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .calendar-cell {
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+    }
+    .calendar-cell img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+    }
+    .calendar-cell span {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      text-align: center;
+      padding: 10px 8px;
+    }
+
+    /* QUOTE */
+    .case-quote {
+      padding: var(--space-lg) var(--padding);
+      border-bottom: 1px solid var(--border-light);
+      background: var(--surface);
+    }
+    .case-quote blockquote {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 3vw, 52px);
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.15;
+      max-width: 900px;
+      font-style: italic;
+    }
+
+    /* NAV */
+    .case-nav {
+      padding: 56px var(--padding);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border-light);
+    }
+    .case-nav a {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: color 0.2s ease, gap 0.2s ease;
+      text-decoration: none;
+    }
+    .case-nav a:hover { color: var(--text); gap: 16px; }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <a href="../index.html" class="logo">Chiara Alduini <span>Independent Creative Director</span></a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="profilo.html">About</a>
+      <a href="contatti.html" class="nav-cta">Contact</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </header>
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="../index.html">Home</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="profilo.html">About</a>
+    <a href="contatti.html">Contact</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="case-hero">
+    <div class="case-hero-content">
+      <div class="section-label">Case Study · 04 — Illustration &amp; Editorial</div>
+      <h1 class="hero-title">Giustacchini<br><em>Calendar 2025</em></h1>
+    </div>
+    <div class="case-hero-meta">
+      <div class="case-meta-item">
+        <span>Client</span>
+        <p>Giustacchini Products<br>Brescia</p>
+      </div>
+      <div class="case-meta-item">
+        <span>Scope</span>
+        <p>Collage Illustration · Art Direction · 12 Monthly Illustrations · Brand Identity Application</p>
+      </div>
+      <div class="case-meta-item">
+        <span>Year</span>
+        <p>2025</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COVER -->
+  <img src="../img/cover_giustacchini.jpg" alt="Giustacchini Calendar 2025 — Cover" class="case-cover">
+
+  <!-- BACKGROUND -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">01 — Background</div>
+    <div class="case-section-content">
+      <h2>The Behance Call</h2>
+      <p>
+        Giustacchini didn't know me. They found the Linea Calì calendar on Behance and reached out directly. That's when I understood what the brief really was: they had been producing an annual calendar with their products for years, but wanted something different — something that could make people want to keep it on the wall all year, not just use it to cross off days.
+      </p>
+      <p>
+        I proposed a collage-based approach: twelve monthly illustrations, each with its own mood, palette, and cast of products — drawn not from a predefined selection, but researched and curated directly from their website for each theme.
+      </p>
+    </div>
+  </div>
+
+  <!-- THE CHALLENGE -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">02 — The Challenge</div>
+    <div class="case-section-content">
+      <h2>2,000 Square Metres of Products</h2>
+      <p>
+        Giustacchini is not a stationery shop. It's a 2,000-square-metre universe covering school supplies, office technology, home décor, luggage, party goods, wedding accessories, children's toys, and packaging. The real challenge was editorial: deciding which products belonged to which month, building a coherent theme for each illustration, and then finding usable images from the catalogue — often with uneven or poor-quality photography that had to be carefully integrated into a surreal, vintage-inspired composition.
+      </p>
+      <p>
+        Every month started with a concept: a season, a ritual, a moment in the year. March is the month of home renewal and Women's Day — a Greek bust, mimosa, soft furnishings. September is back to school, anchored by a dinosaur stomping through a playground of backpacks and pencil cases. October is the cosmos — planets, travel, and suitcases suspended in space. The products had to serve the mood, not the other way around.
+      </p>
+    </div>
+  </div>
+
+  <!-- THE SIGNATURE -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">03 — The Signature</div>
+    <div class="case-section-content">
+      <h2>One Animal Per Month</h2>
+      <p>
+        Running through all twelve illustrations is a recurring device: each month has its own animal. A grey cat reappears across several scenes, half mascot, half observer. A flamingo returns in summer. A sleeping fox marks autumn. A dinosaur stomps through September. The animals are never decorative — they carry the emotional tone of the month, adding a layer of poetry that gives the calendar a personality beyond its commercial function.
+      </p>
+      <p>
+        This is something I do instinctively. I did it in the Linea Calì calendar too. Animals ground a composition in something warm and alive, especially when the rest of the image is made of objects.
+      </p>
+    </div>
+  </div>
+
+  <!-- PROCESS -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">04 — Process</div>
+    <div class="case-section-content">
+      <h2>Three Months, Twelve Worlds</h2>
+      <p>
+        The entire calendar was designed in three months — a tight timeline for twelve distinct illustrations, each requiring concept development, product research, image sourcing, and collage construction. December was the most complex: the visual territory of Christmas is saturated and predictable, and the product range risks feeling generic. The solution was to go maximalist and theatrical — a giant Santa Claus head as a sun, surrounded by an almost absurd abundance of products, anchored by a white reindeer and a retro radio that give it an unexpected warmth.
+      </p>
+      <p>
+        The cover illustration — a woman at a laptop, a flamingo at her side, planets and textures orbiting around her — was designed last, as a synthesis of the year's visual language.
+      </p>
+    </div>
+  </div>
+
+  <!-- CALENDAR GRID — 11 illustrations, 3 cols -->
+  <div class="calendar-grid reveal">
+    <div class="calendar-cell">
+      <img src="../img/GENNAIO_2025.jpg" alt="January 2025">
+      <span>January</span>
+    </div>
+    <div class="calendar-cell">
+      <img src="../img/FEBBRAIO.jpg" alt="February 2025">
+      <span>February</span>
+    </div>
+    <div class="calendar-cell">
+      <img src="../img/MARZO.jpg" alt="March 2025">
+      <span>March</span>
+    </div>
+    <div class="calendar-cell">
+      <img src="../img/APRILE.jpg" alt="April 2025">
+      <span>April</span>
+    </div>
+    <div class="calendar-cell">
+      <img src="../img/MAGGIO.jpg" alt="May 2025">
+      <span>May</span>
+    </div>
+    <div class="calendar-cell">
+      <img src="../img/LUGLIO.jpg" alt="July 2025">
+      <span>July</span>
+    </div>
+    <div class="calendar-cell">
+      <img src="../img/AGOSTO.jpg" alt="August 2025">
+      <span>August</span>
+    </div>
+    <div class="calendar-cell">
+      <img src="../img/SETTEMBRE.jpg" alt="September 2025">
+      <span>September</span>
+    </div>
+    <div class="calendar-cell">
+      <img src="../img/OTTOBRE.jpg" alt="October 2025">
+      <span>October</span>
+    </div>
+    <div class="calendar-cell">
+      <img src="../img/NOVEMBRE.jpg" alt="November 2025">
+      <span>November</span>
+    </div>
+    <div class="calendar-cell">
+      <img src="../img/DICEMBRE.jpg" alt="December 2025">
+      <span>December</span>
+    </div>
+  </div>
+
+  <!-- QUOTE -->
+  <div class="case-quote reveal">
+    <blockquote>
+      "Twelve months, twelve worlds — each one built around a mood, a season, and an animal that makes it alive."
+    </blockquote>
+  </div>
+
+  <!-- NAVIGATION -->
+  <div class="case-nav">
+    <a href="case-cali.html">← Linea Calì Calendar</a>
+    <a href="case-petra.html">Discover Petra with Ahmad →</a>
+  </div>
+
+  <footer>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Chiara Alduini — All rights reserved</span>
+      <a href="privacy.html" style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted);">Privacy Policy</a>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

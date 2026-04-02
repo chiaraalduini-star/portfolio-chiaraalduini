@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Linea Calì Calendar 2023 — Chiara Alduini</title>
+  <link rel="stylesheet" href="../css/reset.css?v=2">
+  <link rel="stylesheet" href="../css/variables.css?v=2">
+  <link rel="stylesheet" href="../css/typography.css?v=2">
+  <link rel="stylesheet" href="../css/layout.css?v=2">
+  <link rel="stylesheet" href="../css/components.css?v=2">
+  <link rel="stylesheet" href="../css/animations.css?v=2">
+  <link rel="stylesheet" href="../css/responsive.css?v=2">
+  <style>
+    .case-hero {
+      min-height: 70vh;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      padding: calc(var(--header-h) + 80px) var(--padding) 80px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .case-hero-content { align-self: end; }
+    .case-hero-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 40px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border-light);
+      margin-top: 40px;
+    }
+    .case-meta-item span {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      display: block;
+      margin-bottom: 8px;
+    }
+    .case-meta-item p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
+    /* COVER — full width landscape */
+    .case-cover {
+      width: 100%;
+      aspect-ratio: 21/9;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* TEXT SECTIONS */
+    .case-body-section {
+      padding: var(--space-lg) var(--padding);
+      border-bottom: 1px solid var(--border-light);
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .case-section-label {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      padding-top: 6px;
+      position: sticky;
+      top: calc(var(--header-h) + 24px);
+    }
+    .case-section-content h2 {
+      font-family: var(--font-display);
+      font-size: 42px;
+      font-weight: 400;
+      color: var(--text);
+      text-transform: uppercase;
+      line-height: 1.0;
+      margin-bottom: 24px;
+    }
+    .case-section-content p {
+      font-size: 16px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .case-section-content p:last-child { margin-bottom: 0; }
+
+    /* SINGLE FULL IMAGE */
+    .case-img-full {
+      border-bottom: 1px solid var(--border-light);
+    }
+    .case-img-full img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+      background: #f0ede8;
+    }
+
+    /* 2-COL GRID */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .grid-2 img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+      background: #f0ede8;
+    }
+
+    /* QUOTE */
+    .case-quote {
+      padding: var(--space-lg) var(--padding);
+      border-bottom: 1px solid var(--border-light);
+      background: var(--surface);
+    }
+    .case-quote blockquote {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 3vw, 52px);
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.15;
+      max-width: 900px;
+      font-style: italic;
+    }
+
+    /* NAV */
+    .case-nav {
+      padding: 56px var(--padding);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border-light);
+    }
+    .case-nav a {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: color 0.2s ease, gap 0.2s ease;
+      text-decoration: none;
+    }
+    .case-nav a:hover { color: var(--text); gap: 16px; }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <a href="../index.html" class="logo">Chiara Alduini <span>Independent Creative Director</span></a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="profilo.html">About</a>
+      <a href="contatti.html" class="nav-cta">Contact</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </header>
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="../index.html">Home</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="profilo.html">About</a>
+    <a href="contatti.html">Contact</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="case-hero">
+    <div class="case-hero-content">
+      <div class="section-label">Collage & Illustration</div>
+      <h1 class="hero-title">Linea Calì<br><em>Calendar 2023</em></h1>
+    </div>
+    <div class="case-hero-meta">
+      <div class="case-meta-item">
+        <span>Client</span>
+        <p>Linea Calì<br>Handles & Architectural Hardware<br>Italy</p>
+      </div>
+      <div class="case-meta-item">
+        <span>Scope</span>
+        <p>Collage Illustration · Iconographic Research · Cultural Storytelling · Art Direction</p>
+      </div>
+      <div class="case-meta-item">
+        <span>Year</span>
+        <p>2023</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COVER -->
+  <img src="../img/cali-1.jpg" alt="Linea Calì Calendar 2023 — Cover" class="case-cover">
+
+  <!-- CONCEPT -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">01 — Concept</div>
+    <div class="case-section-content">
+      <h2>A Handle Opens a World</h2>
+      <p>
+        Linea Calì is a renowned Italian manufacturer of architectural hardware — handles, knobs, and door fittings of exceptional design quality. For their 2023 annual calendar, the brief was simple: celebrate the countries where the brand is present.
+      </p>
+      <p>
+        What they gave me was a handle and a country name. Everything else — the research, the symbols, the visual narrative — was mine to build. I developed a concept that makes the handle the protagonist: it is not decoration, it is the threshold. Every handle opens a door onto a world.
+      </p>
+      <p>
+        Each of the 13 collage illustrations required deep research into the cultural, historical, natural and symbolic identity of its country — finding the elements that speak most truthfully about a place and composing them into a single, layered image where the Calì handle is always the hinge between the viewer and the world beyond.
+      </p>
+    </div>
+  </div>
+
+  <!-- ITALY -->
+  <div class="case-img-full reveal">
+    <img src="../img/cali-2.jpg" alt="Linea Calì — Italia">
+  </div>
+
+  <!-- UK -->
+  <div class="case-img-full reveal">
+    <img src="../img/cali-3.jpg" alt="Linea Calì — Regno Unito">
+  </div>
+
+  <!-- PROCESS -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">02 — Process</div>
+    <div class="case-section-content">
+      <h2>Research First</h2>
+      <p>
+        Before touching Photoshop, I spent time researching each country — not looking for the obvious postcard image, but for the detail that carries meaning. A robin perched on Michelangelo's David because in Italy the robin announces winter and good fortune. The texture of London's red postboxes filling the circle behind Tower Bridge. The specific angle at which each handle sits changes the composition's tension entirely.
+      </p>
+      <p>
+        The visual language is consistent across all 13 illustrations — a warm cream background, a bold typographic treatment for the country name, and the handle always physically integrated into the scene, never floating. The object becomes architecture within the image.
+      </p>
+    </div>
+  </div>
+
+  <!-- 2-COL GRIDS — pairs of countries -->
+  <div class="grid-2 reveal">
+    <img src="../img/cali-4.jpg" alt="Linea Calì — country illustration">
+    <img src="../img/cali-5.jpg" alt="Linea Calì — country illustration">
+  </div>
+
+  <div class="grid-2 reveal">
+    <img src="../img/cali-6.jpg" alt="Linea Calì — country illustration">
+    <img src="../img/cali-7.jpg" alt="Linea Calì — country illustration">
+  </div>
+
+  <div class="grid-2 reveal">
+    <img src="../img/cali-8.jpg" alt="Linea Calì — country illustration">
+    <img src="../img/cali-9.jpg" alt="Linea Calì — country illustration">
+  </div>
+
+  <div class="grid-2 reveal">
+    <img src="../img/cali-10.jpg" alt="Linea Calì — country illustration">
+    <img src="../img/cali-11.jpg" alt="Linea Calì — country illustration">
+  </div>
+
+  <!-- QUOTE -->
+  <div class="case-quote reveal">
+    <blockquote>
+      "A handle and a country name. Everything else — the symbols, the research, the story — was mine to find."
+    </blockquote>
+  </div>
+
+  <!-- LAST IMAGES -->
+  <div class="grid-2 reveal">
+    <img src="../img/cali-12.jpg" alt="Linea Calì — country illustration">
+    <img src="../img/cali-13.jpg" alt="Linea Calì — country illustration">
+  </div>
+
+  <!-- NAVIGATION -->
+  <div class="case-nav">
+    <a href="../index.html">← Back to Work</a>
+    <a href="portfolio.html">View Full Portfolio →</a>
+  </div>
+
+  <footer>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Chiara Alduini — All rights reserved</span>
+      <a href="privacy.html" style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted);">Privacy Policy</a>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

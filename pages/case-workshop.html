@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Information Design in Action — Chiara Alduini</title>
+  <link rel="stylesheet" href="../css/reset.css?v=2">
+  <link rel="stylesheet" href="../css/variables.css?v=2">
+  <link rel="stylesheet" href="../css/typography.css?v=2">
+  <link rel="stylesheet" href="../css/layout.css?v=2">
+  <link rel="stylesheet" href="../css/components.css?v=2">
+  <link rel="stylesheet" href="../css/animations.css?v=2">
+  <link rel="stylesheet" href="../css/responsive.css?v=2">
+  <style>
+    .case-hero {
+      min-height: 70vh;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      padding: calc(var(--header-h) + 80px) var(--padding) 80px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .case-hero-content { align-self: end; }
+    .case-hero-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 40px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border-light);
+      margin-top: 40px;
+    }
+    .case-meta-item span {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      display: block;
+      margin-bottom: 8px;
+    }
+    .case-meta-item p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
+    .case-cover {
+      width: 100%;
+      aspect-ratio: 21/9;
+      object-fit: cover;
+      display: block;
+    }
+
+    .case-body-section {
+      padding: var(--space-lg) var(--padding);
+      border-bottom: 1px solid var(--border-light);
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .case-section-label {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      padding-top: 6px;
+      position: sticky;
+      top: calc(var(--header-h) + 24px);
+    }
+    .case-section-content h2 {
+      font-family: var(--font-display);
+      font-size: 42px;
+      font-weight: 400;
+      color: var(--text);
+      text-transform: uppercase;
+      line-height: 1.0;
+      margin-bottom: 24px;
+    }
+    .case-section-content p {
+      font-size: 16px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .case-section-content p:last-child { margin-bottom: 0; }
+
+    /* IMAGE LAYOUTS */
+    .case-img-full { border-bottom: 1px solid var(--border-light); }
+    .case-img-full img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+      background: var(--surface);
+    }
+    .case-img-full img.wide {
+      aspect-ratio: 21/9;
+    }
+    .case-img-full img.contain {
+      object-fit: contain;
+      background: #f8f8f6;
+      padding: 40px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .grid-2 img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+      background: var(--surface);
+    }
+    .grid-2 img.portrait {
+      aspect-ratio: 3/4;
+      object-fit: contain;
+      background: #f8f8f6;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .grid-3 img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+      background: var(--surface);
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      background: var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .grid-4 img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: contain;
+      background: #f8f8f6;
+      display: block;
+    }
+
+    /* QUOTE */
+    .case-quote {
+      padding: var(--space-lg) var(--padding);
+      border-bottom: 1px solid var(--border-light);
+      background: var(--surface);
+    }
+    .case-quote blockquote {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 3vw, 52px);
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.15;
+      max-width: 900px;
+      font-style: italic;
+    }
+
+    /* NAV */
+    .case-nav {
+      padding: 56px var(--padding);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border-light);
+    }
+    .case-nav a {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: color 0.2s ease, gap 0.2s ease;
+      text-decoration: none;
+    }
+    .case-nav a:hover { color: var(--text); gap: 16px; }
+
+    @media (max-width: 768px) {
+      .case-hero-meta {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .case-body-section {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .case-section-label {
+        position: static;
+      }
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <a href="../index.html" class="logo">Chiara Alduini <span>Independent Creative Director</span></a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="profilo.html">About</a>
+      <a href="contatti.html" class="nav-cta">Contact</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </header>
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="../index.html">Home</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="profilo.html">About</a>
+    <a href="contatti.html">Contact</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="case-hero">
+    <div class="case-hero-content">
+      <div class="section-label">Institutional · 10 — Education &amp; Teaching</div>
+      <h1 class="hero-title">Information Design<br><em>in Action</em></h1>
+    </div>
+    <div class="case-hero-meta">
+      <div class="case-meta-item">
+        <span>Client</span>
+        <p>Dante Alighieri Amman · Platform Amman ·<br>EUNIC Jordan · European Union</p>
+      </div>
+      <div class="case-meta-item">
+        <span>Scope</span>
+        <p>Workshop Design · Teaching · Didactic Materials · Visual Identity · Facilitation</p>
+      </div>
+      <div class="case-meta-item">
+        <span>Year</span>
+        <p>2019</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COVER -->
+  <img src="../img/Design_Week_Amman_02.jpg" alt="Information Design in Action — Workshop at Amman Design Week" class="case-cover">
+
+  <!-- 01 — BACKGROUND -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">01 — Background</div>
+    <div class="case-section-content">
+      <h2>From Designer to Educator</h2>
+      <p>
+        In July 2019, as part of the Amman Design Week, I designed and led a two-day intensive workshop on information design — funded by the European Union through EUNIC Jordan, in partnership with the Società Dante Alighieri Amman Committee and Platform Amman.
+      </p>
+      <p>
+        The workshop was not just something I taught — it was something I built entirely from scratch. I designed the visual identity, all promotional materials, and the rollup banner, developed the full didactic programme, and facilitated both days of training for a selected group of professional designers with a minimum of two years of experience.
+      </p>
+    </div>
+  </div>
+
+  <!-- FULL IMAGE -->
+  <div class="case-img-full reveal">
+    <img src="../img/Design_Week_Amman.jpg" alt="Workshop promotional graphic — From Amman to Torino">
+  </div>
+
+  <!-- 02 — THE PROGRAMME -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">02 — The Programme</div>
+    <div class="case-section-content">
+      <h2>What to Think, When to Think, How to Think</h2>
+      <p>
+        Day one focused on theory: an introduction to data visualisation, how to develop a communication system around a message, how to make aesthetic decisions about iconography, and how to evaluate the impact of a successful infographic.
+      </p>
+      <p>
+        Day two was the challenge: participants applied everything learned to a real brief, developing a full infographic from first sketch to final layout — with live revision, data control, and design critique.
+      </p>
+    </div>
+  </div>
+
+  <!-- GRID 2 -->
+  <div class="grid-2 reveal">
+    <img src="../img/Design_Week_Amman_02.jpg" alt="Chiara Alduini teaching — workshop session">
+    <img src="../img/Design_Week_Amman_04.jpg" alt="Workshop — design critique session">
+  </div>
+
+  <!-- 03 — THE PARTICIPANTS -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">03 — The Participants</div>
+    <div class="case-section-content">
+      <h2>A Room Full of Designers</h2>
+      <p>
+        The workshop was open to professional designers with at least two years of experience — a deliberate choice to ensure a high-level exchange between peers rather than a basic introductory course. Participants came from different design backgrounds: graphic design, UX, illustration, and communication.
+      </p>
+    </div>
+  </div>
+
+  <!-- FULL IMAGE -->
+  <div class="case-img-full reveal">
+    <img src="../img/Design_Week_Amman_03.jpg" alt="Workshop participants group photo — Amman Design Week 2019">
+  </div>
+
+  <!-- 04 — THE CHALLENGE -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">04 — The Challenge</div>
+    <div class="case-section-content">
+      <h2>From Sketch to Final Infographic</h2>
+      <p>
+        At the end of the workshop, participants were invited to enter a design contest with a two-week deadline. The brief: create an original, unpublished infographic on a real sustainability issue. A panel of experts evaluated each entry for originality, infographic quality, and clarity of communication.
+      </p>
+      <p>
+        The first prize: a three-day trip to Torino Graphic Days — the most important festival dedicated to visual design in Italy — including flights, accommodation, and full festival access.
+      </p>
+    </div>
+  </div>
+
+  <!-- GRID 2 -->
+  <div class="grid-2 reveal">
+    <img src="../img/Design_Week_Amman_06.jpg" alt="Participant presenting sketch — design critique">
+    <img src="../img/Design_Week_Amman_05.jpg" alt="Final infographics — plastic in the food chain">
+  </div>
+
+  <!-- QUOTE -->
+  <div class="case-quote reveal">
+    <blockquote>
+      "Teaching information design means teaching how to think — not just how to make things look good."
+    </blockquote>
+  </div>
+
+  <!-- NAVIGATION -->
+  <div class="case-nav">
+    <a href="case-ambasciata.html">← Italy–Jordan 75 Years</a>
+    <a href="case-petra.html">Discover Petra with Ahmad →</a>
+  </div>
+
+  <footer>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Chiara Alduini — All rights reserved</span>
+      <a href="privacy.html" style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted);">Privacy Policy</a>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

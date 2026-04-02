@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Società Dante Alighieri Amman — Chiara Alduini</title>
+  <link rel="stylesheet" href="../css/reset.css?v=2">
+  <link rel="stylesheet" href="../css/variables.css?v=2">
+  <link rel="stylesheet" href="../css/typography.css?v=2">
+  <link rel="stylesheet" href="../css/layout.css?v=2">
+  <link rel="stylesheet" href="../css/components.css?v=2">
+  <link rel="stylesheet" href="../css/animations.css?v=2">
+  <link rel="stylesheet" href="../css/responsive.css?v=2">
+  <style>
+    .case-hero {
+      min-height: 70vh;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      padding: calc(var(--header-h) + 80px) var(--padding) 80px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .case-hero-content { align-self: end; }
+    .case-hero-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 40px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border-light);
+      margin-top: 40px;
+    }
+    .case-meta-item span {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      display: block;
+      margin-bottom: 8px;
+    }
+    .case-meta-item p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
+    /* COVER — full width landscape */
+    .case-cover {
+      width: 100%;
+      aspect-ratio: 21/9;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* TEXT SECTIONS */
+    .case-body-section {
+      padding: var(--space-lg) var(--padding);
+      border-bottom: 1px solid var(--border-light);
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .case-section-label {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      padding-top: 6px;
+      position: sticky;
+      top: calc(var(--header-h) + 24px);
+    }
+    .case-section-content h2 {
+      font-family: var(--font-display);
+      font-size: 42px;
+      font-weight: 400;
+      color: var(--text);
+      text-transform: uppercase;
+      line-height: 1.0;
+      margin-bottom: 24px;
+    }
+    .case-section-content p {
+      font-size: 16px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .case-section-content p:last-child { margin-bottom: 0; }
+
+    /* SINGLE FULL IMAGE */
+    .case-img-full {
+      border-bottom: 1px solid var(--border-light);
+    }
+    .case-img-full img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+      background: #f0ede8;
+    }
+
+    /* 2-COL GRID */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .grid-2 img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+      background: #f0ede8;
+    }
+
+    /* VIDEO EMBED */
+    .case-video {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/9;
+      margin-top: 32px;
+    }
+    .case-video iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* TAGS */
+    .case-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 24px;
+    }
+    .case-tag {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      border: 1px solid var(--border);
+      padding: 5px 12px;
+    }
+
+    /* NAV */
+    .case-nav {
+      padding: 56px var(--padding);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border-light);
+    }
+    .case-nav a {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: color 0.2s ease, gap 0.2s ease;
+      text-decoration: none;
+    }
+    .case-nav a:hover { color: var(--text); gap: 16px; }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <a href="../index.html" class="logo">Chiara Alduini <span>Independent Creative Director</span></a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="profilo.html">About</a>
+      <a href="contatti.html" class="nav-cta">Contact</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </header>
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="../index.html">Home</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="profilo.html">About</a>
+    <a href="contatti.html">Contact</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="case-hero">
+    <div class="case-hero-content">
+      <div class="section-label">Institutional · Multilingual Communication</div>
+      <h1 class="hero-title">Società Dante<br><em>Alighieri Amman</em></h1>
+    </div>
+    <div class="case-hero-meta">
+      <div class="case-meta-item">
+        <span>Client</span>
+        <p>Società Dante Alighieri<br>Amman, Jordan</p>
+      </div>
+      <div class="case-meta-item">
+        <span>Scope</span>
+        <p>Campaign Design · Social Media · Motion Graphics · Educational Materials</p>
+      </div>
+      <div class="case-meta-item">
+        <span>Year</span>
+        <p>2018–2024</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COVER -->
+  <img src="../img/speak_italian_dante_amman_mon_dad_adv.jpg" alt="Società Dante Alighieri Amman — Cover" class="case-cover">
+
+  <!-- INTRO -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">Overview</div>
+    <div class="case-section-content">
+      <h2>Italian Culture,<br>Arabic Audiences</h2>
+      <p>
+        A long-term collaboration with the Italian cultural institute in Amman, Jordan. From social media campaigns to bilingual infographics and motion graphics — all designed to connect Italian language and culture with Arabic-speaking audiences across generations.
+      </p>
+    </div>
+  </div>
+
+  <!-- SECTION 1 -->
+  <div class="case-img-full reveal">
+    <img src="../img/speak_italian_dante_amman_mon_dad_adv.jpg" alt="Italian School Courses Campaign">
+  </div>
+
+  <div class="case-body-section reveal">
+    <div class="case-section-label">01 — Campaign</div>
+    <div class="case-section-content">
+      <h2>Italian School Courses Campaign</h2>
+      <p>
+        Two campaign concepts targeting different audiences: teenagers reached through Jordanian dialect and smartphone culture; families addressed through the emotional bond between Italian-speaking parents and their children. Bilingual IT/EN, adapted for print and digital.
+      </p>
+    </div>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div class="case-img-full reveal">
+    <img src="../img/italy_post_video.jpg" alt="The Italian Language Value for Your Future">
+  </div>
+
+  <div class="case-body-section reveal">
+    <div class="case-section-label">02 — Social Media</div>
+    <div class="case-section-content">
+      <h2>The Italian Language Value for Your Future</h2>
+      <p>
+        Social media campaign and motion graphics video for Italian Language Day. The project presents Italy as a living, relevant country — economically, culturally and linguistically — through bilingual EN/AR content designed for Instagram and web.
+      </p>
+      <div class="case-video">
+        <iframe src="https://www.youtube.com/embed/_a6A1hnyS8c" title="The Italian Language Value for Your Future" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 3 -->
+  <div class="grid-2 reveal">
+    <img src="../img/zainetto_ragazzini_02.jpg" alt="Bilingual Educational Bag — detail">
+    <img src="../img/zainetto_bambini_01.jpg" alt="Bilingual Educational Bag — children">
+  </div>
+
+  <div class="case-body-section reveal">
+    <div class="case-section-label">03 — Educational</div>
+    <div class="case-section-content">
+      <h2>Bilingual Educational Materials</h2>
+      <p>
+        Illustrated fabric bags designed for children attending Dante Alighieri language courses. Each bag features bilingual IT/AR vocabulary — animals, objects, everyday words — printed as a visual learning tool and keepsake. Children could also use the bags as an interactive game, completing words with a marker.
+      </p>
+      <div class="case-tags">
+        <span class="case-tag">Institutional</span>
+        <span class="case-tag">Multilingual</span>
+        <span class="case-tag">IT/EN/AR</span>
+        <span class="case-tag">Social Media</span>
+        <span class="case-tag">Motion Graphics</span>
+        <span class="case-tag">Educational Design</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <div class="case-nav">
+    <a href="../index.html">← Back to Work</a>
+    <a href="portfolio.html">View Full Portfolio →</a>
+  </div>
+
+  <footer>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Chiara Alduini — All rights reserved</span>
+      <a href="privacy.html" style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted);">Privacy Policy</a>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

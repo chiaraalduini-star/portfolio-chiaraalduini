@@ -1,0 +1,659 @@
+/* =====================================================
+   RESPONSIVE.CSS — CHIARA ALDUINI PORTFOLIO
+   Single source of truth for all responsive rules.
+   Applied to: homepage + all inner pages.
+   ===================================================== */
+
+/* ── Global resets (apply at all sizes) ── */
+*, *::before, *::after { box-sizing: border-box; }
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ── Hamburger: hidden on desktop ── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 8px;
+  /* Must be above header (z-index 100) and below mobile-nav (9999) */
+  position: relative;
+  z-index: 10000;
+}
+
+.hamburger span {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: #111110;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform-origin: center;
+}
+
+/* X animation */
+.hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+/* ── Mobile nav overlay: hidden until .open ── */
+.mobile-nav {
+  position: fixed;
+  inset: 0;               /* top/left/right/bottom: 0 */
+  width: 100%;
+  height: 100vh;
+  background: #ffffff;
+  z-index: 9999;          /* below hamburger button (10000), above everything else */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* Off-screen to the right by default */
+  transform: translateX(100%);
+  transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+  /* No overflow hidden — prevents touch scroll issues */
+  overflow-y: auto;
+}
+
+.mobile-nav.open {
+  transform: translateX(0);
+}
+
+.mobile-nav a {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 52px;
+  color: #111110;
+  text-decoration: none;
+  text-transform: uppercase;
+  line-height: 1.1;
+  padding: 16px 40px;
+  border-bottom: 1px solid #e8e6df;
+  display: block;
+  width: 100%;
+  text-align: center;
+  transition: opacity 0.15s ease;
+  /* Ensure tappable */
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.mobile-nav a:last-child {
+  border-bottom: none;
+}
+
+.mobile-nav a:active {
+  opacity: 0.45;
+}
+
+/* =====================================================
+   MOBILE  ≤ 768px
+   ===================================================== */
+@media (max-width: 768px) {
+
+  /* Variables */
+  :root {
+    --padding: 20px;
+    --space-xl: 56px;
+    --space-lg: 36px;
+    --space-md: 24px;
+  }
+
+  /* ── Header ── */
+  header nav {
+    display: none !important;
+  }
+
+  .hamburger {
+    display: flex !important;
+  }
+
+  header {
+    padding: 0 20px;
+  }
+
+  .logo {
+    font-size: 20px !important;
+  }
+
+  .logo span {
+    display: none !important;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    min-height: 60vh !important;
+    padding: calc(var(--header-h) + 16px) 20px 28px !important;
+  }
+
+  .hero-title {
+    font-size: clamp(44px, 12vw, 72px) !important;
+    margin-bottom: 16px !important;
+  }
+
+  .hero-meta {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+    padding-top: 18px !important;
+  }
+
+  .hero-sub {
+    max-width: 100% !important;
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+  }
+
+  .hero-scroll-hint {
+    display: none;
+  }
+
+  /* ── Section header ── */
+  .section-header {
+    display: block !important;
+    padding-bottom: 20px !important;
+    margin-bottom: 0 !important;
+  }
+
+  .section-label {
+    margin-bottom: 8px !important;
+  }
+
+  .section-title {
+    font-size: clamp(32px, 10vw, 56px) !important;
+    margin-bottom: 12px !important;
+  }
+
+  .section-header-desc {
+    max-width: 100% !important;
+    font-size: 14px !important;
+  }
+
+  /* ── Three Pillars ── */
+  .pillars {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .pillars-grid {
+    grid-template-columns: 1fr !important;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .pillar {
+    border-right: none !important;
+    border-bottom: 1px solid var(--border-light) !important;
+    padding: 22px 20px !important;
+    min-height: auto !important;
+    gap: 10px !important;
+  }
+
+  .pillar:last-child {
+    border-bottom: none !important;
+  }
+
+  .pillar h3 {
+    font-size: clamp(22px, 6vw, 34px) !important;
+  }
+
+  .pillar p {
+    font-size: 13px !important;
+    line-height: 1.6 !important;
+  }
+
+  /* ── Case Studies section ── */
+  .case-studies {
+    padding: 36px 0 48px !important;
+  }
+
+  .case-studies > .section-header {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .case-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+    border-left: none !important;
+    border-right: none !important;
+  }
+
+  .case-card {
+    border-bottom: 1px solid var(--border-light) !important;
+  }
+
+  .case-card:last-child {
+    border-bottom: none !important;
+  }
+
+  .case-img {
+    aspect-ratio: 16 / 9 !important;
+    width: 100% !important;
+  }
+
+  .case-img img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .case-body {
+    padding: 20px 20px 28px !important;
+    gap: 10px !important;
+  }
+
+  .case-title {
+    font-size: 24px !important;
+  }
+
+  .case-desc {
+    font-size: 14px !important;
+    line-height: 1.65 !important;
+  }
+
+  .case-tags {
+    padding-top: 8px !important;
+  }
+
+  /* ── More Work / Other Projects ── */
+  .other-projects {
+    padding: 0 0 40px !important;
+  }
+
+  .other-header {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    margin-bottom: 0 !important;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0 !important;
+    border-left: none !important;
+    border-right: none !important;
+  }
+
+  .project-card {
+    border-bottom: 1px solid var(--border-light) !important;
+    border-right: none !important;
+  }
+
+  .project-img {
+    aspect-ratio: 4 / 3 !important;
+    width: 100% !important;
+  }
+
+  .project-img img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .project-info {
+    padding: 10px 12px 14px !important;
+  }
+
+  .project-info h3 {
+    font-size: 18px !important;
+    line-height: 1.2 !important;
+  }
+
+  .project-info p {
+    font-size: 11px !important;
+    line-height: 1.5 !important;
+    display: none;
+  }
+
+  /* ── Footer ── */
+  footer {
+    padding: 36px 20px !important;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+    margin-bottom: 24px !important;
+    padding-bottom: 24px !important;
+  }
+
+  .footer-bottom {
+    flex-direction: column !important;
+    gap: 10px !important;
+    align-items: flex-start !important;
+  }
+
+  /* =====================================================
+     CASE STUDY INNER PAGES
+     ===================================================== */
+
+  .case-hero {
+    min-height: auto !important;
+    padding: calc(var(--header-h) + 16px) 20px 24px !important;
+  }
+
+  /* Metadata row: CLIENT / SCOPE / YEAR */
+  .case-hero-meta {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+    padding-top: 20px !important;
+    border-top: 1px solid var(--border-light) !important;
+    margin-top: 20px !important;
+  }
+
+  .case-meta-item {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 3px !important;
+  }
+
+  .case-meta-item span,
+  .case-meta-item label {
+    font-size: 10px !important;
+    letter-spacing: 0.12em !important;
+  }
+
+  .case-meta-item p,
+  .case-meta-item strong,
+  .case-meta-item .meta-value {
+    font-size: 15px !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Body sections */
+  .case-body-section {
+    display: block !important;
+    padding: 28px 20px !important;
+  }
+
+  .case-section-label {
+    position: static !important;
+    margin-bottom: 8px !important;
+    display: block !important;
+  }
+
+  .case-section-content h2 {
+    font-size: 26px !important;
+    margin-bottom: 14px !important;
+  }
+
+  .case-section-content p {
+    font-size: 15px !important;
+    line-height: 1.7 !important;
+    max-width: 100% !important;
+  }
+
+  /* Image grids inside case studies */
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr !important;
+    gap: 2px !important;
+  }
+
+  .grid-4 {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 2px !important;
+  }
+
+  .grid-2 img,
+  .grid-3 img,
+  .grid-4 img {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16 / 9 !important;
+    object-fit: cover !important;
+  }
+
+  /* Full-width images */
+  .case-img-full,
+  .cs-img-full,
+  .case-full-img {
+    width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .case-img-full img,
+  .cs-img-full img,
+  .case-full-img img {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Pull quote */
+  .case-quote {
+    padding: 28px 20px !important;
+  }
+
+  .case-quote blockquote {
+    font-size: 20px !important;
+    line-height: 1.35 !important;
+  }
+
+  /* Case-to-case nav */
+  .case-nav {
+    flex-direction: column !important;
+    gap: 12px !important;
+    padding: 28px 20px !important;
+    align-items: flex-start !important;
+  }
+
+  /* =====================================================
+     PORTFOLIO PAGE
+     ===================================================== */
+
+  .filter-bar {
+    padding: 16px 20px !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+
+  .filter-btn {
+    font-size: 10px !important;
+    padding: 6px 12px !important;
+  }
+
+  /* Hide the last empty placeholder card */
+  .project-card[style*="visibility:hidden"] {
+    display: none !important;
+  }
+
+  /* =====================================================
+     CONTACT / ABOUT PAGES
+     ===================================================== */
+
+  .page-main {
+    padding: calc(var(--header-h) + 16px) 20px 40px !important;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  /* ── Poster grid (case-prati) ── */
+  .poster-grid-2 {
+    grid-template-columns: 1fr !important;
+  }
+
+  .poster-grid-2 img {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 3 / 4 !important;
+    object-fit: cover !important;
+  }
+
+  /* ── Contact form ── */
+  .contact-form input,
+  .contact-form textarea {
+    width: 100% !important;
+    font-size: 16px !important; /* prevents auto-zoom on iOS */
+    box-sizing: border-box !important;
+  }
+
+  .submit-btn {
+    width: 100% !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+
+  /* ── About page ── */
+  .about-image {
+    width: 100% !important;
+  }
+
+  .about-image img {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 1 / 1 !important;
+    object-fit: cover !important;
+  }
+
+  .about-tags {
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+
+  .about-cta {
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+    margin-top: 24px !important;
+  }
+
+  /* ── Contact list ── */
+  .contact-list {
+    padding: 0 !important;
+  }
+
+  .contact-list li {
+    flex-direction: column !important;
+    gap: 4px !important;
+    padding: 14px 0 !important;
+  }
+
+  /* ── Typography ── */
+  h1 { font-size: clamp(32px, 9vw, 52px) !important; }
+  h2 { font-size: clamp(22px, 6vw, 36px) !important; }
+  h3 { font-size: clamp(18px, 5vw, 28px) !important; }
+  p  { font-size: 15px; line-height: 1.7; }
+
+}
+
+/* =====================================================
+   VERY SMALL PHONES  ≤ 480px
+   ===================================================== */
+@media (max-width: 480px) {
+
+  .hero-title {
+    font-size: clamp(36px, 11vw, 52px) !important;
+  }
+
+  .mobile-nav a {
+    font-size: 40px !important;
+    padding: 14px 20px !important;
+  }
+
+  /* Stack portfolio to 1 column */
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .grid-4 {
+    grid-template-columns: 1fr !important;
+  }
+
+}
+
+/* =====================================================
+   TABLET  769–1023px
+   ===================================================== */
+@media (min-width: 769px) and (max-width: 1023px) {
+
+  :root { --padding: 32px; }
+
+  header nav {
+    display: none !important;
+  }
+
+  .hamburger {
+    display: flex !important;
+  }
+
+  .section-header {
+    display: block !important;
+    padding-bottom: 24px;
+  }
+
+  .case-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+}
+
+/* =====================================================
+   FIX IMMAGINI VERTICALI SU MOBILE
+   ===================================================== */
+@media (max-width: 768px) {
+
+  /* Tutte le griglie diventano 1 colonna */
+  [class*="grid-"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Griglie custom dei case study */
+  [class*="-grid-2"],
+  [class*="-grid-3"],
+  [class*="-grid-4"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Immagini portrait — mantieni proporzioni */
+  [class*="grid-"] img[class*="portrait"],
+  .grid-4 img {
+    aspect-ratio: 3/4 !important;
+    object-fit: cover;
+  }
+
+  /* Immagini landscape standard */
+  [class*="grid-"] img:not([class*="portrait"]) {
+    aspect-ratio: 16/9 !important;
+    object-fit: cover;
+  }
+
+  /* Eccezione arcangeli portrait grid */
+  .archangels-portrait-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .archangels-portrait-grid img {
+    aspect-ratio: 3/4 !important;
+  }
+
+  /* Behind the work — immagini intere */
+  .process-grid img {
+    aspect-ratio: auto !important;
+    object-fit: contain !important;
+  }
+
+}
+
+/* =====================================================
+   LARGE DESKTOP  ≥ 1280px
+   ===================================================== */
+@media (min-width: 1280px) {
+  :root { --padding: 64px; }
+}

@@ -1,0 +1,39 @@
+/* ═══════════════════════════════════════
+   DESIGN SYSTEM — Tokens & Variables
+   Modifica qui per cambiare l'intera palette
+═══════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Familjen+Grotesk:ital,wght@0,400;0,500;0,700;1,400&family=IBM+Plex+Mono:wght@300;400&display=swap');
+
+:root {
+  /* Colori — Light Theme */
+  --bg:           #ffffff;
+  --bg2:          #f7f7f5;
+  --surface:      #f0efea;
+  --border:       #d8d6cf;
+  --border-light: #e8e6df;
+  --text:         #111110;
+  --text-muted:   #6b6860;
+  --text-dim:     #aaa9a4;
+  --accent:       #111110;
+  --accent2:      #6b6860;
+  --accent-warm:  #111110;
+  --white:        #ffffff;
+
+  /* Font */
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body:    'Familjen Grotesk', sans-serif;
+  --font-mono:    'IBM Plex Mono', monospace;
+
+  /* Spacing */
+  --space-xs:  8px;
+  --space-sm:  16px;
+  --space-md:  32px;
+  --space-lg:  64px;
+  --space-xl:  120px;
+
+  /* Layout */
+  --header-h: 64px;
+  --max-w:    1400px;
+  --padding:  48px;
+}

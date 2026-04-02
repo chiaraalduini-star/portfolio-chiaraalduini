@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio — Chiara Alduini</title>
+  <link rel="stylesheet" href="../css/reset.css?v=2">
+  <link rel="stylesheet" href="../css/variables.css?v=2">
+  <link rel="stylesheet" href="../css/typography.css?v=2">
+  <link rel="stylesheet" href="../css/layout.css?v=2">
+  <link rel="stylesheet" href="../css/components.css?v=2">
+  <link rel="stylesheet" href="../css/animations.css?v=2">
+  <link rel="stylesheet" href="../css/responsive.css?v=2">
+</head>
+<body>
+  <header id="header">
+    <a href="../index.html" class="logo">Chiara Alduini <span>Independent Creative Director</span></a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="portfolio.html" class="active">Portfolio</a>
+      <a href="profilo.html">About</a>
+      <a href="contatti.html" class="nav-cta">Contact</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </header>
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="../index.html">Home</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="profilo.html">About</a>
+    <a href="contatti.html">Contact</a>
+  </nav>
+
+  <main class="page-main">
+    <div class="section-header">
+      <div>
+        <div class="section-label">All Projects</div>
+        <h1 class="section-title">Portfolio</h1>
+      </div>
+      <p class="section-header-desc">
+        20 years of work across brand identity, institutional communication, illustration and editorial design.
+      </p>
+    </div>
+
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="branding">Strategic Branding</button>
+      <button class="filter-btn" data-filter="institutional">Institutional</button>
+      <button class="filter-btn" data-filter="illustration">Illustration &amp; Editorial</button>
+    </div>
+
+    <div class="projects-grid" id="projectsGrid">
+
+      <!-- 1 -->
+      <a href="case-petra.html" class="project-card" data-category="institutional" style="text-decoration:none;color:inherit;display:block;">
+        <div class="project-img"><img src="../img/coverahmad.jpg" alt="Discover Petra with Ahmad"></div>
+        <div class="project-info">
+          <span class="project-tag">Institutional</span>
+          <h3>Discover Petra with Ahmad</h3>
+          <p>Educational project for children at the UNESCO site of Petra.</p>
+        </div>
+      </a>
+
+      <!-- 2 -->
+      <a href="case-ambasciata.html" class="project-card" data-category="institutional" style="text-decoration:none;color:inherit;display:block;">
+        <div class="project-img"><img src="../img/amb-pannelli-08.jpg" alt="Exhibition Amman"></div>
+        <div class="project-info">
+          <span class="project-tag">Institutional</span>
+          <h3>Italy–Jordan 75 Years</h3>
+          <p>Visual, graphic and textual design of the photographic exhibition "Italy and Jordan: 75 Years of Friendship and Cooperation" at the Jordan National Gallery of Fine Arts. Bilingual IT/AR.</p>
+        </div>
+      </a>
+
+      <!-- 3 -->
+      <a href="case-cali.html" class="project-card" data-category="illustration" style="text-decoration:none;color:inherit;display:block;">
+        <div class="project-img"><img src="../img/cover_cali.jpg" alt="Linea Calì Calendar"></div>
+        <div class="project-info">
+          <span class="project-tag">Illustration &amp; Editorial</span>
+          <h3>Linea Calì Calendar</h3>
+          <p>Collage celebrating cultural diversity around the world.</p>
+        </div>
+      </a>
+
+      <!-- 4 -->
+      <a href="case-poster-dante.html" class="project-card" data-category="illustration" style="text-decoration:none;color:inherit;display:block;">
+        <div class="project-img"><img src="../img/cover_poster_dante.jpg" alt="Iconic Posters"></div>
+        <div class="project-info">
+          <span class="project-tag">Illustration &amp; Editorial</span>
+          <h3>Iconic Posters</h3>
+          <p>A bilingual poster series celebrating Italian figures in science, culture and the arts — commissioned by Società Dante Alighieri, Amman Committee.</p>
+        </div>
+      </a>
+
+      <!-- 5 -->
+      <a href="case-maps.html" class="project-card" data-category="illustration" style="text-decoration:none;color:inherit;display:block;">
+        <div class="project-img"><img src="../img/mappa_citta_parigi.jpg" alt="Illustrated Maps"></div>
+        <div class="project-info">
+          <span class="project-tag">Illustration &amp; Editorial</span>
+          <h3>Illustrated Maps</h3>
+          <p>Maps of Brescia, Bergamo, Verona and French cities for educational publishers.</p>
+        </div>
+      </a>
+
+      <!-- 6 -->
+      <a href="case-giustacchini.html" class="project-card" data-category="illustration" style="text-decoration:none;color:inherit;display:block;">
+        <div class="project-img"><img src="../img/cover_giustacchini.jpg" alt="Giustacchini Calendar"></div>
+        <div class="project-info">
+          <span class="project-tag">Illustration &amp; Editorial</span>
+          <h3>Giustacchini Calendar</h3>
+          <p>Corporate calendar in collage style — a year in twelve scenes.</p>
+        </div>
+      </a>
+
+      <!-- 7 -->
+      <a href="case-capirola.html" class="project-card" data-category="institutional" style="text-decoration:none;color:inherit;display:block;">
+        <div class="project-img"><img src="../img/capirola_cover.jpg" alt="Capirola High School"></div>
+        <div class="project-info">
+          <span class="project-tag">Institutional</span>
+          <h3>Capirola High School</h3>
+          <p>Institutional logo for a secondary school.</p>
+        </div>
+      </a>
+
+      <a href="case-prati.html" class="project-card" data-category="branding" style="text-decoration:none;color:inherit;display:block;">
+        <div class="project-img"><img src="../img/prati-studio-1.jpg" alt="Prati Assicurazioni"></div>
+        <div class="project-info">
+          <span class="project-tag">Strategic Branding</span>
+          <h3>Prati Assicurazioni</h3>
+          <p>Complete creative direction: logo, website, campaigns, interior design.</p>
+        </div>
+      </a>
+
+      <a href="case-frittanza.html" class="project-card" data-category="branding" style="text-decoration:none;color:inherit;display:block;">
+        <div class="project-img"><img src="../img/frittanza_cover.jpg" alt="Frittanza — Self-initiated brand concept"></div>
+        <div class="project-info">
+          <span class="project-tag">Strategic Branding</span>
+          <h3>Frittanza</h3>
+          <p>Complete brand for an 80s-inspired fast food restaurant.</p>
+        </div>
+      </a>
+
+      <a href="case-railab.html" class="project-card" data-category="branding" style="text-decoration:none;color:inherit;display:block;">
+        <div class="project-img"><img src="../img/railab_logo_02.jpg" alt="Railab"></div>
+        <div class="project-info">
+          <span class="project-tag">Strategic Branding</span>
+          <h3>Railab</h3>
+          <p>Brand identity for a robotics and AI hub.</p>
+        </div>
+      </a>
+
+      <a href="case-latteria.html" class="project-card" data-category="branding" style="text-decoration:none;color:inherit;display:block;">
+        <div class="project-img"><img src="../img/logo_lait_01.jpg" alt="Latteria Alta Italia — brand identity"></div>
+        <div class="project-info">
+          <span class="project-tag">Strategic Branding</span>
+          <h3>Latteria Alta Italia</h3>
+          <p>Modern vintage logo for a local dairy brand.</p>
+        </div>
+      </a>
+
+      <a href="case-dante.html" class="project-card" data-category="institutional" style="text-decoration:none;color:inherit;display:block;">
+        <div class="project-img"><img src="../img/speak_italian_dante_amman_mon_dad_adv.jpg" alt="Dante Alighieri Amman"></div>
+        <div class="project-info">
+          <span class="project-tag">Institutional</span>
+          <h3>Dante Alighieri Amman</h3>
+          <p>Multilingual campaigns for Italian language courses in Jordan.</p>
+        </div>
+      </a>
+
+      <a href="case-workshop.html" class="project-card" data-category="institutional" style="text-decoration:none;color:inherit;display:block;">
+        <div class="project-img"><img src="../img/Design_Week_Amman_03.jpg" alt="Information Design Workshop — Amman Design Week 2019"></div>
+        <div class="project-info">
+          <span class="project-tag">Institutional</span>
+          <h3>Information Design Workshop</h3>
+          <p>Two-day workshop on information design at the Amman Design Week — designed, taught and facilitated entirely by Chiara Alduini.</p>
+        </div>
+      </a>
+
+      <a href="case-poetry.html" class="project-card" data-category="illustration" style="text-decoration:none;color:inherit;display:block;">
+        <div class="project-img"><img src="../img/Mayakovsky_Book-1024x683.jpg" alt="Poetry Book Covers"></div>
+        <div class="project-info">
+          <span class="project-tag">Illustration &amp; Editorial</span>
+          <h3>Poetry Book Covers</h3>
+          <p>Collage covers for Arab and Russian poetry collections.</p>
+        </div>
+      </a>
+
+      <a href="case-archangels.html" class="project-card" data-category="illustration" style="text-decoration:none;color:inherit;display:block;">
+        <div class="project-img"><img src="../img/arcangelo_michele_portfolio_chiara_alduini_02.jpg" alt="Archangel Collage"></div>
+        <div class="project-info">
+          <span class="project-tag">Illustration &amp; Editorial</span>
+          <h3>Archangel Collage</h3>
+          <p>Series of handcrafted digital collages — no AI involved.</p>
+        </div>
+      </a>
+
+      <a href="case-ultrafab.html" class="project-card" data-category="illustration" style="text-decoration:none;color:inherit;display:block;">
+        <div class="project-img"><img src="../img/ultrafab_01.jpg" alt="Ultrafab — IIoT infographic system"></div>
+        <div class="project-info">
+          <span class="project-tag">Illustration &amp; Editorial</span>
+          <h3>Ultrafab — IIoT</h3>
+          <p>Information design for an industrial IoT company — infographics explaining the Bishop operating system.</p>
+        </div>
+      </a>
+
+      <a href="case-reply.html" class="project-card" data-category="illustration" style="text-decoration:none;color:inherit;display:block;">
+        <div class="project-img"><img src="../img/reply_12.jpg" alt="The Data Incubator — Data Reply"></div>
+        <div class="project-info">
+          <span class="project-tag">Illustration &amp; Editorial</span>
+          <h3>The Data Incubator</h3>
+          <p>Infographic series for Data Reply explaining the path to becoming a data scientist.</p>
+        </div>
+      </a>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Chiara Alduini — All rights reserved</span>
+      <a href="privacy.html" style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted);">Privacy Policy</a>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/portfolio.js"></script>
+</body>
+</html>

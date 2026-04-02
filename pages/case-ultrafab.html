@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ultrafab — Chiara Alduini</title>
+  <link rel="stylesheet" href="../css/reset.css?v=2">
+  <link rel="stylesheet" href="../css/variables.css?v=2">
+  <link rel="stylesheet" href="../css/typography.css?v=2">
+  <link rel="stylesheet" href="../css/layout.css?v=2">
+  <link rel="stylesheet" href="../css/components.css?v=2">
+  <link rel="stylesheet" href="../css/animations.css?v=2">
+  <link rel="stylesheet" href="../css/responsive.css?v=2">
+  <style>
+    .case-hero {
+      min-height: 70vh;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      padding: calc(var(--header-h) + 80px) var(--padding) 80px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .case-hero-content { align-self: end; }
+    .case-hero-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 40px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border-light);
+      margin-top: 40px;
+    }
+    .case-meta-item span {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      display: block;
+      margin-bottom: 8px;
+    }
+    .case-meta-item p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
+    .case-cover {
+      width: 100%;
+      aspect-ratio: 21/9;
+      object-fit: cover;
+      display: block;
+    }
+
+    .case-body-section {
+      padding: var(--space-lg) var(--padding);
+      border-bottom: 1px solid var(--border-light);
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .case-section-label {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      padding-top: 6px;
+      position: sticky;
+      top: calc(var(--header-h) + 24px);
+    }
+    .case-section-content h2 {
+      font-family: var(--font-display);
+      font-size: 42px;
+      font-weight: 400;
+      color: var(--text);
+      text-transform: uppercase;
+      line-height: 1.0;
+      margin-bottom: 24px;
+    }
+    .case-section-content p {
+      font-size: 16px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .case-section-content p:last-child { margin-bottom: 0; }
+
+    /* IMAGE LAYOUTS */
+    .case-img-full { border-bottom: 1px solid var(--border-light); }
+    .case-img-full img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+      background: var(--surface);
+    }
+    .case-img-full img.wide {
+      aspect-ratio: 21/9;
+    }
+    .case-img-full img.contain {
+      object-fit: contain;
+      background: #f8f8f6;
+      padding: 40px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .grid-2 img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+      background: var(--surface);
+    }
+
+    .ultrafab-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .ultrafab-grid-2 img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* QUOTE */
+    .case-quote {
+      padding: var(--space-lg) var(--padding);
+      border-bottom: 1px solid var(--border-light);
+      background: var(--surface);
+    }
+    .case-quote blockquote {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 3vw, 52px);
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.15;
+      max-width: 900px;
+      font-style: italic;
+    }
+
+    /* NAV */
+    .case-nav {
+      padding: 56px var(--padding);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border-light);
+    }
+    .case-nav a {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: color 0.2s ease, gap 0.2s ease;
+      text-decoration: none;
+    }
+    .case-nav a:hover { color: var(--text); gap: 16px; }
+
+    @media (max-width: 768px) {
+      .case-hero-meta {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .case-body-section {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .case-section-label {
+        position: static;
+      }
+      .ultrafab-grid-2 {
+        grid-template-columns: 1fr;
+      }
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <a href="../index.html" class="logo">Chiara Alduini <span>Independent Creative Director</span></a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="profilo.html">About</a>
+      <a href="contatti.html" class="nav-cta">Contact</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </header>
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="../index.html">Home</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="profilo.html">About</a>
+    <a href="contatti.html">Contact</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="case-hero">
+    <div class="case-hero-content">
+      <div class="section-label">Illustration &amp; Editorial · 11 — Information Design</div>
+      <h1 class="hero-title">Ultrafab<br><em>Industrial Internet of Things</em></h1>
+    </div>
+    <div class="case-hero-meta">
+      <div class="case-meta-item">
+        <span>Client</span>
+        <p>Ultrafab Srl — Brescia</p>
+      </div>
+      <div class="case-meta-item">
+        <span>Scope</span>
+        <p>Information Design · Infographic Illustration · IIoT Visual Communication</p>
+      </div>
+      <div class="case-meta-item">
+        <span>Year</span>
+        <p>2022</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COVER -->
+  <img src="../img/ultrafab_01.jpg" alt="Ultrafab — Bishop IIoT infographic system" class="case-cover">
+
+  <!-- 01 — BRIEF -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">01 — Brief</div>
+    <div class="case-section-content">
+      <h2>Making the Invisible Visible</h2>
+      <p>
+        Ultrafab is a Brescia-based tech company specialising in Industrial IoT solutions. Their product — Bishop — is a proprietary operating system that connects industrial machinery, collects production data in real time, and enables remote control and predictive maintenance across factory floors.
+      </p>
+      <p>
+        The challenge: explain a complex, invisible technological system to non-technical audiences — factory owners, financial consultants, and industrial clients — through clear, compelling visual communication. Information design as a translation tool between engineers and decision-makers.
+      </p>
+    </div>
+  </div>
+
+  <!-- 02 — THE INFOGRAPHICS -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">02 — The Infographics</div>
+    <div class="case-section-content">
+      <h2>Three Systems, One Visual Language</h2>
+      <p>
+        The series of infographics visualises how Bishop works across three scenarios: how interconnected industrial objects communicate, how data flows from machine to dashboard, and how the system integrates with existing factory infrastructure.
+      </p>
+      <p>
+        Each infographic uses a consistent visual language — flat illustration, a structured grid, and a clear colour-coded hierarchy — to make abstract data flows immediately readable. The goal was not decoration but comprehension: a client who sees these infographics should understand Bishop in under 60 seconds.
+      </p>
+    </div>
+  </div>
+
+  <!-- GRID 2 -->
+  <div class="ultrafab-grid-2 reveal">
+    <img src="../img/ultrafab_02.jpg" alt="Bishop IIoT infographic — data flow system">
+    <img src="../img/ultrafab_03.jpg" alt="Bishop IIoT infographic — factory integration">
+  </div>
+
+  <!-- 03 — THE RESULT -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">03 — The Result</div>
+    <div class="case-section-content">
+      <h2>Design as Communication Tool</h2>
+      <p>
+        Information design for industrial tech requires a precise balance: enough visual complexity to convey the sophistication of the system, enough clarity to make it immediately accessible. These infographics were used by Ultrafab in client presentations, on the website, and in commercial materials.
+      </p>
+    </div>
+  </div>
+
+  <!-- FULL IMAGE -->
+  <div class="case-img-full reveal">
+    <img src="../img/ultrafab_04.jpg" alt="Bishop IIoT infographic — complete system overview">
+  </div>
+
+  <!-- QUOTE -->
+  <div class="case-quote reveal">
+    <blockquote>
+      "A client who sees these infographics should understand Bishop in under 60 seconds."
+    </blockquote>
+  </div>
+
+  <!-- NAVIGATION -->
+  <div class="case-nav">
+    <a href="case-maps.html">← Illustrated Maps</a>
+    <a href="case-workshop.html">Information Design Workshop →</a>
+  </div>
+
+  <footer>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Chiara Alduini — All rights reserved</span>
+      <a href="privacy.html" style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted);">Privacy Policy</a>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Archangels — Chiara Alduini</title>
+  <link rel="stylesheet" href="../css/reset.css?v=2">
+  <link rel="stylesheet" href="../css/variables.css?v=2">
+  <link rel="stylesheet" href="../css/typography.css?v=2">
+  <link rel="stylesheet" href="../css/layout.css?v=2">
+  <link rel="stylesheet" href="../css/components.css?v=2">
+  <link rel="stylesheet" href="../css/animations.css?v=2">
+  <link rel="stylesheet" href="../css/responsive.css?v=2">
+  <style>
+    .case-hero {
+      min-height: 70vh;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      padding: calc(var(--header-h) + 80px) var(--padding) 80px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .case-hero-content { align-self: end; }
+    .case-hero-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 40px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border-light);
+      margin-top: 40px;
+    }
+    .case-meta-item span {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      display: block;
+      margin-bottom: 8px;
+    }
+    .case-meta-item p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
+    /* COVER */
+    .case-cover {
+      width: 100%;
+      aspect-ratio: 21/9;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* TEXT SECTIONS */
+    .case-body-section {
+      padding: var(--space-lg) var(--padding);
+      border-bottom: 1px solid var(--border-light);
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .case-section-label {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      padding-top: 6px;
+      position: sticky;
+      top: calc(var(--header-h) + 24px);
+    }
+    .case-section-content h2 {
+      font-family: var(--font-display);
+      font-size: 42px;
+      font-weight: 400;
+      color: var(--text);
+      text-transform: uppercase;
+      line-height: 1.0;
+      margin-bottom: 24px;
+    }
+    .case-section-content p {
+      font-size: 16px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .case-section-content p:last-child { margin-bottom: 0; }
+
+    /* ARCHANGELS PORTRAIT GRID — 4 cols */
+    .archangels-grid-portrait {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      background: var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .archangels-grid-portrait img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+      background: var(--surface);
+    }
+
+    /* ARCHANGELS MOCKUP GRID — 2 cols 16/9 */
+    .archangels-grid-mockup {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .archangels-grid-mockup img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+      background: var(--surface);
+    }
+
+    /* QUOTE */
+    .case-quote {
+      padding: var(--space-lg) var(--padding);
+      border-bottom: 1px solid var(--border-light);
+      background: var(--surface);
+    }
+    .case-quote blockquote {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 3vw, 52px);
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.15;
+      max-width: 900px;
+      font-style: italic;
+    }
+
+    /* PROCESS GRID — 2 cols portrait */
+    .process-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .process-grid img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+      background: var(--surface);
+    }
+
+    @media (max-width: 768px) {
+      .archangels-grid-portrait {
+        grid-template-columns: 1fr 1fr;
+      }
+      .process-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .archangels-grid-mockup {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* NAV */
+    .case-nav {
+      padding: 56px var(--padding);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border-light);
+    }
+    .case-nav a {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: color 0.2s ease, gap 0.2s ease;
+      text-decoration: none;
+    }
+    .case-nav a:hover { color: var(--text); gap: 16px; }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <a href="../index.html" class="logo">Chiara Alduini <span>Independent Creative Director</span></a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="profilo.html">About</a>
+      <a href="contatti.html" class="nav-cta">Contact</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </header>
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="../index.html">Home</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="profilo.html">About</a>
+    <a href="contatti.html">Contact</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="case-hero">
+    <div class="case-hero-content">
+      <div class="section-label">Personal Research · 05 — Illustration</div>
+      <h1 class="hero-title">The Archangels<br><em>A Personal Series</em></h1>
+    </div>
+    <div class="case-hero-meta">
+      <div class="case-meta-item">
+        <span>Client</span>
+        <p>Post-Anthropocene<br>Personal Practice</p>
+      </div>
+      <div class="case-meta-item">
+        <span>Scope</span>
+        <p>Digital Collage · Photography · Art Direction</p>
+      </div>
+      <div class="case-meta-item">
+        <span>Year</span>
+        <p>2023 – ongoing</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 01 — CONCEPT -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">01 — Concept</div>
+    <div class="case-section-content">
+      <h2>Sacred Figures, Contemporary Eyes</h2>
+      <p>
+        The Archangels is a personal series of digital collages exploring what happens when sacred iconography meets high-fashion aesthetics. Gabriel, Michael, Raphael, Uriel — four figures shared by Christianity, Islam, and Judaism — are reimagined not as devotional images but as mythical presences: powerful, elegant, and deliberately modern.
+      </p>
+      <p>
+        Each name appears in its three languages — Italian, Hebrew, Arabic — not as decoration but as a statement. These figures belong to no single tradition. They are universal.
+      </p>
+    </div>
+  </div>
+
+  <!-- SECTION 02 — PROCESS -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">02 — Process</div>
+    <div class="case-section-content">
+      <h2>Built by Hand</h2>
+      <p>
+        Every piece in this series is constructed entirely in Photoshop — photography, digital painting, texture layering, light design — without generative AI. The discipline is intentional: collage as a craft requires decisions at every layer, and that deliberateness shows in the final image.
+      </p>
+      <p>
+        The visual language draws from fashion photography and baroque composition simultaneously — dramatic drapery, cosmic backgrounds, golden halos reduced to geometric rings. Sacredness and modernity not in opposition, but in conversation.
+      </p>
+    </div>
+  </div>
+
+  <!-- SECTION 03 — THE WORKS -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">03 — The Works</div>
+    <div class="case-section-content">
+      <h2>Four Archangels</h2>
+    </div>
+  </div>
+
+  <!-- PORTRAIT GRID — 4 archangels -->
+  <div class="archangels-grid-portrait reveal">
+    <img src="../img/arcangelo_michele_chiara_alduini.jpg" alt="Michael Archangel — Michele Arcangelo">
+    <img src="../img/archangel-gabriel-chiara-alduini.jpg" alt="Gabriel Archangel — Gabriele Arcangelo">
+    <img src="../img/archangel-raphael-chiara-alduini.jpg" alt="Raphael Archangel — Raffaele Arcangelo">
+    <img src="../img/archangel-uriel-chiara-alduini.jpg" alt="Uriel Archangel — Uriele Arcangelo">
+  </div>
+
+  <!-- MOCKUP GRID — 4 interior shots in 2×2 -->
+  <div class="archangels-grid-mockup reveal">
+    <img src="../img/arcangelo_michele_portfolio_chiara_alduini_02.jpg" alt="Michael — fine art print in interior">
+    <img src="../img/arcangelo_gabriele_portfolio_chiara_alduini_02.jpg" alt="Gabriel — fine art print in interior">
+    <img src="../img/arcangelo_raphael_portfolio_chiara_alduini_02.jpg" alt="Raphael — fine art print in interior">
+    <img src="../img/arcangelo_uriel_portfolio_chiara_alduini_02.jpg" alt="Uriel — fine art print in interior">
+  </div>
+
+  <!-- SECTION 04 — POST-ANTHROPOCENE -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">04 — Post-Anthropocene</div>
+    <div class="case-section-content">
+      <h2>A Studio for Personal Research</h2>
+      <p>
+        The Archangels is part of Post-Anthropocene, Chiara Alduini's personal practice — a space for work that exists outside of client briefs, exploring fragmented visions of spirituality, identity, and the post-human condition through digital collage and photography.
+      </p>
+      <p>
+        Selected works from this series are available as fine art prints through the Post-Anthropocene shop on Fine Art America.
+      </p>
+      <a href="https://fineartamerica.com/profiles/postantropocene/shop"
+         target="_blank"
+         style="display:inline-flex; align-items:center; gap:10px; font-family:var(--font-mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted); text-decoration:none; margin-top:24px; transition:color 0.2s ease, gap 0.2s ease;"
+         onmouseover="this.style.color='var(--text)';this.style.gap='16px';"
+         onmouseout="this.style.color='var(--text-muted)';this.style.gap='10px';">
+        Shop Fine Art Prints →
+      </a>
+    </div>
+  </div>
+
+  <!-- SECTION 05 — BEHIND THE WORK -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">05 — Behind the Work</div>
+    <div class="case-section-content">
+      <h2>From Reference to Vision</h2>
+      <p>
+        Each archangel begins with two sources: a photographic study of a human figure — posed, lit, and selected for its gestural quality — and a reference from the Western iconographic tradition. The figure provides the body. The tradition provides the symbolic grammar. The collage is where the two worlds meet.
+      </p>
+      <p>
+        Guido Reni's Saint Michael Defeats Satan (1636) was the direct iconographic reference for Michael — the dynamic pose, the dragon underfoot, the red drapery as a symbol of divine power. The contemporary figure replaces the baroque angel, but the composition logic remains intact across four centuries.
+      </p>
+    </div>
+  </div>
+
+  <!-- PROCESS GRID — 2×2 portrait -->
+  <div class="process-grid reveal">
+    <img src="../img/Uriel_Arcangelo.jpg" alt="Uriel — collage work in progress">
+    <img src="../img/process-reni-michael.jpg" alt="Guido Reni, Saint Michael Defeats Satan, 1636 — iconographic reference">
+  </div>
+
+  <!-- NAVIGATION -->
+  <div class="case-nav">
+    <a href="case-maps.html">← Illustrated Maps</a>
+    <a href="portfolio.html">View Full Portfolio →</a>
+  </div>
+
+  <footer>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Chiara Alduini — All rights reserved</span>
+      <a href="privacy.html" style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted);">Privacy Policy</a>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

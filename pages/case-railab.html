@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Railab — Chiara Alduini</title>
+  <link rel="stylesheet" href="../css/reset.css?v=2">
+  <link rel="stylesheet" href="../css/variables.css?v=2">
+  <link rel="stylesheet" href="../css/typography.css?v=2">
+  <link rel="stylesheet" href="../css/layout.css?v=2">
+  <link rel="stylesheet" href="../css/components.css?v=2">
+  <link rel="stylesheet" href="../css/animations.css?v=2">
+  <link rel="stylesheet" href="../css/responsive.css?v=2">
+  <style>
+    .case-hero {
+      min-height: 70vh;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      padding: calc(var(--header-h) + 80px) var(--padding) 80px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .case-hero-content { align-self: end; }
+    .case-hero-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 40px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border-light);
+      margin-top: 40px;
+    }
+    .case-meta-item span {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      display: block;
+      margin-bottom: 8px;
+    }
+    .case-meta-item p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
+    /* COVER */
+    .case-cover {
+      width: 100%;
+      aspect-ratio: 21/9;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* TEXT SECTIONS */
+    .case-body-section {
+      padding: var(--space-lg) var(--padding);
+      border-bottom: 1px solid var(--border-light);
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .case-section-label {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      padding-top: 6px;
+      position: sticky;
+      top: calc(var(--header-h) + 24px);
+    }
+    .case-section-content h2 {
+      font-family: var(--font-display);
+      font-size: 42px;
+      font-weight: 400;
+      color: var(--text);
+      text-transform: uppercase;
+      line-height: 1.0;
+      margin-bottom: 24px;
+    }
+    .case-section-content p {
+      font-size: 16px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .case-section-content p:last-child { margin-bottom: 0; }
+
+    /* FULL WIDTH IMAGE */
+    .case-img-full {
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    /* 2-COL GRID */
+    .railab-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .railab-grid-2 img {
+      width: 100%;
+      display: block;
+    }
+
+    /* NAV */
+    .case-nav {
+      padding: 56px var(--padding);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border-light);
+    }
+    .case-nav a {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: color 0.2s ease, gap 0.2s ease;
+      text-decoration: none;
+    }
+    .case-nav a:hover { color: var(--text); gap: 16px; }
+
+    @media (max-width: 768px) {
+      .railab-grid-2 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <a href="../index.html" class="logo">Chiara Alduini <span>Independent Creative Director</span></a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="profilo.html">About</a>
+      <a href="contatti.html" class="nav-cta">Contact</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </header>
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="../index.html">Home</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="profilo.html">About</a>
+    <a href="contatti.html">Contact</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="case-hero">
+    <div class="case-hero-content">
+      <div class="section-label">Strategic Branding · 06 — Brand Identity</div>
+      <h1 class="hero-title">Railab<br><em>Fair Technology</em></h1>
+    </div>
+    <div class="case-hero-meta">
+      <div class="case-meta-item">
+        <span>Client</span>
+        <p>Railab Srl<br>Robotics &amp; Innovation Laboratory<br>Brescia</p>
+      </div>
+      <div class="case-meta-item">
+        <span>Scope</span>
+        <p>Brand Strategy · Logo Design · Visual Identity · Mascot Design · Stationery · Corporate Presentations · Infographics</p>
+      </div>
+      <div class="case-meta-item">
+        <span>Year</span>
+        <p>2022</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COVER -->
+  <img src="../img/railab_logo_01.jpg" alt="Railab — Fair Technology" class="case-cover">
+
+  <!-- 01 — BRIEF -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">01 — Brief</div>
+    <div class="case-section-content">
+      <h2>An Innovation Hub with 15 Years of Experience</h2>
+      <p>
+        Railab Srl is a Brescia-based company specialising in robotics, automation, and artificial intelligence, with over 15 years of industrial experience. Despite its deep technical expertise, the brand had no coherent visual identity — and needed one that could communicate simultaneously to industrial clients and to the wider tech ecosystem.
+      </p>
+      <p>
+        The positioning concept that emerged from the brief was "Fair Technology": innovation that is powerful yet human-centric, balancing industrial strength with digital intelligence. Every design decision was made in service of this idea.
+      </p>
+    </div>
+  </div>
+
+  <!-- 02 — THE SYMBOL -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">02 — The Symbol</div>
+    <div class="case-section-content">
+      <h2>Three Concepts, One Mark</h2>
+      <p>
+        The pictogram is a custom-engineered mark that merges three distinct concepts into a single cohesive icon. The lightbulb at the core represents the initial spark of intuition and creative problem-solving. The gear as the outer silhouette communicates industrial reliability and precision engineering. The circuitry lines inside represent the digital brain — how Railab gives life to mechanics through artificial intelligence.
+      </p>
+      <p>
+        This synthesis tells a complete story: every Railab solution starts with an Idea, is built with Mechanical excellence, and is driven by AI intelligence. The mark was sketched by hand before being developed as a precise vector — a process that kept the symbol grounded in human intuition even as it became technically rigorous.
+      </p>
+    </div>
+  </div>
+
+  <div class="case-img-full reveal">
+    <img src="../img/railab_logo_02.jpg" alt="Railab logo sketch and final vector" style="width:100%; aspect-ratio:21/9; object-fit:cover; display:block;">
+  </div>
+
+  <!-- 03 — COLOR & TYPOGRAPHY -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">03 — Color &amp; Typography</div>
+    <div class="case-section-content">
+      <h2>Energy vs. Sophistication</h2>
+      <p>
+        The brand palette is built on Industrial Red and Cream, with the primary logo rendered in Gray. Red commands attention and evokes the energy and dynamism of the tech sector. Cream softens the aggression of the red, providing a sophisticated and human feel that aligns with "Fair Technology." Gray gives the logo maximum authority and timelessness across all technical applications.
+      </p>
+      <p>
+        The wordmark was developed starting from Roboto as a foundation — chosen for its clean, mechanically precise legibility — then customised to align with the geometric weight of the pictogram. The tagline uses Nexa Bold, whose geometric structure creates a clear visual hierarchy with the main wordmark.
+      </p>
+    </div>
+  </div>
+
+  <div class="railab-grid-2 reveal">
+    <img src="../img/mykot_infografica.jpg" alt="Mykot infographic" style="aspect-ratio:16/9; object-fit:cover;">
+    <img src="../img/mykot_logo.jpg" alt="Mykot logo" style="aspect-ratio:16/9; object-fit:cover;">
+  </div>
+
+  <!-- 04 — THE MASCOT -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">04 — The Mascot</div>
+    <div class="case-section-content">
+      <h2>Humanising Technology</h2>
+      <p>
+        A key element of the brand storytelling is a custom character mascot: a small, charismatic robot designed with subtle visual nods to the company's founder as a playful tribute. While Railab operates in the high-tech B2B sector, the character breaks the coldness of traditional industrial robotics — humanising the company and making complex AI presentations more approachable and memorable for clients.
+      </p>
+      <p>
+        The mascot is integrated throughout the corporate presentation system, guiding viewers through technical data and creating a narrative flow that is both professional and engaging.
+      </p>
+    </div>
+  </div>
+
+  <div class="railab-grid-2 reveal">
+    <img src="../img/railab_robot.jpg" alt="Railab brand mascot — custom robot character" style="aspect-ratio:16/9; object-fit:contain; background:#f8f5ef;">
+    <img src="../img/railab_corporate.jpg" alt="Railab corporate presentation system" style="aspect-ratio:16/9; object-fit:cover;">
+  </div>
+
+  <!-- 05 — APPLICATIONS -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">05 — Applications</div>
+    <div class="case-section-content">
+      <h2>A Complete Brand System</h2>
+      <p>
+        Beyond the core logo, the project included a complete coordinated visual identity: stationery (letterhead, business cards, envelopes), digital assets, and a modular system of visual elements for corporate presentations. Every touchpoint uses the established grid, custom typography, and the Red/Cream/Gray palette.
+      </p>
+    </div>
+  </div>
+
+  <div class="railab-grid-2 reveal">
+    <img src="../img/stationary_railab_02.jpg" alt="Railab stationery — letterhead, business cards, envelope" style="aspect-ratio:16/9; object-fit:cover;">
+    <img src="../img/railab_robot.jpg" alt="Railab brand mascot — custom robot character" style="aspect-ratio:16/9; object-fit:contain; background:#f8f5ef;">
+  </div>
+
+  <!-- 06 — MYKOT -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">06 — Mykot</div>
+    <div class="case-section-content">
+      <h2>A Product Within the Brand</h2>
+      <p>
+        Mykot — My Knowledge of Things — is Railab's cloud robotic ecosystem for remote control: a platform that allows operators to visualise, access, control, and manage robotic systems from anywhere in the world. As a distinct product within the Railab family, Mykot required its own logo — one that could stand independently while remaining visually coherent with the parent brand.
+      </p>
+      <p>
+        The Mykot mark is an elegant symbolic fusion: a mechanical gear transforms into a living eye, with a bright red iris at its centre. The washer symbolises precision and engineering reliability. The eye represents an active camera — constant connection and vigilance, the fundamental characteristics of a cloud robotic ecosystem. A product logo that tells its own story while remaining unmistakably part of the Railab family.
+      </p>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <div class="case-nav">
+    <a href="case-latteria.html">← Latteria Alta Italia</a>
+    <a href="portfolio.html">View Full Portfolio →</a>
+  </div>
+
+  <footer>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Chiara Alduini — All rights reserved</span>
+      <a href="privacy.html" style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted);">Privacy Policy</a>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

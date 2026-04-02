@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latteria Alta Italia — Chiara Alduini</title>
+  <link rel="stylesheet" href="../css/reset.css?v=2">
+  <link rel="stylesheet" href="../css/variables.css?v=2">
+  <link rel="stylesheet" href="../css/typography.css?v=2">
+  <link rel="stylesheet" href="../css/layout.css?v=2">
+  <link rel="stylesheet" href="../css/components.css?v=2">
+  <link rel="stylesheet" href="../css/animations.css?v=2">
+  <link rel="stylesheet" href="../css/responsive.css?v=2">
+  <style>
+    .case-hero {
+      min-height: 70vh;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      padding: calc(var(--header-h) + 80px) var(--padding) 80px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .case-hero-content { align-self: end; }
+    .case-hero-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 40px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border-light);
+      margin-top: 40px;
+    }
+    .case-meta-item span {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      display: block;
+      margin-bottom: 8px;
+    }
+    .case-meta-item p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
+    .case-cover {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+    }
+
+    .case-body-section {
+      padding: var(--space-lg) var(--padding);
+      border-bottom: 1px solid var(--border-light);
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .case-section-label {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      padding-top: 6px;
+      position: sticky;
+      top: calc(var(--header-h) + 24px);
+    }
+    .case-section-content h2 {
+      font-family: var(--font-display);
+      font-size: 42px;
+      font-weight: 400;
+      color: var(--text);
+      text-transform: uppercase;
+      line-height: 1.0;
+      margin-bottom: 24px;
+    }
+    .case-section-content p {
+      font-size: 16px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .case-section-content p:last-child { margin-bottom: 0; }
+
+    /* IMAGE LAYOUTS */
+    .case-img-full { border-bottom: 1px solid var(--border-light); }
+    .case-img-full img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+      background: var(--surface);
+    }
+    .case-img-full img.wide {
+      aspect-ratio: 21/9;
+    }
+    .case-img-full img.contain {
+      object-fit: contain;
+      background: #f8f8f6;
+      padding: 40px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .grid-2 img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+      background: var(--surface);
+    }
+
+    .latteria-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .latteria-grid-2 img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* QUOTE */
+    .case-quote {
+      padding: var(--space-lg) var(--padding);
+      border-bottom: 1px solid var(--border-light);
+      background: var(--surface);
+    }
+    .case-quote blockquote {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 3vw, 52px);
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.15;
+      max-width: 900px;
+      font-style: italic;
+    }
+
+    /* NAV */
+    .case-nav {
+      padding: 56px var(--padding);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border-light);
+    }
+    .case-nav a {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: color 0.2s ease, gap 0.2s ease;
+      text-decoration: none;
+    }
+    .case-nav a:hover { color: var(--text); gap: 16px; }
+
+    @media (max-width: 768px) {
+      .case-hero-meta {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .case-body-section {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .case-section-label {
+        position: static;
+      }
+      .latteria-grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <a href="../index.html" class="logo">Chiara Alduini <span>Independent Creative Director</span></a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="profilo.html">About</a>
+      <a href="contatti.html" class="nav-cta">Contact</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </header>
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="../index.html">Home</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="profilo.html">About</a>
+    <a href="contatti.html">Contact</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="case-hero">
+    <div class="case-hero-content">
+      <div class="section-label">Strategic Branding · 13 — Logo &amp; Packaging</div>
+      <h1 class="hero-title">Latteria Alta Italia<br><em>Local · Artisanal · Italian</em></h1>
+    </div>
+    <div class="case-hero-meta">
+      <div class="case-meta-item">
+        <span>Client</span>
+        <p>Latteria Alta Italia · Local Farm</p>
+      </div>
+      <div class="case-meta-item">
+        <span>Scope</span>
+        <p>Logo Design · Brand Identity · Packaging Design · Illustration</p>
+      </div>
+      <div class="case-meta-item">
+        <span>Year</span>
+        <p>2017</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COVER -->
+  <img src="../img/logo_lait_01.jpg" alt="Latteria Alta Italia — brand identity" class="case-cover">
+
+  <!-- 01 — BRIEF -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">01 — Brief</div>
+    <div class="case-section-content">
+      <h2>The Brand Behind the Product</h2>
+      <p>
+        Two connected briefs, one visual world. Latteria Alta Italia is a local Italian dairy brand that needed a logo with the warmth and authority of a classic — modern enough to work today, timeless enough to outlast trends.
+      </p>
+      <p>
+        Local Farm is an artisanal yogurt and milk producer requiring a complete logotype and packaging system that could communicate freshness, locality, and craft quality at a glance.
+      </p>
+    </div>
+  </div>
+
+  <!-- 02 — THE APPROACH -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">02 — The Approach</div>
+    <div class="case-section-content">
+      <h2>Modern Vintage</h2>
+      <p>
+        For Latteria Alta Italia, the design direction was modern vintage — a logo that references the visual language of Italian dairy tradition without becoming nostalgic pastiche. Clean geometry, considered letterforms, and a restrained palette that works on labels, stamps, and packaging alike.
+      </p>
+      <p>
+        For Local Farm, the packaging system was built around hand-drawn botanical illustrations — fruits, herbs, and natural elements that change per flavour while maintaining a consistent brand framework. Each yogurt variety has its own illustration, its own colour, its own personality — unified by the same typographic and structural logic.
+      </p>
+    </div>
+  </div>
+
+  <!-- 03 — PACKAGING -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">03 — Packaging</div>
+    <div class="case-section-content">
+      <h2>Local Farm — Yogurt Line</h2>
+    </div>
+  </div>
+
+  <!-- PACKAGING GRIGLIA 1 -->
+  <div class="latteria-grid-2 reveal">
+    <img src="../img/yogurt_01.jpg" alt="Local Farm yogurt packaging">
+    <img src="../img/yogurt_02.jpg" alt="Local Farm yogurt packaging">
+  </div>
+
+  <!-- PACKAGING GRIGLIA 2 -->
+  <div class="latteria-grid-2 reveal">
+    <img src="../img/yogurt_03.jpg" alt="Local Farm yogurt packaging">
+    <img src="../img/yogurt_04.jpg" alt="Local Farm yogurt packaging">
+  </div>
+
+  <!-- 04 — LOGO SYSTEM -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">04 — Logo System</div>
+    <div class="case-section-content">
+      <h2>Latteria Alta Italia</h2>
+    </div>
+  </div>
+
+  <!-- LOGO GRIGLIA 1 -->
+  <div class="latteria-grid-2 reveal">
+    <img src="../img/logo_lait_01.jpg" alt="Latteria Alta Italia logo design">
+    <img src="../img/logo_lait_02.jpg" alt="Latteria Alta Italia logo design">
+  </div>
+
+  <!-- LOGO GRIGLIA 2 -->
+  <div class="latteria-grid-2 reveal">
+    <img src="../img/logo_lait_03.jpg" alt="Latteria Alta Italia logo applications">
+    <img src="../img/logo_lait_04.jpg" alt="Latteria Alta Italia logo applications">
+  </div>
+
+  <!-- FULL WIDTH -->
+  <div class="case-img-full reveal">
+    <img src="../img/logo_lait_05.jpg" alt="Latteria Alta Italia brand system">
+  </div>
+
+  <!-- QUOTE -->
+  <div class="case-quote reveal">
+    <blockquote>
+      "Two dairy brands, one design philosophy — local provenance made visible."
+    </blockquote>
+  </div>
+
+  <!-- NAVIGATION -->
+  <div class="case-nav">
+    <a href="case-prati.html">← Prati Assicurazioni</a>
+    <a href="case-railab.html">Railab →</a>
+  </div>
+
+  <footer>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Chiara Alduini — All rights reserved</span>
+      <a href="privacy.html" style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted);">Privacy Policy</a>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
