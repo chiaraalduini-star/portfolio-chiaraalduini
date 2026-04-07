@@ -145,21 +145,28 @@
       display: block;
     }
 
-    /* MOBILE */
     @media (max-width: 768px) {
       .archangels-grid-portrait {
         grid-template-columns: 1fr 1fr;
       }
       .archangels-grid-portrait img {
+        aspect-ratio: 3/4;
+        object-fit: cover;
         width: 100%;
-        height: auto;
-        display: block;
       }
       .archangels-grid-mockup {
         grid-template-columns: 1fr;
       }
+      .archangels-grid-mockup img {
+        aspect-ratio: 16/9;
+        object-fit: cover;
+      }
       .process-grid {
         grid-template-columns: 1fr;
+      }
+      .process-grid img {
+        aspect-ratio: 16/9;
+        object-fit: cover;
       }
     }
 
