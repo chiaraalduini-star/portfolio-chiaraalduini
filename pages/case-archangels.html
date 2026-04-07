@@ -41,15 +41,6 @@
     }
     .case-meta-item p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
 
-    /* COVER */
-    .case-cover {
-      width: 100%;
-      aspect-ratio: 21/9;
-      object-fit: cover;
-      display: block;
-    }
-
-    /* TEXT SECTIONS */
     .case-body-section {
       padding: var(--space-lg) var(--padding);
       border-bottom: 1px solid var(--border-light);
@@ -85,35 +76,6 @@
     }
     .case-section-content p:last-child { margin-bottom: 0; }
 
-    /* PORTRAIT GRID — desktop */
-    .archangels-grid-portrait {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2px;
-      background: var(--border-light);
-      border-bottom: 1px solid var(--border-light);
-    }
-    .archangels-grid-portrait img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    /* MOCKUP GRID — desktop */
-    .archangels-grid-mockup {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2px;
-      background: var(--border-light);
-      border-bottom: 1px solid var(--border-light);
-    }
-    .archangels-grid-mockup img {
-      width: 100%;
-      aspect-ratio: 16/9;
-      object-fit: cover;
-      display: block;
-    }
-
     /* QUOTE */
     .case-quote {
       padding: var(--space-lg) var(--padding);
@@ -130,44 +92,48 @@
       font-style: italic;
     }
 
-    /* PROCESS GRID */
-    .process-grid {
+    /* PORTRAIT GRID — 4 ritratti verticali */
+    .archangels-portrait {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(4, 1fr);
       gap: 2px;
       background: var(--border-light);
       border-bottom: 1px solid var(--border-light);
     }
-    .process-grid img {
+    .archangels-portrait img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* MOCKUP GRID — 4 immagini ambientate */
+    .archangels-mockup {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+      background: var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .archangels-mockup img {
       width: 100%;
       aspect-ratio: 16/9;
       object-fit: cover;
       display: block;
     }
 
-    @media (max-width: 768px) {
-      .archangels-grid-portrait {
-        grid-template-columns: 1fr 1fr;
-      }
-      .archangels-grid-portrait img {
-        aspect-ratio: 3/4;
-        object-fit: cover;
-        width: 100%;
-      }
-      .archangels-grid-mockup {
-        grid-template-columns: 1fr;
-      }
-      .archangels-grid-mockup img {
-        aspect-ratio: 16/9;
-        object-fit: cover;
-      }
-      .process-grid {
-        grid-template-columns: 1fr;
-      }
-      .process-grid img {
-        aspect-ratio: 16/9;
-        object-fit: cover;
-      }
+    /* PROCESS GRID — Behind the Work */
+    .archangels-process {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .archangels-process img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
     }
 
     /* NAV */
@@ -191,6 +157,12 @@
       text-decoration: none;
     }
     .case-nav a:hover { color: var(--text); gap: 16px; }
+
+    @media (max-width: 768px) {
+      .archangels-portrait {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
   </style>
 </head>
 <body>
@@ -270,13 +242,20 @@
   </div>
 
   <!-- PORTRAIT GRID — 4 archangels -->
-  <div class="archangels-grid-portrait reveal">
+  <div class="archangels-portrait reveal">
     <img src="../img/arcangelo_michele_chiara_alduini.jpg" alt="Michael Archangel — Michele Arcangelo">
     <img src="../img/archangel-gabriel-chiara-alduini.jpg" alt="Gabriel Archangel — Gabriele Arcangelo">
     <img src="../img/archangel-raphael-chiara-alduini.jpg" alt="Raphael Archangel — Raffaele Arcangelo">
     <img src="../img/archangel-uriel-chiara-alduini.jpg" alt="Uriel Archangel — Uriele Arcangelo">
   </div>
 
+  <!-- MOCKUP GRID — 4 interior shots in 2×2 -->
+  <div class="archangels-mockup reveal">
+    <img src="../img/arcangelo_michele_portfolio_chiara_alduini_02.jpg" alt="Michael — fine art print in interior">
+    <img src="../img/arcangelo_gabriele_portfolio_chiara_alduini_02.jpg" alt="Gabriel — fine art print in interior">
+    <img src="../img/arcangelo_raphael_portfolio_chiara_alduini_02.jpg" alt="Raphael — fine art print in interior">
+    <img src="../img/arcangelo_uriel_portfolio_chiara_alduini_02.jpg" alt="Uriel — fine art print in interior">
+  </div>
 
   <!-- SECTION 04 — POST-ANTHROPOCENE -->
   <div class="case-body-section reveal">
@@ -313,8 +292,8 @@
     </div>
   </div>
 
-  <!-- PROCESS GRID — 2×2 portrait -->
-  <div class="process-grid reveal">
+  <!-- PROCESS GRID — Behind the Work -->
+  <div class="archangels-process reveal">
     <img src="../img/Uriel_Arcangelo.jpg" alt="Uriel — collage work in progress">
     <img src="../img/process-reni-michael.jpg" alt="Guido Reni, Saint Michael Defeats Satan, 1636 — iconographic reference">
   </div>
