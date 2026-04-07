@@ -95,9 +95,8 @@
     }
     .archangels-grid-portrait img {
       width: 100%;
-      aspect-ratio: 16/9;
+      aspect-ratio: 3/4;
       object-fit: cover;
-      object-position: top;
       display: block;
       background: var(--surface);
     }
@@ -105,7 +104,7 @@
     /* ARCHANGELS MOCKUP GRID — 2 cols 16/9 */
     .archangels-grid-mockup {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(2, 1fr);
       gap: 2px;
       background: var(--border-light);
       border-bottom: 1px solid var(--border-light);
@@ -134,7 +133,7 @@
       font-style: italic;
     }
 
-    /* PROCESS GRID — 2 cols portrait */
+    /* PROCESS GRID — Behind the Work, 2 cols */
     .process-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -146,6 +145,7 @@
       width: 100%;
       aspect-ratio: 16/9;
       object-fit: cover;
+      max-height: 500px;
       display: block;
       background: var(--surface);
     }
@@ -154,11 +154,21 @@
       .archangels-grid-portrait {
         grid-template-columns: 1fr 1fr;
       }
-      .process-grid {
-        grid-template-columns: 1fr 1fr;
+      .archangels-grid-portrait img {
+        aspect-ratio: 3/4;
       }
       .archangels-grid-mockup {
         grid-template-columns: 1fr;
+      }
+      .archangels-grid-mockup img {
+        aspect-ratio: 16/9;
+      }
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+      .process-grid img {
+        aspect-ratio: 16/9;
+        max-height: none;
       }
     }
 
