@@ -153,12 +153,14 @@
     @media (max-width: 768px) {
       .archangels-grid-portrait {
         grid-template-columns: 1fr 1fr;
+        gap: 2px;
       }
       .archangels-grid-portrait img {
         width: 100%;
-        aspect-ratio: 2/3;
-        object-fit: cover;
+        height: auto;
         display: block;
+        object-fit: unset;
+        aspect-ratio: unset;
       }
       .archangels-grid-mockup {
         grid-template-columns: 1fr;
