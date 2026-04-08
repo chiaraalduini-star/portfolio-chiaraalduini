@@ -13,22 +13,6 @@ img {
   display: block;
 }
 
-/* Immagini orizzontali */
-.img-landscape {
-  width: 100%;
-  aspect-ratio: 16/9;
-  object-fit: cover;
-  display: block;
-}
-
-/* Immagini verticali */
-.img-portrait {
-  width: 100%;
-  aspect-ratio: 3/4;
-  object-fit: cover;
-  display: block;
-}
-
 /* ── Hamburger: hidden on desktop ── */
 .hamburger {
   display: none;
@@ -563,18 +547,6 @@ img {
   h2 { font-size: clamp(22px, 6vw, 36px) !important; }
   h3 { font-size: clamp(18px, 5vw, 28px) !important; }
   p  { font-size: 15px; line-height: 1.7; }
-
-  /* ── Utility image classes ── */
-  .img-portrait {
-    aspect-ratio: unset;
-    height: auto;
-    object-fit: unset;
-  }
-  /* Su mobile le orizzontali restano 16/9 */
-  .img-landscape {
-    aspect-ratio: 16/9;
-    object-fit: cover;
-  }
 
 }
 
