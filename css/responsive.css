@@ -649,26 +649,6 @@ img {
     object-fit: contain !important;
   }
 
-  /* Fix immagini verticali su mobile —
-     mostra sempre l'immagine intera */
-  .archangels-grid-portrait img,
-  [class*="grid"] img {
-    height: auto !important;
-    aspect-ratio: unset !important;
-    object-fit: unset !important;
-    width: 100% !important;
-  }
-
-  /* Eccezione per immagini orizzontali
-     che devono restare 16/9 */
-  .archangels-grid-mockup img,
-  .case-img-full img,
-  .case-cover {
-    aspect-ratio: 16/9 !important;
-    object-fit: cover !important;
-    height: auto !important;
-  }
-
 }
 
 /* =====================================================
