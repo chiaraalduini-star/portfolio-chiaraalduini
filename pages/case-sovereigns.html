@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Sovereigns — Chiara Alduini | Digital Collage Art</title>
+  <meta name="description" content="A series of multi-layered digital collages reimagining four iconic female rulers — Zenobia, Nefertiti, Tamara and Dihya — as semiotic reconstructions of power and legacy.">
+  <meta property="og:url" content="https://www.chiaraalduini.it/pages/case-sovereigns.html">
+  <link rel="stylesheet" href="../css/reset.css?v=2">
+  <link rel="stylesheet" href="../css/variables.css?v=2">
+  <link rel="stylesheet" href="../css/typography.css?v=2">
+  <link rel="stylesheet" href="../css/layout.css?v=2">
+  <link rel="stylesheet" href="../css/components.css?v=2">
+  <link rel="stylesheet" href="../css/animations.css?v=2">
+  <link rel="stylesheet" href="../css/responsive.css?v=2">
+  <style>
+    .case-hero {
+      min-height: 70vh;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      padding: calc(var(--header-h) + 80px) var(--padding) 80px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .case-hero-content { align-self: end; }
+    .case-hero-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 40px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border-light);
+      margin-top: 40px;
+    }
+    .case-meta-item span {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      display: block;
+      margin-bottom: 8px;
+    }
+    .case-meta-item p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
+    /* COVER */
+    .case-cover {
+      width: 100%;
+      aspect-ratio: 21/9;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* TEXT SECTIONS */
+    .case-body-section {
+      padding: var(--space-lg) var(--padding);
+      border-bottom: 1px solid var(--border-light);
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .case-section-label {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      padding-top: 6px;
+      position: sticky;
+      top: calc(var(--header-h) + 24px);
+    }
+    .case-section-content h2 {
+      font-family: var(--font-display);
+      font-size: 42px;
+      font-weight: 400;
+      color: var(--text);
+      text-transform: uppercase;
+      line-height: 1.0;
+      margin-bottom: 24px;
+    }
+    .case-section-content p {
+      font-size: 16px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .case-section-content p:last-child { margin-bottom: 0; }
+
+    /* QUEENS SUBSECTION */
+    .queen-block {
+      margin-bottom: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .queen-block:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+    .queen-block h3 {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--text);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 12px;
+    }
+
+    /* SOVEREIGNS PORTRAIT GRID — 4 cols */
+    .sovereigns-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      background: var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .sovereigns-grid img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      display: block;
+      background: var(--surface);
+    }
+
+    /* QUOTE */
+    .case-quote {
+      padding: var(--space-lg) var(--padding);
+      border-bottom: 1px solid var(--border-light);
+      background: var(--surface);
+    }
+    .case-quote blockquote {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 3vw, 52px);
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.15;
+      max-width: 900px;
+      font-style: italic;
+    }
+
+    @media (max-width: 768px) {
+      .sovereigns-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* NAV */
+    .case-nav {
+      padding: 56px var(--padding);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border-light);
+    }
+    .case-nav a {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: color 0.2s ease, gap 0.2s ease;
+      text-decoration: none;
+    }
+    .case-nav a:hover { color: var(--text); gap: 16px; }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <a href="../index.html" class="logo">Chiara Alduini <span>Independent Creative Director</span></a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="profilo.html">About</a>
+      <a href="contatti.html" class="nav-cta">Contact</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </header>
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="../index.html">Home</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="profilo.html">About</a>
+    <a href="contatti.html">Contact</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="case-hero">
+    <div class="case-hero-content">
+      <div class="section-label">Personal Research · Illustration</div>
+      <h1 class="hero-title">The Sovereigns<br><em>A Digital Iconography of Power &amp; Legacy</em></h1>
+    </div>
+    <div class="case-hero-meta">
+      <div class="case-meta-item">
+        <span>Client</span>
+        <p>Post-Anthropocene<br>Personal Practice</p>
+      </div>
+      <div class="case-meta-item">
+        <span>Scope</span>
+        <p>Digital Collage · Art Direction · Historical Research</p>
+      </div>
+      <div class="case-meta-item">
+        <span>Year</span>
+        <p>2024 – ongoing</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COVER -->
+  <img class="case-cover" src="../img/Zenobia.jpg" alt="The Sovereigns — Zenobia of Palmyra, digital collage by Chiara Alduini">
+
+  <!-- SECTION 01 — VISION -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">01 — Vision</div>
+    <div class="case-section-content">
+      <h2>Four Queens, One Language</h2>
+      <p>
+        The Sovereigns is a series of multi-layered digital collages reimagining four iconic female figures — Zenobia, Nefertiti, Tamara of Georgia, and Dihya — not merely as portraits, but as semiotic reconstructions. By merging AI-synthesized textures, historical archives, and digital painting, the work investigates the friction between the permanence of stone and the volatility of pixels.
+      </p>
+      <p>
+        A pursuit of a New Sacrality in the age of algorithmic reproduction.
+      </p>
+    </div>
+  </div>
+
+  <!-- SECTION 02 — THE WORKS -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">02 — The Works</div>
+    <div class="case-section-content">
+      <h2>Four Sovereigns</h2>
+    </div>
+  </div>
+
+  <!-- SOVEREIGNS PORTRAIT GRID -->
+  <div class="sovereigns-grid reveal">
+    <img src="../img/queen_khaina_alduini.jpg" alt="Dihya Khaina — The Oracle of the Aurès">
+    <img src="../img/queen_zenobia_alduini.jpg" alt="Zenobia — The Ambition of Palmyra">
+    <img src="../img/queen_nefertari_alduini.jpg" alt="Nefertiti — The Sun of Amarna">
+    <img src="../img/queen_tamara_alduini.jpg" alt="Tamara — The King of Georgia">
+  </div>
+
+  <!-- SECTION 03 — THE QUEENS -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">03 — The Queens</div>
+    <div class="case-section-content">
+
+      <div class="queen-block">
+        <h3>Dihya "Khaina" | The Oracle of the Aurès</h3>
+        <p>
+          A study on North African sovereignty and materiality. The earth-cracked textures reflect the resilience of the Zenata tribes, while the crimson mantle serves as a chromatic focal point against a desaturated, timeless void. The suspension of geometric spheres acts as a visual punctuation, breaking the historical narrative to remind the viewer of the artifice.
+        </p>
+      </div>
+
+      <div class="queen-block">
+        <h3>Zenobia | The Ambition of Palmyra</h3>
+        <p>
+          A reconstruction of power at the edge of the Roman Empire. This piece explores the balance between the predator's gaze and diplomatic grace. The integration of traditional calligraphy and floral patterns symbolizes the cultural syncretism of a queen who turned the desert into a golden crossroads of civilization.
+        </p>
+      </div>
+
+      <div class="queen-block">
+        <h3>Nefertiti | The Sun of Amarna</h3>
+        <p>
+          Immortal elegance through a modernist lens. This collage fuses the perfection of the Egyptian canon with geometric abstractions. The work focuses on the profile as a monumental silhouette, where the textured crown becomes a vessel for ancient pigments and digital noise.
+        </p>
+      </div>
+
+      <div class="queen-block">
+        <h3>Tamara | The King of Georgia</h3>
+        <p>
+          Warrior and Saint. The composition focuses on the martial sacrality of the Georgian Queen. The golden halo acts as a structural anchor, contrasting with the metallic textures of the armor and the deep reds of medieval iconography, evoking the rugged beauty of the Caucasus.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SECTION 04 — METHOD & PROCESS -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">04 — Method &amp; Process</div>
+    <div class="case-section-content">
+      <h2>The Digital Fresco Technique</h2>
+      <p>
+        Each artwork is a synthesis of deliberate art direction and technological exploration. The process involves a digital-fresco technique: layering AI-generated textures with curated historical fragments and digital brushwork. This methodology allows for a unique tactile depth, where every grain and glitch is meticulously placed to create a bridge between classical heritage and the future of digital art.
+      </p>
+    </div>
+  </div>
+
+  <!-- QUOTE -->
+  <div class="case-quote reveal">
+    <blockquote>"Four women who shaped history — reconstructed in the language of the present."</blockquote>
+  </div>
+
+  <!-- NAVIGATION -->
+  <div class="case-nav">
+    <a href="case-archangels.html">← The Archangels</a>
+    <a href="case-petra.html">Discover Petra with Ahmad →</a>
+  </div>
+
+  <footer>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Chiara Alduini — Independent Creative Director</span>
+      <a href="privacy.html" style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted);">Privacy Policy</a>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
