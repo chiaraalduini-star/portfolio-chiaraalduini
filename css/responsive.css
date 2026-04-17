@@ -657,3 +657,24 @@ img {
 @media (min-width: 1280px) {
   :root { --padding: 64px; }
 }
+
+/* =====================================================
+   UTILITY CLASSES — IMAGE ASPECT RATIO
+   ===================================================== */
+.img-cover {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  display: block;
+}
+.img-portrait {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  display: block;
+}
+@media (max-width: 768px) {
+  .img-portrait {
+    aspect-ratio: 3/4 !important;
+  }
+}
