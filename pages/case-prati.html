@@ -146,6 +146,16 @@
       text-decoration: none;
     }
     .case-nav a:hover { color: var(--text); gap: 16px; }
+
+    @media (max-width: 768px) {
+      .poster-grid-2 img,
+      .case-img-full img,
+      .grid-2 img {
+        aspect-ratio: 3/4 !important;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
   </style>
 </head>
 <body>
