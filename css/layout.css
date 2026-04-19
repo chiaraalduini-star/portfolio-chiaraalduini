@@ -38,6 +38,14 @@ header.scrolled {
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
+.logo small {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--text-dim);
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+}
 
 nav { display: flex; align-items: center; gap: 36px; margin-left: auto; }
 nav a {
