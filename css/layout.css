@@ -40,12 +40,13 @@ header.scrolled {
 }
 .logo small {
   font-family: var(--font-mono);
-  font-size: 10px;
-  font-weight: 300;
+  font-size: 10px !important;
+  font-weight: 300 !important;
   color: var(--text-dim);
   letter-spacing: 0.05em;
   display: block;
   line-height: 1.3;
+  text-transform: none;
 }
 
 nav { display: flex; align-items: center; gap: 36px; margin-left: auto; }
