@@ -11,6 +11,12 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+  -webkit-user-drag: none;
+  user-select: none;
+  pointer-events: none;
+}
+a img {
+  pointer-events: auto;
 }
 
 /* ── Hamburger: hidden on desktop ── */
