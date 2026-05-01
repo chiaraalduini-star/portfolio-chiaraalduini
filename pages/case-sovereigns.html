@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="../css/animations.css?v=2">
   <link rel="stylesheet" href="../css/responsive.css?v=2">
   <style>
+    /* HERO */
     .case-hero {
       min-height: 70vh;
       display: grid;
@@ -22,24 +23,14 @@
       border-bottom: 1px solid var(--border-light);
     }
     .case-hero-content { align-self: end; }
-    .case-hero-meta {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 40px;
-      padding-top: 40px;
-      border-top: 1px solid var(--border-light);
-      margin-top: 40px;
+    .hero-sub-tagline {
+      font-family: var(--font-display);
+      font-size: clamp(18px, 2vw, 26px);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--text-muted);
+      margin-top: 20px;
     }
-    .case-meta-item span {
-      font-family: var(--font-mono);
-      font-size: 9px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--text-dim);
-      display: block;
-      margin-bottom: 8px;
-    }
-    .case-meta-item p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
 
     /* COVER */
     .case-cover {
@@ -49,7 +40,79 @@
       display: block;
     }
 
-    /* TEXT SECTIONS */
+    /* INTRO */
+    .sov-intro {
+      padding: 100px var(--padding);
+      border-bottom: 1px solid var(--border-light);
+      max-width: 780px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .sov-intro p {
+      font-size: 18px;
+      color: var(--text-muted);
+      line-height: 1.9;
+    }
+
+    /* QUEEN BLOCKS */
+    .queen-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 80vh;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .queen-row-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .queen-row-text {
+      padding: 80px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .queen-label {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 28px;
+      display: block;
+    }
+    .queen-title {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 3.5vw, 52px);
+      font-weight: 400;
+      text-transform: uppercase;
+      line-height: 1.05;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+    .queen-subtitle {
+      font-family: var(--font-display);
+      font-size: clamp(14px, 1.4vw, 18px);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--text-muted);
+      margin-bottom: 36px;
+    }
+    .queen-row-text p {
+      font-size: 16px;
+      color: var(--text-muted);
+      line-height: 1.85;
+      max-width: 480px;
+    }
+
+    /* PROCESS */
+    .sov-process-img {
+      width: 100%;
+      display: block;
+      max-height: 600px;
+      object-fit: cover;
+    }
     .case-body-section {
       padding: var(--space-lg) var(--padding);
       border-bottom: 1px solid var(--border-light);
@@ -75,7 +138,7 @@
       color: var(--text);
       text-transform: uppercase;
       line-height: 1.0;
-      margin-bottom: 24px;
+      margin-bottom: 32px;
     }
     .case-section-content p {
       font-size: 16px;
@@ -85,69 +148,22 @@
     }
     .case-section-content p:last-child { margin-bottom: 0; }
 
-    /* QUEENS SUBSECTION */
-    .queen-block {
-      margin-bottom: 48px;
-      padding-bottom: 48px;
-      border-bottom: 1px solid var(--border-light);
-    }
-    .queen-block:last-child {
-      margin-bottom: 0;
-      padding-bottom: 0;
-      border-bottom: none;
-    }
-    .queen-block h3 {
-      font-family: var(--font-display);
-      font-size: 22px;
-      font-weight: 400;
-      color: var(--text);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 12px;
-    }
-
-    /* SOVEREIGNS PORTRAIT GRID — 4 cols */
-    .sovereigns-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2px;
-      background: var(--border-light);
-      border-bottom: 1px solid var(--border-light);
-    }
-    .sovereigns-grid img {
-      width: 100%;
-      aspect-ratio: 3/4;
-      object-fit: cover;
-      display: block;
-      background: var(--surface);
-    }
-
     /* QUOTE */
     .case-quote {
-      padding: var(--space-lg) var(--padding);
+      padding: 120px var(--padding);
       border-bottom: 1px solid var(--border-light);
-      background: var(--surface);
+      display: flex;
+      justify-content: center;
     }
     .case-quote blockquote {
       font-family: var(--font-display);
-      font-size: clamp(28px, 3vw, 52px);
+      font-size: clamp(26px, 3vw, 50px);
       font-weight: 400;
       color: var(--text);
-      line-height: 1.15;
-      max-width: 900px;
+      line-height: 1.2;
+      max-width: 860px;
       font-style: italic;
-    }
-
-    @media (max-width: 768px) {
-      .sovereigns-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-      .queen-img {
-        aspect-ratio: 3/4;
-        object-fit: cover;
-        object-position: center;
-        width: 100%;
-      }
+      text-align: center;
     }
 
     /* NAV */
@@ -171,6 +187,29 @@
       text-decoration: none;
     }
     .case-nav a:hover { color: var(--text); gap: 16px; }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .queen-row {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+      .queen-row-img {
+        width: 100%;
+        aspect-ratio: 3/4;
+        height: auto;
+      }
+      .queen-row-text {
+        padding: 48px var(--padding);
+      }
+      .queen-row-text p { max-width: 100%; }
+      .case-body-section {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .sov-intro { padding: 60px var(--padding); }
+      .case-quote { padding: 80px var(--padding); }
+    }
   </style>
 </head>
 <body>
@@ -195,117 +234,70 @@
   <section class="case-hero">
     <div class="case-hero-content">
       <div class="section-label">Personal Research · Illustration</div>
-      <h1 class="hero-title">Dreaming the Queens of the Past</h1>
-    </div>
-    <div class="case-hero-meta">
-      <div class="case-meta-item">
-        <span>Client</span>
-        <p>Post-Anthropocene<br>Personal Practice</p>
-      </div>
-      <div class="case-meta-item">
-        <span>Scope</span>
-        <p>Digital Collage · Art Direction · Historical Research</p>
-      </div>
-      <div class="case-meta-item">
-        <span>Year</span>
-        <p>2026 – ongoing</p>
-      </div>
+      <h1 class="hero-title">The Sovereigns</h1>
+      <p class="hero-sub-tagline">Four queens. Four worlds. One obsession.</p>
     </div>
   </section>
 
   <!-- COVER -->
   <img class="case-cover" src="../img/Zenobia.jpg" alt="The Sovereigns — Zenobia of Palmyra, digital collage by Chiara Alduini">
 
-  <!-- SECTION 01 — VISION -->
-  <div class="case-body-section reveal">
-    <div class="case-section-label">01 — Vision</div>
-    <div class="case-section-content">
-      <h2>Queens of the Past: A Visual Archaeology</h2>
-      <p>
-        This project stems from a personal obsession: a fascination with archaeology and the Orientalist painting of masters such as Jean-Léon Gérôme. This time, the focus lies on the great queens of the past — women of power whose legacies I have sought to reimagine through my own creative lens.
-      </p>
-      <p>
-        My process is a ritual of stratification. I blend the ancient allure of Arabic and Hebrew calligraphy and Egyptian hieroglyphs with the tactile textures of damasks and natural elements. I employ collage as my primary medium, a space where the analogue meets the digital, incorporating bespoke elements crafted through Artificial Intelligence.
-      </p>
-      <p>
-        It is my way of navigating uncharted visual territories, where millennial history engages in a dialogue with the technologies of the future.
-      </p>
+  <!-- INTRO -->
+  <div class="sov-intro reveal">
+    <p>This project is about everything I love — texture, faces, history, the dream logic of Orientalist painting turned inside out. Four women who held power in worlds that tried to erase them. I reconstruct them the way I think: in layers, starting from a sketch, building up images, symbols, calligraphy, fabric, light — until something true emerges.</p>
+  </div>
+
+  <!-- ZENOBIA -->
+  <div class="queen-row reveal">
+    <img class="queen-row-img" src="../img/queen_zenobia_alduini.jpg" alt="Zenobia — The Ambition of Palmyra">
+    <div class="queen-row-text">
+      <span class="queen-label">I</span>
+      <h2 class="queen-title">Zenobia</h2>
+      <p class="queen-subtitle">The Ambition of Palmyra</p>
+      <p>A queen who turned the desert into a crossroads of civilizations. The collage holds the tension between a predator's gaze and diplomatic grace — calligraphy and floral patterns weaving through the armor of a woman who dared to challenge Rome.</p>
     </div>
   </div>
 
-  <!-- SECTION 02 — THE WORKS -->
-  <div class="case-body-section reveal">
-    <div class="case-section-label">02 — The Works</div>
-    <div class="case-section-content">
-      <h2>Four Sovereigns</h2>
+  <!-- NEFERTITI -->
+  <div class="queen-row reveal">
+    <img class="queen-row-img" src="../img/queen_nefertari_alduini.jpg" alt="Nefertiti — The Sun of Amarna">
+    <div class="queen-row-text">
+      <span class="queen-label">II</span>
+      <h2 class="queen-title">Nefertiti</h2>
+      <p class="queen-subtitle">The Sun of Amarna</p>
+      <p>Immortal because of a profile. I worked with that silhouette as a monumental form — geometric, textured, layered with ancient pigments and digital noise. Elegance as a form of power.</p>
     </div>
   </div>
 
-  <!-- SECTION 03 — THE QUEENS -->
-
-  <!-- BLOCCO 1 — Dihya Khaina -->
-  <img class="queen-img img-portrait" src="../img/queen_khaina_alduini.jpg" style="width:100%; aspect-ratio:16/9; object-fit:cover; object-position:center; display:block;" alt="Dihya Khaina — The Oracle of the Aurès">
-  <div class="case-body-section reveal">
-    <div class="case-section-label">03 — The Queens</div>
-    <div class="case-section-content">
-      <h2>Dihya "Khaina"<br>The Oracle of the Aurès</h2>
-      <p>
-        A study on North African sovereignty and materiality. The earth-cracked textures reflect the resilience of the Zenata tribes, while the crimson mantle serves as a chromatic focal point against a desaturated, timeless void. The suspension of geometric spheres acts as a visual punctuation, breaking the historical narrative to remind the viewer of the artifice.
-      </p>
+  <!-- DIHYA -->
+  <div class="queen-row reveal">
+    <img class="queen-row-img" src="../img/queen_khaina_alduini.jpg" alt="Dihya — The Oracle of the Aurès">
+    <div class="queen-row-text">
+      <span class="queen-label">III</span>
+      <h2 class="queen-title">Dihya</h2>
+      <p class="queen-subtitle">The Oracle of the Aurès</p>
+      <p>Earth-cracked textures, a crimson mantle, suspended spheres. The materiality of North Africa — its resilience, its silence, its refusal to be erased. Dihya fought until the end and still carries her name in the land.</p>
     </div>
   </div>
 
-  <!-- BLOCCO 2 — Nefertiti -->
-  <img class="queen-img img-portrait" src="../img/queen_nefertari_alduini.jpg" style="width:100%; aspect-ratio:16/9; object-fit:cover; object-position:center; display:block;" alt="Nefertiti — The Sun of Amarna">
-  <div class="case-body-section reveal">
-    <div class="case-section-label"></div>
-    <div class="case-section-content">
-      <h2>Nefertiti<br>The Sun of Amarna</h2>
-      <p>
-        Immortal elegance through a modernist lens. This collage fuses the perfection of the Egyptian canon with geometric abstractions. The work focuses on the profile as a monumental silhouette, where the textured crown becomes a vessel for ancient pigments and digital noise.
-      </p>
+  <!-- TAMARA -->
+  <div class="queen-row reveal">
+    <img class="queen-row-img" src="../img/queen_tamara_alduini.jpg" alt="Tamara — The King of Georgia">
+    <div class="queen-row-text">
+      <span class="queen-label">IV</span>
+      <h2 class="queen-title">Tamara</h2>
+      <p class="queen-subtitle">The King of Georgia</p>
+      <p>She ruled as king, not queen — and insisted on the title. The golden halo anchors the composition like a medieval icon, surrounded by armor and deep reds. Warrior and saint in the same body.</p>
     </div>
   </div>
 
-  <!-- BLOCCO 3 — Zenobia -->
-  <img class="queen-img img-portrait" src="../img/queen_zenobia_alduini.jpg" style="width:100%; aspect-ratio:16/9; object-fit:cover; object-position:center; display:block;" alt="Zenobia — The Ambition of Palmyra">
+  <!-- PROCESS -->
+  <img src="../img/khaina_processo.jpg" alt="The Digital Fresco Technique — process documentation" class="sov-process-img">
   <div class="case-body-section reveal">
-    <div class="case-section-label"></div>
-    <div class="case-section-content">
-      <h2>Zenobia<br>The Ambition of Palmyra</h2>
-      <p>
-        A reconstruction of power at the edge of the Roman Empire. This piece explores the balance between the predator's gaze and diplomatic grace. The integration of traditional calligraphy and floral patterns symbolizes the cultural syncretism of a queen who turned the desert into a golden crossroads of civilization.
-      </p>
-    </div>
-  </div>
-
-  <!-- BLOCCO 4 — Tamara -->
-  <img class="queen-img img-portrait" src="../img/queen_tamara_alduini.jpg" style="width:100%; aspect-ratio:16/9; object-fit:cover; object-position:center; display:block;" alt="Tamara — The King of Georgia">
-  <div class="case-body-section reveal">
-    <div class="case-section-label"></div>
-    <div class="case-section-content">
-      <h2>Tamara<br>The King of Georgia</h2>
-      <p>
-        Warrior and Saint. The composition focuses on the martial sacrality of the Georgian Queen. The golden halo acts as a structural anchor, contrasting with the metallic textures of the armor and the deep reds of medieval iconography, evoking the rugged beauty of the Caucasus.
-      </p>
-    </div>
-  </div>
-
-  <!-- SECTION 04 — METHOD & PROCESS -->
-  <img src="../img/khaina_processo.jpg" alt="The Digital Fresco Technique — process documentation" class="img-cover" style="width:100%; display:block; margin-bottom:0;">
-  <div class="case-body-section reveal">
-    <div class="case-section-label">04 — Method &amp; Process</div>
+    <div class="case-section-label">Method &amp; Process</div>
     <div class="case-section-content">
       <h2>The Digital Fresco Technique</h2>
-      <p>
-        This project began as a personal investigation into the reconstruction of historical female archetypes through a technique I call digital-fresco. It is not simply digital art — it is a layered and complex working method that builds a bridge between past and future.
-      </p>
-      <p>
-        The process moves through three distinct registers: analogue research into historical textures and symbols drawn from primary sources; manual work through digital painting and meticulous composition; and emerging technology, integrating AI-generated elements to add new layers of meaning to the image.
-      </p>
-      <p>
-        In the age of algorithms, the role of the artist remains to orchestrate different tools in order to construct visual narratives that are both strategically grounded and aesthetically resonant.
-      </p>
+      <p>The Digital Fresco technique starts with a sketch — a composition, a mood, a structure. Then comes the layering: photographic elements, hand-researched textures, fragments of illustration, AI-generated surfaces used deliberately, not randomly. Everything is composed by hand. The result looks ancient and digital at the same time, because it is.</p>
     </div>
   </div>
 
