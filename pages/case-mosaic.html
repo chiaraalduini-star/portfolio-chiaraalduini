@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mosaic Booklet — Chiara Alduini | Educational Design, Jordan</title>
+  <meta name="description" content="Mosaic Booklet — an educational and creative kit developed for Entimaa', Jordan. Character design, bilingual content, editorial design and packaging. 2022.">
+  <meta property="og:url" content="https://www.chiaraalduini.it/pages/case-mosaic.html">
+  <link rel="stylesheet" href="../css/reset.css?v=2">
+  <link rel="stylesheet" href="../css/variables.css?v=2">
+  <link rel="stylesheet" href="../css/typography.css?v=2">
+  <link rel="stylesheet" href="../css/layout.css?v=2">
+  <link rel="stylesheet" href="../css/components.css?v=2">
+  <link rel="stylesheet" href="../css/animations.css?v=2">
+  <link rel="stylesheet" href="../css/responsive.css?v=2">
+  <style>
+    .case-hero {
+      min-height: 70vh;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      padding: calc(var(--header-h) + 80px) var(--padding) 80px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .case-hero-content { align-self: end; }
+    .case-hero-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 40px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border-light);
+      margin-top: 40px;
+    }
+    .case-meta-item span {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      display: block;
+      margin-bottom: 8px;
+    }
+    .case-meta-item p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
+    .case-cover {
+      width: 100%;
+      aspect-ratio: 21/9;
+      object-fit: cover;
+      display: block;
+    }
+
+    .case-body-section {
+      padding: var(--space-lg) var(--padding);
+      border-bottom: 1px solid var(--border-light);
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .case-section-label {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      padding-top: 6px;
+      position: sticky;
+      top: calc(var(--header-h) + 24px);
+    }
+    .case-section-content h2 {
+      font-family: var(--font-display);
+      font-size: 42px;
+      font-weight: 400;
+      color: var(--text);
+      text-transform: uppercase;
+      line-height: 1.0;
+      margin-bottom: 24px;
+    }
+    .case-section-content p {
+      font-size: 16px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .case-section-content p:last-child { margin-bottom: 0; }
+
+    .case-img-full { border-bottom: 1px solid var(--border-light); }
+    .case-img-full img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+      background: var(--surface);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .grid-2 img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+      background: var(--surface);
+    }
+    .grid-2 img.square {
+      aspect-ratio: 1/1;
+      object-fit: cover;
+    }
+
+    .case-quote {
+      padding: var(--space-lg) var(--padding);
+      border-bottom: 1px solid var(--border-light);
+      background: var(--surface);
+    }
+    .case-quote blockquote {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 3vw, 52px);
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.15;
+      max-width: 900px;
+      font-style: italic;
+    }
+
+    .case-nav {
+      padding: 56px var(--padding);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border-light);
+    }
+    .case-nav a {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: color 0.2s ease, gap 0.2s ease;
+      text-decoration: none;
+    }
+    .case-nav a:hover { color: var(--text); gap: 16px; }
+
+    @media (max-width: 768px) {
+      .case-hero-meta { grid-template-columns: 1fr; gap: 24px; }
+      .case-body-section { grid-template-columns: 1fr; gap: 24px; }
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <a href="../index.html" class="logo">Chiara Alduini <span>Creative Director &amp; Illustrator<br><small>Full Agency Thinking, Single Creative Voice</small></span></a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="profilo.html">About</a>
+      <a href="contatti.html">Contact</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </header>
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="../index.html">Home</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="profilo.html">About</a>
+    <a href="contatti.html">Contact</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="case-hero">
+    <div class="case-hero-content">
+      <div class="section-label">Educational Design · Illustration · Jordan</div>
+      <h1 class="hero-title">Mosaic<br><em>Booklet</em></h1>
+    </div>
+    <div class="case-hero-meta">
+      <div class="case-meta-item">
+        <span>Client</span>
+        <p>Entimaa' — Jordan</p>
+      </div>
+      <div class="case-meta-item">
+        <span>Scope</span>
+        <p>Character Design · Educational Design · Editorial Design · Packaging · Bilingual Content</p>
+      </div>
+      <div class="case-meta-item">
+        <span>Year</span>
+        <p>2022</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COVER -->
+  <img class="case-cover" src="../img/mosaic_booklet_01.jpg" alt="Mosaic Booklet — cover and interior pages">
+
+  <!-- SECTION 01 — THE PROJECT -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">01 — The Project</div>
+    <div class="case-section-content">
+      <h2>Belonging Through Making</h2>
+      <p>"Mosaic Booklet" is an educational and creative project developed for Entimaa' — an Arabic word meaning "belonging." The brand offers a wide range of locally made handcrafted products, and through every purchase actively supports community-based projects across Jordan.</p>
+      <p>At the heart of the project is not only the booklet, but a complete interactive kit. Alongside the book, participants receive a box containing essential tools and materials such as a brush, mosaic tesserae, and a hands-on game designed to build and compose mosaics. This combination transforms learning into a tangible and immersive experience.</p>
+    </div>
+  </div>
+
+  <!-- PACKAGING -->
+  <div class="grid-2 reveal">
+    <img src="../img/mosaic_booklet_06.jpg" alt="Mosaic kit — packaging front">
+    <img src="../img/mosaic_booklet_07.jpg" alt="Mosaic kit — packaging open with tools">
+  </div>
+
+  <!-- SECTION 02 — THE CHARACTER -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">02 — The Character</div>
+    <div class="case-section-content">
+      <h2>Fusifous فُسيْفوووس</h2>
+      <p>Through the story of the character "Fusifous" (فُسيْفوووس), a small mosaic cube seeking restoration, participants are guided on an engaging journey that blends storytelling, history, and artistic practice. The narrative introduces the historical importance of mosaics, such as those of the ancient Baptistery dating back to 531 AD, featuring animals and natural elements once present in Jordan.</p>
+    </div>
+  </div>
+
+  <!-- INTERIOR PAGES -->
+  <div class="grid-2 reveal">
+    <img src="../img/mosaic_booklet_02.jpg" alt="Interior pages — pixel illustrations">
+    <img src="../img/mosaic_booklet_03.jpg" alt="Interior pages — educational content">
+  </div>
+
+  <!-- SECTION 03 — EDUCATIONAL APPROACH -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">03 — Educational Approach</div>
+    <div class="case-section-content">
+      <h2>Learning by Doing</h2>
+      <p>The booklet integrates educational content with interactive activities: word games, search exercises, observation tasks, and reconstruction challenges, as well as step-by-step instructions for creating mosaics. Participants learn about the structure and techniques of mosaic art while developing manual skills, precision, and creativity.</p>
+      <p>In the final stage, each participant is encouraged to design and create their own mosaic using the materials provided in the kit, becoming an active "artist-restorer." This experiential approach promotes active learning and fosters a deeper connection with cultural heritage.</p>
+      <p>"Mosaic Booklet" is more than a book — it is a complete educational experience and a creative toolkit that bridges past and present, while also contributing to meaningful social impact by supporting local communities in Jordan.</p>
+    </div>
+  </div>
+
+  <!-- WORKSHOP PHOTOS -->
+  <div class="grid-2 reveal">
+    <img src="../img/mosaic_booklet_04.jpg" alt="Workshop — participants at work">
+    <img src="../img/mosaic_booklet_05.jpg" alt="Workshop — children with Fusifous">
+  </div>
+
+  <!-- QUOTE -->
+  <div class="case-quote reveal">
+    <blockquote>"More than a book — a complete educational experience that bridges past and present."</blockquote>
+  </div>
+
+  <!-- NAVIGATION -->
+  <div class="case-nav">
+    <a href="portfolio.html">← Back to Portfolio</a>
+    <a href="case-petra.html">Discover Petra →</a>
+  </div>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Chiara Alduini</div>
+        <p class="footer-tagline">Independent Creative Director. Complete brand identities, from visual strategy to digital and physical presence.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/chiaraalduini/" class="social-link" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.behance.net/chiaraalduini" class="social-link" target="_blank" rel="noopener">Behance</a>
+          <a href="https://dribbble.com/chiaraalduini" class="social-link" target="_blank" rel="noopener">Dribbble</a>
+          <a href="#" class="social-link">Instagram</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="profilo.html">About</a></li>
+          <li><a href="contatti.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Get in Touch</h4>
+        <ul>
+          <li><a href="mailto:hello@chiaraalduini.it">hello@chiaraalduini.it</a></li>
+          <li><a href="contatti.html">Book a call</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Chiara Alduini — Independent Creative Director</span>
+      <a href="privacy.html" style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted);">Privacy Policy</a>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    document.addEventListener('contextmenu', function(e) {
+      if (e.target.tagName === 'IMG') e.preventDefault();
+    });
+    document.addEventListener('dragstart', function(e) {
+      if (e.target.tagName === 'IMG') e.preventDefault();
+    });
+  </script>
+</body>
+</html>
