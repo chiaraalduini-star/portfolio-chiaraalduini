@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -96,19 +96,23 @@
       background: #1a5fa8;
     }
 
-    .poster-grid-2 {
+    .grid-2 {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 2px;
       background: var(--border-light);
       border-bottom: 1px solid var(--border-light);
     }
-    .poster-grid-2 img {
+    .grid-2 img {
       width: 100%;
       aspect-ratio: 16/9;
       object-fit: cover;
       display: block;
       background: var(--surface);
+    }
+    .grid-2 img.contain {
+      object-fit: contain;
+      background: #1a5fa8;
     }
 
     .case-quote {
@@ -148,13 +152,10 @@
     .case-nav a:hover { color: var(--text); gap: 16px; }
 
     @media (max-width: 768px) {
-      .poster-grid-2 img,
-      .case-img-full img,
-      .grid-2 img {
-        aspect-ratio: 3/4 !important;
-        object-fit: cover;
-        object-position: center;
-      }
+      .case-hero-meta { grid-template-columns: 1fr; gap: 24px; }
+      .case-body-section { grid-template-columns: 1fr; gap: 24px; }
+      .grid-2 { grid-template-columns: 1fr; }
+      .grid-2 img, .case-img-full img { aspect-ratio: 3/4 !important; object-position: center; }
     }
   </style>
 </head>
@@ -179,13 +180,13 @@
   <!-- HERO -->
   <section class="case-hero">
     <div class="case-hero-content">
-      <div class="section-label">Case Study · 01 — Strategic Branding</div>
+      <div class="section-label">Strategic Branding</div>
       <h1 class="hero-title">Prati<br><em>Assicurazioni</em></h1>
     </div>
     <div class="case-hero-meta">
       <div class="case-meta-item">
         <span>Client</span>
-        <p>Prati &amp; C.<br>Consulenze Assicurative<br>Bagnolo Mella, Brescia</p>
+        <p>Prati &amp; C. Consulenze Assicurative<br>Bagnolo Mella, Brescia</p>
       </div>
       <div class="case-meta-item">
         <span>Scope</span>
@@ -198,135 +199,91 @@
     </div>
   </section>
 
-  <!-- COVER — Studio overview -->
+  <!-- COVER -->
   <img src="../img/prati-studio-1.jpg" alt="Prati Assicurazioni — Studio overview" class="case-cover">
 
-  <!-- CHALLENGE -->
+  <!-- 01 — THE CHALLENGE -->
   <div class="case-body-section reveal">
-    <div class="case-section-label">01 — Challenge</div>
+    <div class="case-section-label">01 — The Challenge</div>
     <div class="case-section-content">
       <h2>Starting from Zero</h2>
-      <p>
-        Prati &amp; C. Consulenze Assicurative is a young insurance consultancy based in Bagnolo Mella, Brescia. When we started working together, they had no brand at all — no logo, no visual language, no digital presence.
-      </p>
-      <p>
-        The brief was as open as it gets: be original, stand out from the big players — Generali, Allianz — who they collaborate with but whose visual identity reads as dated and corporate. A young team, a human approach, a local reality that wanted to be remembered.
-      </p>
-      <p>
-        They gave me full creative freedom. That kind of trust is rare, and it deserves to be honored with real work.
-      </p>
+      <p>Prati &amp; C. Consulenze Assicurative is a young insurance consultancy based in Bagnolo Mella, Brescia. When we started working together, they had no brand at all — no logo, no visual language, no digital presence.</p>
+      <p>The brief was as open as it gets: be original, stand out from the big players — Generali, Allianz — who they collaborate with but whose visual identity reads as dated and corporate. A young team, a human approach, a local reality that wanted to be remembered.</p>
+      <p>They gave me full creative freedom. That kind of trust is rare, and it deserves to be honored with real work.</p>
     </div>
   </div>
 
-  <!-- BRAND IDENTITY -->
+  <div class="grid-2 reveal">
+    <img src="../img/prati_logo_costruzione.jpg" alt="Prati — Logo construction and brand mark">
+    <img src="../img/prati_coordinata.jpg" alt="Prati — Complete brand identity system">
+  </div>
+
+  <!-- 02 — BRAND IDENTITY -->
   <div class="case-body-section reveal">
     <div class="case-section-label">02 — Brand Identity</div>
     <div class="case-section-content">
       <h2>The Mark</h2>
-      <p>
-        The brand name is the founders' surname — Prati. The logo builds on the letter P, into which I embedded a graphic symbol recalling an angel's wing — a subtle, elegant reference to the core concept of the business: protection.
-      </p>
-      <p>
-        The color palette is built around blue and white — blue for security and trust, white for clarity and approachability. The typography pairs a refined serif for the brand name with a modern sans-serif payoff, balancing institutional weight with contemporary lightness.
-      </p>
-      <p>
-        For the physical space, I introduced a third color: yellow. Used selectively on furniture, lamps, and accent pieces, it brings energy and warmth — because this is a young agency run by real people, not a faceless corporation.
-      </p>
+      <p>The brand name is the founders' surname — Prati. The logo builds on the letter P, into which I embedded a graphic symbol recalling an angel's wing — a subtle, elegant reference to the core concept of the business: protection.</p>
+      <p>The color palette is built around blue and white — blue for security and trust, white for clarity and approachability. The typography pairs a refined serif for the brand name with a modern sans-serif payoff, balancing institutional weight with contemporary lightness.</p>
+      <p>For the physical space, I introduced a third color: yellow. Used selectively on furniture, lamps, and accent pieces, it brings energy and warmth — because this is a young agency run by real people, not a faceless corporation.</p>
     </div>
   </div>
 
-  <!-- LOGO COSTRUZIONE -->
-  <div class="case-img-full reveal">
-    <img src="../img/prati_logo_costruzione.jpg" alt="Prati — Logo construction process">
-  </div>
-
-  <!-- COORDINATA -->
-  <div class="case-img-full reveal">
-    <img src="../img/prati_coordinata.jpg" alt="Prati — Brand identity coordinata">
-  </div>
-
-  <!-- COORDINATA 02 -->
-  <div class="case-img-full reveal">
-    <img src="../img/prati_coordinata_02.jpg" alt="Prati — Agenda 2026 branded">
-  </div>
-
-  <!-- WEBSITE MOCKUP -->
-  <div class="case-img-full reveal">
+  <div class="grid-2 reveal">
+    <img src="../img/prati_coordinata_02.jpg" alt="Prati — Branded agenda 2026">
     <img src="../img/prati-website-mockup.png" alt="Prati Assicurazioni — Website" class="contain">
   </div>
 
-  <!-- STUDIO ROOM 2 -->
-  <div class="case-img-full reveal">
-    <img src="../img/prati-studio-2.jpg" alt="Prati Assicurazioni — Consulting room">
-  </div>
-
-  <!-- CAMPAIGN -->
+  <!-- 03 — THE CAMPAIGN -->
   <div class="case-body-section reveal">
-    <div class="case-section-label">03 — Campaign</div>
+    <div class="case-section-label">03 — The Campaign</div>
     <div class="case-section-content">
       <h2>The Animal Kingdom</h2>
-      <p>
-        For the advertising campaign, I developed a cast of animal characters — each one embodying a different insurance product through metaphor. The approach is warm, witty, and completely unexpected in the insurance sector.
-      </p>
-      <p>
-        A turtle sheltering under an umbrella in a hailstorm for home insurance. A raccoon dressed as a thief for car coverage. A squirrel passing an acorn to a smaller one for savings plans. An elderly wolf and his companion for long-term care. A horse with a bandaged leg for health insurance.
-      </p>
-      <p>
-        Each character was built through AI generation and my own post-production — every detail refined, every expression designed. I also wrote all the headlines and body copy for the entire campaign, from concept through to the final word on every poster.
-      </p>
+      <p>For the advertising campaign, I developed a cast of animal characters — each one embodying a different insurance product through metaphor. The approach is warm, witty, and completely unexpected in the insurance sector.</p>
+      <p>A turtle sheltering under an umbrella in a hailstorm for home insurance. A raccoon dressed as a thief for car coverage. A squirrel passing an acorn to a smaller one for savings plans. An elderly wolf and his companion for long-term care. A horse with a bandaged leg for health insurance.</p>
+      <p>Each character was built through AI generation and my own post-production — every detail refined, every expression designed. I also wrote all the headlines and body copy for the entire campaign, from concept through to the final word on every poster.</p>
     </div>
   </div>
 
-  <!-- POSTERS — Casa + Auto -->
-  <div class="poster-grid-2 reveal">
+  <div class="grid-2 reveal">
     <img src="../img/prati-poster-casa.jpg" alt="Anche la casa più solida merita protezione">
     <img src="../img/prati-poster-auto.jpg" alt="L'RC auto è un obbligo. La tranquillità è una scelta.">
   </div>
 
-  <!-- POSTERS — Accumulo + Sanità -->
-  <div class="poster-grid-2 reveal">
+  <div class="grid-2 reveal">
     <img src="../img/prati-poster-accumulo.jpg" alt="Un piano di accumulo per il suo futuro">
     <img src="../img/prati-poster-sanita.jpg" alt="La salute è la forza che non si vede">
   </div>
 
-  <!-- POSTERS — Previdenza + Assistenza -->
-  <div class="poster-grid-2 reveal">
+  <div class="grid-2 reveal">
     <img src="../img/prati-poster-previdenza.jpg" alt="Un piccolo gesto oggi, una grande serenità domani">
     <img src="../img/prati-poster-assistenza.jpg" alt="Con la long term care, il futuro è più sereno">
   </div>
 
-  <!-- STUDIO FULL -->
-  <div class="case-img-full reveal">
-    <img src="../img/prati-studio-1.jpg" alt="Prati Assicurazioni — Studio with campaign posters and website">
+  <!-- 04 — THE SPACE -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">04 — The Space</div>
+    <div class="case-section-content">
+      <h2>What Was Built</h2>
+      <p>A complete brand system — logo, color palette, typography, brand guidelines — extended across every touchpoint: website, social media templates, print materials, business cards, signage, and the physical design of the office space.</p>
+      <p>The large-format campaign posters hang on the studio walls, turning the workspace itself into a brand statement. The result is a coherent environment where every element — from the screen to the chairs — tells the same story.</p>
+      <p>A single creative direction, a single point of contact, a complete and consistent identity. From the first digital impression to the physical experience of walking through the door.</p>
+    </div>
+  </div>
+
+  <div class="grid-2 reveal">
+    <img src="../img/prati-studio-2.jpg" alt="Prati Assicurazioni — Consulting room">
+    <img src="../img/prati-studio-1.jpg" alt="Prati Assicurazioni — Studio with campaign posters">
   </div>
 
   <!-- QUOTE -->
   <div class="case-quote reveal">
-    <blockquote>
-      "An entire agency in a single person — from the brand mark to the walls of the office."
-    </blockquote>
-  </div>
-
-  <!-- RESULT -->
-  <div class="case-body-section reveal">
-    <div class="case-section-label">04 — Result</div>
-    <div class="case-section-content">
-      <h2>What Was Built</h2>
-      <p>
-        A complete brand system — logo, color palette, typography, brand guidelines — extended across every touchpoint: website, social media templates, print materials, business cards, signage, and the physical design of the office space.
-      </p>
-      <p>
-        The large-format campaign posters hang on the studio walls, turning the workspace itself into a brand statement. The result is a coherent environment where every element — from the screen to the chairs — tells the same story.
-      </p>
-      <p>
-        A single creative direction, a single point of contact, a complete and consistent identity. From the first digital impression to the physical experience of walking through the door.
-      </p>
-    </div>
+    <blockquote>"An entire agency in a single person — from the brand mark to the walls of the office."</blockquote>
   </div>
 
   <!-- NAVIGATION -->
   <div class="case-nav">
-    <a href="../index.html">← Back to Work</a>
+    <a href="portfolio.html">← Back to Portfolio</a>
     <a href="case-latteria.html">Latteria Alta Italia →</a>
   </div>
 
