@@ -523,10 +523,12 @@ footer {
 
 .portfolio-img {
   filter: grayscale(100%);
-  transition: filter 0.5s ease, transform 0.5s ease;
+  transition: filter 0.5s ease, transform 0.6s ease;
   transform: scale(1);
+  display: block;
+  width: 100%;
 }
 .portfolio-img:hover {
   filter: grayscale(0%);
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
