@@ -161,7 +161,7 @@ section { padding: var(--space-xl) var(--padding); }
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: #F5C842;
+  background: #e8175d;
 }
 .pillar h3 {
   font-family: var(--font-display);
