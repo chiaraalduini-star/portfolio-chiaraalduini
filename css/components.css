@@ -37,3 +37,27 @@
 .portfolio-cta-link:hover svg {
   transform: translateX(6px);
 }
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.card-tag {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border: 1px solid currentColor;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.card-tag:hover {
+  opacity: 1;
+  color: #e8175d;
+  border-color: #e8175d;
+}
