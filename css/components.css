@@ -3,34 +3,30 @@
 
 .portfolio-cta {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  padding: 40px 0 64px;
+}
+
+.portfolio-cta-link {
+  display: flex;
   align-items: center;
   gap: 16px;
-  padding: 48px 24px;
-  text-align: center;
-}
-
-.portfolio-count {
-  font-size: 0.85rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  opacity: 0.5;
-  margin: 0;
-}
-
-.portfolio-cta-btn {
-  display: inline-block;
-  padding: 14px 32px;
-  border: 1.5px solid currentColor;
-  font-size: 0.9rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
   text-decoration: none;
-  transition: background 0.3s ease, color 0.3s ease;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
 }
 
-.portfolio-cta-btn:hover {
-  background: #e8175d;
-  border-color: #e8175d;
-  color: #fff;
+.portfolio-cta-link:hover {
+  opacity: 1;
+}
+
+.portfolio-cta-link svg {
+  transition: transform 0.3s ease;
+}
+
+.portfolio-cta-link:hover svg {
+  transform: translateX(6px);
 }
