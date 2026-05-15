@@ -110,6 +110,16 @@
     }
     .article-nav a:hover { color: var(--text); gap: 16px; }
 
+    .image-caption {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-text-tertiary, #999);
+      text-align: center;
+      margin-top: 8px;
+      margin-bottom: 2rem;
+    }
+
     @media (max-width: 768px) {
       .article-hero-meta { grid-template-columns: 1fr; gap: 24px; }
       .article-body-inner { max-width: 100%; }
@@ -169,6 +179,7 @@
 
   <!-- COVER -->
   <img src="../img/FLOWER-MAN.jpg" alt="Flower Man of the Asir region, Saudi Arabia — wearing a crown of jasmine and wild herbs" class="article-cover" style="max-width: 680px; display: block; margin: 0 auto;">
+  <p class="image-caption">Illustration © Chiara Alduini</p>
 
   <!-- BODY -->
   <div class="article-body reveal">
