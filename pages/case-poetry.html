@@ -147,6 +147,7 @@
       .poetry-grid-3 { grid-template-columns: 1fr; }
     }
   </style>
+  <script>window['ga-disable-G-3Y2FTS95M5']=true;window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{'analytics_storage':'denied'});</script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-3Y2FTS95M5"></script>
   <script>
@@ -317,6 +318,13 @@
     document.addEventListener('dragstart', function(e) {
       if (e.target.tagName === 'IMG') e.preventDefault();
     });
+  </script>
+  <div id="cookie-banner" style="position:fixed;bottom:0;left:0;right:0;background:#1a1a1a;color:#fff;padding:20px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;z-index:9999;font-size:13px;line-height:1.5;flex-wrap:wrap;"><div style="flex:1;min-width:260px;"><p style="margin:0 0 4px 0;">This site uses Google Analytics to collect anonymous usage data. No personal data is collected without your consent. <a href="/pages/privacy.html" style="color:#e8175d;text-decoration:none;">Privacy Policy</a></p><p style="margin:0;opacity:0.6;font-size:11px;letter-spacing:0.04em;">Questo sito utilizza Google Analytics per raccogliere dati anonimi. Nessun dato personale viene raccolto senza il tuo consenso.</p></div><div style="display:flex;gap:12px;flex-shrink:0;"><button onclick="acceptCookies()" style="background:#e8175d;color:#fff;border:none;padding:10px 24px;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;">Accept</button><button onclick="declineCookies()" style="background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.3);padding:10px 24px;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;">Decline</button></div></div>
+  <script>
+  (function(){var c=localStorage.getItem('cookie-consent');if(c==='accepted'){enableGA();}else if(c){document.getElementById('cookie-banner').style.display='none';}})();
+  function enableGA(){document.getElementById('cookie-banner').style.display='none';window['ga-disable-G-3Y2FTS95M5']=false;gtag('consent','update',{'analytics_storage':'granted'});}
+  function acceptCookies(){localStorage.setItem('cookie-consent','accepted');enableGA();}
+  function declineCookies(){localStorage.setItem('cookie-consent','declined');window['ga-disable-G-3Y2FTS95M5']=true;document.getElementById('cookie-banner').style.display='none';}
   </script>
 </body>
 </html>
