@@ -450,6 +450,11 @@ footer {
   color: var(--text-dim);
   letter-spacing: 0.1em;
 }
+.footer-copyright {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  opacity: 0.4;
+}
 .cv-btn {
   font-family: var(--font-body);
   font-size: 13px;
