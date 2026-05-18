@@ -109,6 +109,29 @@
     @media (max-width: 768px) {
       .cabinet-article { grid-template-columns: 1fr; gap: 32px; }
     }
+
+    .cabinet-links {
+      padding: 48px 0;
+    }
+    .cabinet-links-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .cabinet-links-list a {
+      font-size: 14px;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      opacity: 0.7;
+      transition: opacity 0.2s ease, color 0.2s ease;
+    }
+    .cabinet-links-list a:hover {
+      opacity: 1;
+      color: #e8175d;
+    }
   </style>
   <script>window['ga-disable-G-3Y2FTS95M5']=true;window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{'analytics_storage':'denied'});</script>
   <!-- Google tag (gtag.js) -->
@@ -191,6 +214,18 @@
       </div>
     </div>
 
+  </div>
+
+  <div class="cabinet-links">
+    <div class="divider-label">
+      <span>Reading &amp; Inspiration</span>
+      <div class="divider-line"></div>
+    </div>
+    <ul class="cabinet-links-list">
+      <li><a href="https://awarewomenartists.com/" target="_blank" rel="noopener">AWARE — Artists Women Artwork Research Education</a></li>
+      <li><a href="https://www.itsnicethat.com/" target="_blank" rel="noopener">It's Nice That</a></li>
+      <li><a href="https://kolajmagazine.com/content/" target="_blank" rel="noopener">Kolaj Magazine</a></li>
+    </ul>
   </div>
 
   <footer>
