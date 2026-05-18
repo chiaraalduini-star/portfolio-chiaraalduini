@@ -105,4 +105,29 @@
     <lastmod>2026-04-07</lastmod>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://www.chiaraalduini.it/pages/cabinet.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.chiaraalduini.it/pages/cabinet-flower-men.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.chiaraalduini.it/pages/cabinet-nazar.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.chiaraalduini.it/pages/cabinet-rima.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.chiaraalduini.it/pages/case-kinesiomed.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
