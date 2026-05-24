@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Cat's Eye — The Cabinet | Chiara Alduini</title>
+  <meta name="description" content="How Silicon Valley read Tolkien — and what they missed. On Palantir, Anduril, surveillance, power and the names that carry memory.">
+  <meta property="og:title" content="The Cat's Eye — The Cabinet | Chiara Alduini">
+  <meta property="og:description" content="Sauron was a cat. Then he became an eye. The eye never sleeps. And now it has an IP address.">
+  <meta property="og:url" content="https://www.chiaraalduini.it/pages/cabinet-palantir.html">
+  <meta property="og:image" content="https://www.chiaraalduini.it/img/PALANTIR.jpg">
+  <link rel="stylesheet" href="../css/reset.css?v=2">
+  <link rel="stylesheet" href="../css/variables.css?v=2">
+  <link rel="stylesheet" href="../css/typography.css?v=2">
+  <link rel="stylesheet" href="../css/layout.css?v=2">
+  <link rel="stylesheet" href="../css/components.css?v=2">
+  <link rel="stylesheet" href="../css/animations.css?v=2">
+  <link rel="stylesheet" href="../css/responsive.css?v=2">
+  <style>
+    .article-hero {
+      min-height: 60vh;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      padding: calc(var(--header-h) + 80px) var(--padding) 80px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .article-hero-content { align-self: end; }
+    .article-hero-content .article-subtitle {
+      font-size: 20px;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-top: 16px;
+      max-width: 560px;
+      line-height: 1.5;
+    }
+    .article-hero-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 40px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border-light);
+      margin-top: 40px;
+    }
+    .article-meta-item span {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      display: block;
+      margin-bottom: 8px;
+    }
+    .article-meta-item p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
+    .article-cover {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .article-body {
+      padding: var(--space-lg) var(--padding);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .article-body-inner {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .article-body-inner p {
+      font-size: 17px;
+      color: var(--text-muted);
+      line-height: 1.9;
+      margin-bottom: 28px;
+    }
+    .article-body-inner p:last-child { margin-bottom: 0; }
+    .article-body-inner h2 {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 400;
+      color: var(--text);
+      text-transform: uppercase;
+      line-height: 1.1;
+      margin-top: 56px;
+      margin-bottom: 24px;
+    }
+
+    .article-pullquote {
+      padding: 40px 0;
+      margin: 16px 0;
+      border-top: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .article-pullquote p {
+      font-family: var(--font-display);
+      font-size: clamp(22px, 2.5vw, 36px);
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.2;
+      font-style: italic;
+      margin-bottom: 0 !important;
+    }
+
+    .article-nav {
+      padding: 56px var(--padding);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border-light);
+    }
+    .article-nav a {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: color 0.2s ease, gap 0.2s ease;
+      text-decoration: none;
+    }
+    .article-nav a:hover { color: var(--text); gap: 16px; }
+
+    .image-caption {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-text-tertiary, #999);
+      text-align: center;
+      margin-top: 8px;
+      margin-bottom: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .article-hero-meta { grid-template-columns: 1fr; gap: 24px; }
+      .article-body-inner { max-width: 100%; }
+      .palantir-hero { height: 400px !important; }
+    }
+  </style>
+  <script>window['ga-disable-G-3Y2FTS95M5']=true;window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{'analytics_storage':'denied'});</script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3Y2FTS95M5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-3Y2FTS95M5');
+  </script>
+</head>
+<body>
+  <header id="header">
+    <a href="../index.html" class="logo">Chiara Alduini <span>Creative Director &amp; Illustrator<br><small>Full Agency Thinking, Single Creative Voice</small></span></a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="cabinet.html" class="active">The Cabinet</a>
+      <a href="profilo.html">About</a>
+      <a href="contatti.html">Contact</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </header>
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="../index.html">Home</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="cabinet.html">The Cabinet</a>
+    <a href="profilo.html">About</a>
+    <a href="contatti.html">Contact</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="article-hero">
+    <div class="article-hero-content">
+      <div class="section-label">The Cabinet · Culture · Symbolism · Technology</div>
+      <h1 class="hero-title">The Cat's <em>Eye</em></h1>
+      <p class="article-subtitle">How Silicon Valley Read Tolkien — and What They Missed</p>
+    </div>
+    <div class="article-hero-meta">
+      <div class="article-meta-item">
+        <span>Date</span>
+        <p>2026</p>
+      </div>
+      <div class="article-meta-item">
+        <span>Read</span>
+        <p>8 min read</p>
+      </div>
+      <div class="article-meta-item">
+        <span>Author</span>
+        <p>Chiara Alduini</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COVER -->
+  <div class="palantir-hero" style="width: 100%; height: 600px; overflow: hidden; margin-bottom: 8px;">
+    <img src="../img/PALANTIR.jpg" alt="The Cat's Eye — Tolkien and Silicon Valley" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+  </div>
+  <p class="image-caption">Collage Illustration © Chiara Alduini</p>
+
+  <!-- BODY -->
+  <div class="article-body reveal">
+    <div class="article-body-inner">
+
+      <p>There's a detail that few know, buried in the Book of Lost Tales, the collection of early drafts that J.R.R. Tolkien never published in his lifetime: Sauron, the Dark Lord, the absolute Evil of Middle-earth, in his first incarnation was not a fiery eye atop a black tower.</p>
+
+      <p>He was a cat.</p>
+
+      <p>In the oldest versions of the story, the character who would become Sauron was called Tevildo, Lord of Cats — an enormous black feline who lived in a castle filled with other cats, servant of Melko, the first Dark Lord. Tevildo was later replaced by Thû the Necromancer, who then became Gorthaur, and finally Sauron.</p>
+
+      <p>Evil, for Tolkien, had something feline about it. That quality of the gaze that watches without being watched. Sovereign indifference. The judgment of one who looks but never speaks.</p>
+
+      <p>When Tevildo became the Eye of Sauron, that quality did not disappear. It sublimated. It became pure surveillance. A gaze without a body, without a voice, with no other function than to see everything.</p>
+
+      <p>Seventy years later, Silicon Valley discovered Tolkien. And chose exactly those symbols.</p>
+
+      <h2>Palantir: The Stones That See Everything</h2>
+
+      <p>Tolkien describes the Eye of Sauron as a watchful, searching presence — 'the Eye was moving', 'a lidless eye… seeking'. This is not an anatomical description. It is the description of a surveillance system.</p>
+
+      <p>The palantíri — crystal spheres through which one could see across great distances, communicate across time and space. In Tolkien's narrative they are also instruments of corruption: Saruman and Denethor are both seduced and ultimately destroyed by their dependence on the stone, which Sauron controls and through which he manipulates anyone who dares to look into it. The stone does not lie — but it shows what Sauron wants you to see.</p>
+
+      <div class="article-pullquote">
+        <p>"A selected truth."</p>
+      </div>
+
+      <p>Peter Thiel, co-founder of PayPal and one of the most influential investors in Silicon Valley, founded Palantir Technologies in 2003 and chose that name deliberately. The system the company builds — called Gotham — allows data on entire populations to be cross-referenced to identify patterns, individuals, threats. It has worked with the CIA, with ICE, with armies and intelligence agencies around the world.</p>
+
+      <p>The question Tolkien had already written, and that no one seemed to be reading carefully enough, is this: who decides what to look for? Whoever controls the stone decides what it shows. And whoever looks into Sauron's stone sees what Sauron wants them to see. Thiel has read The Lord of the Rings. He chose the name of a surveillance tool that in the original narrative brings ruin to whoever uses it. Either he didn't understand the book — which I strongly doubt — or he understood it perfectly.</p>
+
+      <h2>Anduril: The Sword That Judges Its Bearer</h2>
+
+      <p>Andúril, 'Flame of the West', is Aragorn's sword. It is no ordinary object: forged from the shards of Narsil, the broken blade, its reforging marks the return of the rightful king. In Tolkien's mythology it is the ultimate symbol of sovereignty reassembled, of power returning to the hands of those who deserve it.</p>
+
+      <p>But there is something deeper in the symbolism of Andúril that is often overlooked: in the logic of Middle-earth, weapon and bearer are inseparable. Andúril works because Aragorn is Aragorn — because he carries the lineage, the discipline, and the moral weight of decades of sacrifice. The sword is not merely a tool. It is a declaration: this is the man who has the right to wield me.</p>
+
+      <p>Anduril Industries, founded in 2017 by Palmer Luckey, has the explicit goal of modernizing American military technology. The company produces autonomous drones, border surveillance systems, and artificial intelligence for defense applications. It holds billion-dollar contracts with the United States Department of Defense.</p>
+
+      <div class="article-pullquote">
+        <p>"So a sword became a drone. The symbol of the just king became a weapons system that operates without a bearer."</p>
+      </div>
+
+      <p>And this is precisely where the symbolism cracks and becomes almost a confession — because the drone judges no one. It has no lineage, and its morality is an extension of its creator. Andúril, in Tolkien's narrative, was dangerous in the wrong hands not because it wouldn't work — but because the wrong hands could never have wielded it. Anduril Industries' autonomous system does not have this problem. It works for whoever holds the contract.</p>
+
+      <h2>What Tolkien Understood That They Did Not</h2>
+
+      <p>Tolkien was a professor of medieval philology obsessed with one thing above all: language as an act of world creation — not a new idea, every religious tradition understands the power of the word as a creative act. And yet, every name in Middle-earth carried precise etymological roots, its own history, its own specific weight.</p>
+
+      <p>In Tolkien's mythology, objects of power always share one defining characteristic: they reveal whoever uses them. The One Ring does not corrupt — it reveals the corruption already present. The palantíri do not deceive — they amplify the weakness of whoever looks. Andúril does not kill — it declares the legitimacy of whoever wields it.</p>
+
+      <div class="article-pullquote">
+        <p>"For Tolkien, power was always a mirror."</p>
+      </div>
+
+      <p>Silicon Valley took the names of these mirrors and turned them into products. It saw the aesthetic of power — the darkness, the grandeur, the cosmic weight — and assumed it was available vocabulary. That one could choose the name of a seeing-stone without inheriting its logic. That one could name a drone after the sword of the just king without the question of justice suddenly becoming urgent.</p>
+
+      <p>But names have memory. And Tolkien, who spent his entire life understanding how names carry the weight of the things they name, had already written the answer.</p>
+
+      <p>Tevildo was a cat. Then he became an eye.</p>
+
+      <p>The eye never sleeps. And now it has an IP address.</p>
+
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <div class="article-nav">
+    <a href="cabinet-rima.html">← The Voice That Carries</a>
+    <span></span>
+  </div>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Chiara Alduini</div>
+        <p class="footer-tagline">Independent Creative Director. Complete brand identities, from visual strategy to digital and physical presence.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/chiaraalduini/" class="social-link" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.behance.net/chiaraalduini" class="social-link" target="_blank" rel="noopener">Behance</a>
+          <a href="https://dribbble.com/chiaraalduini" class="social-link" target="_blank" rel="noopener">Dribbble</a>
+          <a href="#" class="social-link">Instagram</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="cabinet.html">The Cabinet</a></li>
+          <li><a href="profilo.html">About</a></li>
+          <li><a href="contatti.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Get in Touch</h4>
+        <ul>
+          <li><a href="mailto:hello@chiaraalduini.it">hello@chiaraalduini.it</a></li>
+          <li><a href="contatti.html">Book a call</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">This portfolio was designed and created by Chiara Alduini © 2026 — Independent Creative Director. All works, illustrations, and texts featured on this website are original creations by Chiara Alduini and are protected by copyright. All rights reserved.</p>
+      <a href="privacy.html" style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted);">Privacy Policy</a>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    document.addEventListener('contextmenu', function(e) {
+      if (e.target.tagName === 'IMG') e.preventDefault();
+    });
+    document.addEventListener('dragstart', function(e) {
+      if (e.target.tagName === 'IMG') e.preventDefault();
+    });
+  </script>
+  <div id="cookie-banner" style="position:fixed;bottom:0;left:0;right:0;background:#1a1a1a;color:#fff;padding:20px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;z-index:9999;font-size:13px;line-height:1.5;flex-wrap:wrap;"><div style="flex:1;min-width:260px;"><p style="margin:0 0 4px 0;">This site uses Google Analytics to collect anonymous usage data. No personal data is collected without your consent. <a href="/pages/privacy.html" style="color:#e8175d;text-decoration:none;">Privacy Policy</a></p><p style="margin:0;opacity:0.6;font-size:11px;letter-spacing:0.04em;">Questo sito utilizza Google Analytics per raccogliere dati anonimi. Nessun dato personale viene raccolto senza il tuo consenso.</p></div><div style="display:flex;gap:12px;flex-shrink:0;"><button onclick="acceptCookies()" style="background:#e8175d;color:#fff;border:none;padding:10px 24px;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;">Accept</button><button onclick="declineCookies()" style="background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.3);padding:10px 24px;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;">Decline</button></div></div>
+  <script>
+  (function(){var c=localStorage.getItem('cookie-consent');if(c==='accepted'){enableGA();}else if(c){document.getElementById('cookie-banner').style.display='none';}})();
+  function enableGA(){document.getElementById('cookie-banner').style.display='none';window['ga-disable-G-3Y2FTS95M5']=false;gtag('consent','update',{'analytics_storage':'granted'});}
+  function acceptCookies(){localStorage.setItem('cookie-consent','accepted');enableGA();}
+  function declineCookies(){localStorage.setItem('cookie-consent','declined');window['ga-disable-G-3Y2FTS95M5']=true;document.getElementById('cookie-banner').style.display='none';}
+  </script>
+</body>
+</html>
