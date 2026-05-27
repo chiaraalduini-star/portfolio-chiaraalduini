@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CapCut Streetwear — Chiara Alduini | Brand Identity Concept</title>
+  <meta name="description" content="Brand identity concept for the CapCut Design Studio Challenge — reimagining CapCut as a Tokyo streetwear brand. Logo, campaign posters, packaging and merchandise.">
+  <meta property="og:title" content="CapCut Streetwear — Chiara Alduini | Brand Identity Concept">
+  <meta property="og:description" content="What if CapCut were a streetwear brand born in Tokyo? Logo, posters, packaging and merch in a bold 1980s Japanese advertising aesthetic.">
+  <meta property="og:url" content="https://www.chiaraalduini.it/pages/case-capcut.html">
+  <meta property="og:image" content="https://www.chiaraalduini.it/img/cup_cat_05.jpg">
+  <link rel="stylesheet" href="../css/reset.css?v=2">
+  <link rel="stylesheet" href="../css/variables.css?v=2">
+  <link rel="stylesheet" href="../css/typography.css?v=2">
+  <link rel="stylesheet" href="../css/layout.css?v=2">
+  <link rel="stylesheet" href="../css/components.css?v=2">
+  <link rel="stylesheet" href="../css/animations.css?v=2">
+  <link rel="stylesheet" href="../css/responsive.css?v=2">
+  <style>
+    .case-hero {
+      min-height: 70vh;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      padding: calc(var(--header-h) + 80px) var(--padding) 80px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .case-hero-content { align-self: end; }
+    .case-hero-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 40px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border-light);
+      margin-top: 40px;
+    }
+    .case-meta-item span {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      display: block;
+      margin-bottom: 8px;
+    }
+    .case-meta-item p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
+    .case-cover {
+      width: 100%;
+      aspect-ratio: 21/9;
+      object-fit: cover;
+      display: block;
+    }
+
+    .case-body-section {
+      padding: var(--space-lg) var(--padding);
+      border-bottom: 1px solid var(--border-light);
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .case-section-label {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      padding-top: 6px;
+      position: sticky;
+      top: calc(var(--header-h) + 24px);
+    }
+    .case-section-content h2 {
+      font-family: var(--font-display);
+      font-size: 42px;
+      font-weight: 400;
+      color: var(--text);
+      text-transform: uppercase;
+      line-height: 1.0;
+      margin-bottom: 24px;
+    }
+    .case-section-content p {
+      font-size: 16px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .case-section-content p:last-child { margin-bottom: 0; }
+
+    .case-img-full { border-bottom: 1px solid var(--border-light); }
+    .case-img-full img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+      background: var(--surface);
+    }
+    .case-img-full img.contain {
+      object-fit: contain;
+      background: #1a5fa8;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .grid-2 img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+      background: var(--surface);
+    }
+    .grid-2 img.contain {
+      object-fit: contain;
+      background: #1a5fa8;
+    }
+
+    .case-quote {
+      padding: var(--space-lg) var(--padding);
+      border-bottom: 1px solid var(--border-light);
+      background: var(--surface);
+    }
+    .case-quote blockquote {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 3vw, 52px);
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.15;
+      max-width: 900px;
+      font-style: italic;
+    }
+
+    .case-nav {
+      padding: 56px var(--padding);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border-light);
+    }
+    .case-nav a {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: color 0.2s ease, gap 0.2s ease;
+      text-decoration: none;
+    }
+    .case-nav a:hover { color: var(--text); gap: 16px; }
+
+    @media (max-width: 768px) {
+      .case-hero-meta { grid-template-columns: 1fr; gap: 24px; }
+      .case-body-section { grid-template-columns: 1fr; gap: 24px; }
+      .grid-2 { grid-template-columns: 1fr; }
+      .grid-2 img, .case-img-full img { aspect-ratio: 3/4 !important; object-position: center; }
+    }
+  </style>
+  <script>window['ga-disable-G-3Y2FTS95M5']=true;window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{'analytics_storage':'denied'});</script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3Y2FTS95M5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-3Y2FTS95M5');
+  </script>
+</head>
+<body>
+  <header id="header">
+    <a href="../index.html" class="logo">Chiara Alduini <span>Creative Director &amp; Illustrator<br><small>Full Agency Thinking, Single Creative Voice</small></span></a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="cabinet.html">The Cabinet</a>
+      <a href="profilo.html">About</a>
+      <a href="contatti.html">Contact</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </header>
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="../index.html">Home</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="cabinet.html">The Cabinet</a>
+    <a href="profilo.html">About</a>
+    <a href="contatti.html">Contact</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="case-hero">
+    <div class="case-hero-content">
+      <div class="section-label">Strategic Branding · — Brand Identity Concept</div>
+      <h1 class="hero-title">CapCut<br><em>Streetwear</em></h1>
+      <p style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-dim); margin-top: 16px;">Cut · Create · Express</p>
+    </div>
+    <div class="case-hero-meta">
+      <div class="case-meta-item">
+        <span>Client</span>
+        <p>CapCut · Contra Challenge</p>
+      </div>
+      <div class="case-meta-item">
+        <span>Scope</span>
+        <p>Logo Design · Brand Identity · Campaign Posters · Packaging · Merchandise</p>
+      </div>
+      <div class="case-meta-item">
+        <span>Year</span>
+        <p>2026</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COVER -->
+  <img src="../img/cup_cat_05.jpg" alt="CapCut Streetwear — Brand Identity Concept" class="case-cover">
+
+  <!-- 01 — THE CONCEPT -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">01 — The Concept</div>
+    <div class="case-section-content">
+      <h2>What If CapCut Were a Streetwear Brand?</h2>
+      <p>What if CapCut were not a creative tool, but a streetwear brand born in Tokyo? This concept brand keeps the core DNA — cut, create, express — and translates it into fashion. The scissors evolve into a human figure: a creator, a cutter, a rebel. The red circle is simultaneously the figure's head and the Rising Sun of the Japanese flag. The palette of electric yellow, navy blue and lacquer red channels the energy of 1980s Japanese advertising — bold, loud, unapologetic.</p>
+    </div>
+  </div>
+
+  <div class="grid-2 reveal">
+    <img src="../img/cup_cat_01.jpg" alt="CapCut Streetwear — Concept development">
+    <img src="../img/cup_cat_02.jpg" alt="CapCut Streetwear — Brand exploration">
+  </div>
+
+  <!-- 02 — THE LOGO -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">02 — The Logo</div>
+    <div class="case-section-content">
+      <h2>Cut. Create. Express.</h2>
+      <p>The scissors evolve into a human figure — a creator, a cutter, a rebel. The red circle is simultaneously the figure's head and the Rising Sun of the Japanese flag. A mark that works as a logo, a stamp, a sticker, a patch.</p>
+    </div>
+  </div>
+
+  <div class="case-img-full reveal">
+    <img src="../img/cup_cat_03.jpg" alt="CapCut Streetwear — Logo design">
+  </div>
+
+  <!-- 03 — CAMPAIGN POSTERS -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">03 — Campaign Posters</div>
+    <div class="case-section-content">
+      <h2>1980s Tokyo Energy</h2>
+      <p>The campaign aesthetic channels the bold, loud, unapologetic energy of 1980s Japanese advertising. Electric yellow backgrounds, hard typography, lacquer red accents. Each poster is a statement.</p>
+    </div>
+  </div>
+
+  <div class="grid-2 reveal">
+    <img src="../img/cup_cat_04.jpg" alt="CapCut Streetwear — Campaign poster">
+    <img src="../img/cup_cat_06.jpg" alt="CapCut Streetwear — Campaign poster">
+  </div>
+
+  <div class="case-img-full reveal">
+    <img src="../img/cup_cat_07.jpg" alt="CapCut Streetwear — Campaign poster full">
+  </div>
+
+  <!-- 04 — PACKAGING & MERCHANDISE -->
+  <div class="case-body-section reveal">
+    <div class="case-section-label">04 — Packaging &amp; Merchandise</div>
+    <div class="case-section-content">
+      <h2>The Brand in Every Detail</h2>
+      <p>The identity extends across every touchpoint — shopping bags, tags, boxes, apparel. The same visual language, scaled from a hang tag to a billboard.</p>
+    </div>
+  </div>
+
+  <div class="grid-2 reveal">
+    <img src="../img/cup_cat_08.jpg" alt="CapCut Streetwear — Packaging">
+    <img src="../img/cup_cat_09.jpg" alt="CapCut Streetwear — Packaging detail">
+  </div>
+
+  <div class="grid-2 reveal">
+    <img src="../img/cup_cat_10.jpg" alt="CapCut Streetwear — Merchandise">
+    <img src="../img/cup_cat_11.jpg" alt="CapCut Streetwear — Merchandise detail">
+  </div>
+
+  <!-- QUOTE -->
+  <div class="case-quote reveal">
+    <blockquote>"Cut, create, express — a brand that wears its tools on its sleeve."</blockquote>
+  </div>
+
+  <!-- NAVIGATION -->
+  <div class="case-nav">
+    <a href="case-kinesiomed.html">← Kinesiomed CTB</a>
+    <a href="case-frittanza.html">Frittanza →</a>
+  </div>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Chiara Alduini</div>
+        <p class="footer-tagline">Independent Creative Director. Complete brand identities, from visual strategy to digital and physical presence.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/chiaraalduini/" class="social-link" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.behance.net/chiaraalduini" class="social-link" target="_blank" rel="noopener">Behance</a>
+          <a href="https://dribbble.com/chiaraalduini" class="social-link" target="_blank" rel="noopener">Dribbble</a>
+          <a href="#" class="social-link">Instagram</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="profilo.html">About</a></li>
+          <li><a href="contatti.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Get in Touch</h4>
+        <ul>
+          <li><a href="mailto:hello@chiaraalduini.it">hello@chiaraalduini.it</a></li>
+          <li><a href="contatti.html">Book a call</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">This portfolio was designed and created by Chiara Alduini © 2026 — Independent Creative Director. All works, illustrations, and texts featured on this website are original creations by Chiara Alduini and are protected by copyright. All rights reserved.</p>
+      <a href="privacy.html" style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted);">Privacy Policy</a>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    document.addEventListener('contextmenu', function(e) {
+      if (e.target.tagName === 'IMG') e.preventDefault();
+    });
+    document.addEventListener('dragstart', function(e) {
+      if (e.target.tagName === 'IMG') e.preventDefault();
+    });
+  </script>
+  <div id="cookie-banner" style="position:fixed;bottom:0;left:0;right:0;background:#1a1a1a;color:#fff;padding:20px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;z-index:9999;font-size:13px;line-height:1.5;flex-wrap:wrap;"><div style="flex:1;min-width:260px;"><p style="margin:0 0 4px 0;">This site uses Google Analytics to collect anonymous usage data. No personal data is collected without your consent. <a href="/pages/privacy.html" style="color:#e8175d;text-decoration:none;">Privacy Policy</a></p><p style="margin:0;opacity:0.6;font-size:11px;letter-spacing:0.04em;">Questo sito utilizza Google Analytics per raccogliere dati anonimi. Nessun dato personale viene raccolto senza il tuo consenso.</p></div><div style="display:flex;gap:12px;flex-shrink:0;"><button onclick="acceptCookies()" style="background:#e8175d;color:#fff;border:none;padding:10px 24px;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;">Accept</button><button onclick="declineCookies()" style="background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.3);padding:10px 24px;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;">Decline</button></div></div>
+  <script>
+  (function(){var c=localStorage.getItem('cookie-consent');if(c==='accepted'){enableGA();}else if(c){document.getElementById('cookie-banner').style.display='none';}})();
+  function enableGA(){document.getElementById('cookie-banner').style.display='none';window['ga-disable-G-3Y2FTS95M5']=false;gtag('consent','update',{'analytics_storage':'granted'});}
+  function acceptCookies(){localStorage.setItem('cookie-consent','accepted');enableGA();}
+  function declineCookies(){localStorage.setItem('cookie-consent','declined');window['ga-disable-G-3Y2FTS95M5']=true;document.getElementById('cookie-banner').style.display='none';}
+  </script>
+</body>
+</html>
