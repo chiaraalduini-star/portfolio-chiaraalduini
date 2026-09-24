@@ -16,6 +16,15 @@
   font-style: normal;
   color: var(--text);
 }
+.hero-title-main,
+.hero-title-subtitle {
+  display: block;
+}
+.hero-title-subtitle {
+  margin-top: var(--space-sm);
+  font-size: clamp(44px, 6vw, 96px);
+  line-height: 0.95;
+}
 
 .section-title {
   font-family: var(--font-display);

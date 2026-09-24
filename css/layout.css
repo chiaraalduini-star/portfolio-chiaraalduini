@@ -51,26 +51,15 @@ header.scrolled {
 
 nav { display: flex; align-items: center; gap: 36px; margin-left: auto; }
 nav a {
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: 24px;
-  font-weight: 600;
-  color: var(--text-muted);
+  font-weight: 400;
+  color: var(--text);
   transition: color 0.2s ease;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 nav a:hover, nav a.active { color: var(--text); }
-nav a.nav-cta {
-  padding: 10px 24px;
-  background: var(--text);
-  color: var(--white);
-  font-size: 24px;
-  font-weight: 600;
-  letter-spacing: 0;
-  border-radius: 4px;
-  transition: opacity 0.2s ease;
-}
-nav a.nav-cta:hover { opacity: 0.8; }
-
 a.logo { text-decoration: none; }
 
 /* HERO */
@@ -88,7 +77,6 @@ a.logo { text-decoration: none; }
   align-items: flex-end;
   justify-content: space-between;
   padding-top: 24px;
-  border-top: 1px solid var(--border-light);
 }
 .hero-sub { max-width: 480px; }
 .hero-scroll-hint {
@@ -122,7 +110,7 @@ section { padding: var(--space-xl) var(--padding); }
 }
 
 /* PILLARS */
-.pillars { background: var(--bg); padding-top: var(--space-lg); }
+.pillars { background: var(--bg); padding-top: var(--space-lg); padding-bottom: 72px; }
 .pillars-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -198,6 +186,13 @@ section { padding: var(--space-xl) var(--padding); }
 }
 .pillar:hover .pillar-tag::after {
   transform: translateX(4px);
+}
+.pillar h3.editorial-link {
+  align-self: flex-start;
+  width: fit-content;
+}
+.pillar:hover .editorial-link {
+  background-size: 100% 1px;
 }
 
 /* ABOUT GRID */
@@ -309,6 +304,12 @@ section { padding: var(--space-xl) var(--padding); }
   color: var(--text-dim);
   display: block;
   margin-bottom: 10px;
+}
+.case-tag-item,
+.project-tag,
+.case-tag,
+.tag {
+  cursor: default;
 }
 .project-info h3 {
   font-family: var(--font-display);
@@ -528,14 +529,12 @@ footer {
   pointer-events: none !important;
 }
 
-.portfolio-img {
-  filter: grayscale(100%);
-  transition: filter 0.5s ease, transform 0.6s ease;
+#projectsGrid .portfolio-img {
+  transition: transform 0.6s ease;
   transform: scale(1);
   display: block;
   width: 100%;
 }
-.portfolio-img:hover {
-  filter: grayscale(0%);
+#projectsGrid .portfolio-img:hover {
   transform: scale(1.08);
 }

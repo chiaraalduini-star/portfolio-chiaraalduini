@@ -10,6 +10,34 @@
   }, { passive: true });
 }());
 
+// Apply the shared editorial treatment to text links, excluding navigation and controls.
+;(function () {
+  var excludedSelector = '.logo, .project-card, .case-card, .pillar, .portfolio-cta-link, .about-cta, .filter-bar, .cv-btn, #cookie-banner';
+
+  document.querySelectorAll('a[href]').forEach(function (link) {
+    if (link.closest(excludedSelector)) return;
+    if (link.classList.contains('pillar-tag') && !link.closest('.lab-case-content, .lab-next-project')) return;
+    link.classList.add('editorial-link');
+  });
+
+  document.querySelectorAll('.case-cta, .pillar h3, .pillar .pillar-tag').forEach(function (link) {
+    link.classList.add('editorial-link');
+  });
+}());
+
+// Metadata tags are informational and must not trigger their parent card links.
+;(function () {
+  var tagSelector = '.case-tag-item, .project-tag, .case-tag, .tag';
+
+  document.addEventListener('click', function (e) {
+    var target = e.target;
+    if (!(target instanceof Element) || !target.closest(tagSelector) || !target.closest('a')) return;
+
+    e.preventDefault();
+    e.stopPropagation();
+  }, true);
+}());
+
 // ── Scroll reveal ──
 ;(function () {
   var els = document.querySelectorAll('.reveal');

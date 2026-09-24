@@ -37,3 +37,30 @@
 .portfolio-cta-link:hover svg {
   transform: translateX(6px);
 }
+
+/* Editorial links */
+.editorial-link {
+  color: var(--text) !important;
+  cursor: pointer;
+  background-image: linear-gradient(#e8175d, #e8175d);
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  background-size: 0 1px;
+  transition: background-size 0.24s ease-out;
+}
+
+.editorial-link:hover,
+.editorial-link:focus-visible {
+  color: var(--text) !important;
+  background-size: 100% 1px;
+}
+
+nav a.editorial-link,
+.mobile-nav a.editorial-link,
+.social-link.editorial-link {
+  transition: background-size 0.24s ease-out;
+}
+
+.case-cta.editorial-link {
+  transition: gap 0.2s ease, background-size 0.24s ease-out;
+}
