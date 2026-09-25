@@ -395,11 +395,16 @@ section { padding: var(--space-xl) var(--padding); }
 .submit-btn:hover { opacity: 0.75; }
 
 /* CONTACT SIGNATURE */
+body.contact-body { background: #fcf9f4; }
+body.contact-body #header,
+body.contact-body .mobile-nav {
+  background-color: #fff;
+}
 .contact-page { max-width: none; }
 .contact-signature {
-  background: #F8F6F2;
+  background: #fcf9f4;
   overflow: hidden;
-  padding: clamp(128px, 14vw, 208px) var(--padding) clamp(96px, 12vw, 176px);
+  padding: clamp(128px, 14vw, 208px) var(--padding) 0;
 }
 .contact-signature-inner {
   max-width: var(--max-w);
@@ -417,23 +422,17 @@ section { padding: var(--space-xl) var(--padding); }
   letter-spacing: 0.01em;
   color: var(--text);
 }
-.contact-signature-invitation {
-  max-width: 500px;
-  margin-top: var(--space-md);
-  color: var(--text-muted);
-  font-size: clamp(18px, 1.8vw, 24px);
-  line-height: 1.45;
-}
 .contact-signature-links {
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px 24px;
-  margin-top: var(--space-md);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: clamp(28px, 3vw, 44px);
 }
 .contact-signature-links a {
   color: var(--text);
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: clamp(14px, 1.15vw, 18px);
   letter-spacing: 0.08em;
   text-decoration: none;
   text-transform: uppercase;
@@ -442,24 +441,26 @@ section { padding: var(--space-xl) var(--padding); }
   width: 100%;
   margin-top: auto;
   padding-top: clamp(96px, 14vw, 220px);
+  display: flex;
+  justify-content: center;
 }
 .contact-signature-art img {
   display: block;
-  width: min(100%, 1320px);
+  width: min(100%, 1240px);
   height: auto;
-  margin-left: auto;
+  margin: 0 auto;
   object-fit: contain;
 }
 
 @media (max-width: 768px) {
   .contact-signature {
-    padding: calc(var(--header-h) + var(--space-lg)) var(--padding) var(--space-xl);
+    padding: calc(var(--header-h) + var(--space-lg)) var(--padding) 0;
   }
   .contact-signature-inner {
     align-items: center;
     text-align: center;
   }
-  .contact-signature-links { justify-content: center; }
+  .contact-signature-links { align-items: center; }
   .contact-signature-art {
     margin-top: 0;
     padding-top: var(--space-xl);
