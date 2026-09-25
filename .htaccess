@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# Use the non-www HTTPS domain as the single public URL.
+RewriteCond %{HTTP_HOST} ^www\.chiaraalduini\.it$ [NC]
+RewriteRule ^ https://chiaraalduini.it%{REQUEST_URI} [R=301,L]
+
+# Avoid a duplicate homepage URL.
+RewriteRule ^index\.html$ https://chiaraalduini.it/ [R=301,L]

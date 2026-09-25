@@ -2,11 +2,12 @@
 const fs = require("fs");
 const path = require("path");
 
-const BASE_URL = "https://www.chiaraalduini.it";
+const BASE_URL = "https://chiaraalduini.it";
 
 const EXCLUDE = [
   "privacy.html",
   "404.html",
+  "lab-template.html",
 ];
 
 const PRIORITIES = {
