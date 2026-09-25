@@ -469,7 +469,7 @@ body.contact-body .mobile-nav {
     align-items: center;
   }
   .contact-signature-art {
-    margin-top: 0;
+    margin-top: auto;
     padding-top: var(--space-xl);
     padding-bottom: 0;
   }
