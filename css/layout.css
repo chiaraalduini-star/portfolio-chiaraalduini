@@ -440,9 +440,12 @@ body.contact-body .mobile-nav {
 .contact-signature-art {
   width: 100%;
   margin-top: auto;
+  margin-bottom: 0;
   padding-top: clamp(96px, 14vw, 220px);
+  padding-bottom: 0;
   display: flex;
   justify-content: center;
+  line-height: 0;
 }
 .contact-signature-art img {
   display: block;
@@ -454,16 +457,21 @@ body.contact-body .mobile-nav {
 
 @media (max-width: 768px) {
   .contact-signature {
-    padding: calc(var(--header-h) + var(--space-lg)) var(--padding) 0;
+    padding: calc(var(--header-h) + 24px) var(--padding) 0;
   }
   .contact-signature-inner {
     align-items: center;
     text-align: center;
   }
-  .contact-signature-links { align-items: center; }
+  .contact-signature-links {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
   .contact-signature-art {
     margin-top: 0;
     padding-top: var(--space-xl);
+    padding-bottom: 0;
   }
   .contact-signature-art img {
     width: 100%;
