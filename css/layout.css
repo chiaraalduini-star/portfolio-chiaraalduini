@@ -457,7 +457,7 @@ body.contact-body .mobile-nav {
 
 @media (max-width: 768px) {
   .contact-signature {
-    padding: calc(var(--header-h) + 24px) var(--padding) 0;
+    padding: calc(var(--header-h) + 48px) var(--padding) 0;
   }
   .contact-signature-inner {
     align-items: center;
