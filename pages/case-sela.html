@@ -45,7 +45,7 @@
     .case-meta-item p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
     .case-cover {
       width: 100%;
-      aspect-ratio: 21 / 9;
+      height: 40vh;
       object-fit: cover;
       display: block;
       background: var(--surface);
@@ -138,10 +138,14 @@
     }
     @media (max-width: 768px) {
       .case-hero { min-height: auto; padding: calc(var(--header-h) + 32px) var(--padding) 48px; }
+      .case-cover { height: 25vh; }
       .case-hero-meta { grid-template-columns: 1fr; gap: 20px; }
       .case-body-section { grid-template-columns: 1fr; gap: 24px; }
       .case-section-label { position: static; }
       .case-nav { flex-direction: column; align-items: flex-start; gap: 20px; }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .case-cover { height: 30vh; }
     }
   </style>
   <script>window['ga-disable-G-3Y2FTS95M5']=true;window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{'ad_storage':'denied','analytics_storage':'denied','ad_user_data':'denied','ad_personalization':'denied'});</script>
@@ -179,7 +183,7 @@
   <section class="case-hero">
     <div class="case-hero-content">
       <div class="section-label">Strategic Communication Case Study</div>
-      <h1 class="hero-title">SELA</h1>
+      <h1 class="hero-title">SELA JO - NGO JORDAN</h1>
       <p style="font-family:var(--font-display);font-size:clamp(24px,3vw,42px);line-height:1.05;color:var(--text-muted);margin-top:16px;">Building a Sustainable Communication System</p>
       <p style="font-size:18px;color:var(--text-muted);line-height:1.7;max-width:680px;margin-top:24px;">Transforming an NGO from organisation-centred communication to donor-centred storytelling.</p>
       <div class="case-tags" aria-label="Project scope">
@@ -262,16 +266,8 @@
     </div>
   </section>
 
-  <div class="case-img-full">
-    <img src="../img/sela_brand_identity.png" alt="SELA visual identity board showing the three campaigns as one communication system">
-  </div>
-
-  <div class="case-img-full">
-    <img src="../img/sela_web_site_screenshot.png" alt="SELA website interface">
-  </div>
-
   <section class="case-body-section">
-    <div class="case-section-label">07 - Website Direction</div>
+    <div class="case-section-label">06 - Website Direction</div>
     <div class="case-section-content">
       <h2>Project-First Communication</h2>
       <p>The technical platform already existed. The intervention focused instead on information hierarchy, navigation, visual consistency and content organisation.</p>
@@ -279,12 +275,10 @@
     </div>
   </section>
 
-  <div class="case-img-full">
-    <img src="../img/sela_annotated_screenshots.png" alt="SELA annotated screenshots used to communicate website art direction">
-  </div>
+  <img class="case-cover" src="../img/sela_web_site_screenshot.png" alt="SELA website interface showing project-first communication" loading="lazy">
 
   <section class="case-body-section">
-    <div class="case-section-label">08 - Creative Direction</div>
+    <div class="case-section-label">07 - Creative Direction</div>
     <div class="case-section-content">
       <h2>From Strategy to Implementation</h2>
       <p>Annotated design documents translated strategic choices into clear instructions for the web developer. They defined layout annotations, hierarchy, colour corrections, interface consistency and user journey improvements.</p>
@@ -293,34 +287,54 @@
   </section>
 
   <section class="case-body-section">
-    <div class="case-section-label">09 - Social Media System</div>
+    <div class="case-section-label">08 - Social Media System</div>
     <div class="case-section-content">
       <h2>One Communication Ecosystem</h2>
-      <p>The communication system extended beyond the website through Canva templates, Instagram, Facebook and LinkedIn. Editorial guidelines, a communication workflow and an editorial calendar connected every channel to the same strategic logic.</p>
+      <p>The communication system extended beyond the website through Canva templates, Instagram, Facebook and LinkedIn. Editorial guidelines, a communication workflow and an editorial calendar connected every channel to the same strategic logic, so the website and social media could work as one integrated system.</p>
       <p>The goal was not simply a more consistent feed, but a practical ecosystem that made it easier to plan, create and evaluate communication over time.</p>
     </div>
   </section>
 
   <section class="case-body-section">
-    <div class="case-section-label">10 - Knowledge Transfer</div>
+    <div class="case-section-label">09 - Knowledge Transfer</div>
     <div class="case-section-content">
       <h2>Building Internal Capacity</h2>
-      <p>The objective was not to create dependency. SELA received training and tools to continue communicating independently once the consultancy ended.</p>
-      <p>Canva training, visual consistency, content creation, workflow and communication principles were brought together into an internal practice. The project transformed communication into a sustainable system the organisation could own and continue using.</p>
+      <p>The consultancy did not end with the website. A complete knowledge transfer process gave SELA the tools and confidence to continue communicating independently after the consultancy ended.</p>
+      <p>Canva templates, communication guidelines, principles for visual consistency and a social media workflow were translated into an internal practice. Direct training with the internal communication manager connected these tools to everyday decision-making, from content creation to planning and publishing.</p>
+      <p>The objective was not to create dependency, but to establish a communication system the organisation could own, adapt and sustain over time.</p>
     </div>
   </section>
 
   <section class="case-body-section">
-    <div class="case-section-label">11 - Outcome</div>
+    <div class="case-section-label">10 - Project Outcomes</div>
     <div class="case-section-content">
-      <h2>A System Built to Continue</h2>
-      <p>Results include:</p>
-      <p>&bull; Unified visual identity<br>&bull; Clearer communication<br>&bull; Donor-oriented storytelling<br>&bull; Improved project visibility<br>&bull; Consistent communication across channels<br>&bull; Autonomous communication workflow</p>
-      <p>According to the organisation, the new communication system also contributed to an increase in external enquiries after implementation.</p>
+      <h2>Project Outcomes</h2>
+      <p>The project established a donor-oriented communication model, supported by a reorganised information architecture and a coherent visual identity. Projects, needs and impact could be communicated with greater clarity, giving visitors a more immediate way to understand why SELA's work matters.</p>
+      <p>English and Arabic communication were brought into one consistent system across the website and social media. An integrated channel strategy, Canva communication toolkit and practical workflow made it possible to connect campaigns, daily content and project storytelling without losing focus or visual coherence.</p>
+      <p>Together, these elements formed an internal communication system: not a collection of isolated assets, but a method for planning, creating and maintaining meaningful communication over time.</p>
     </div>
   </section>
 
-  <section class="case-quote">
+  <section class="case-body-section">
+    <div class="case-section-label">11 - Long-Term Impact</div>
+    <div class="case-section-content">
+      <h2>A System That Continued</h2>
+      <p>Following implementation, SELA reported increased external interest and enquiries. The organisation continued using the communication system across its website and social media, carrying the same strategic and visual logic into its ongoing work.</p>
+      <p>The internal communication team became able to produce consistent communication independently. This was the intended outcome: a system designed not for a single launch, but for continued use, development and ownership within the organisation.</p>
+    </div>
+  </section>
+
+  <section class="case-body-section">
+    <div class="case-section-label">12 - Live Project</div>
+    <div class="case-section-content">
+      <h2>Explore the Project</h2>
+      <p><a class="editorial-link" href="https://selajo.org/en/" target="_blank" rel="noopener">Website ↗</a></p>
+      <p>Instagram — [PLACEHOLDER_INSTAGRAM]</p>
+      <p>Facebook — [PLACEHOLDER_FACEBOOK]</p>
+    </div>
+  </section>
+
+  <section class="case-quote" style="margin-top:clamp(48px,8vw,120px);">
     <div class="section-label" style="margin-bottom:32px;">13 - Reflection</div>
     <blockquote>Good communication is not about showing what an organisation does.<br><br>It is about helping people understand why that work matters.<br><br>Building sustainable communication means creating systems that organisations can continue using independently long after the project has ended.</blockquote>
   </section>
