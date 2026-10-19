@@ -58,6 +58,111 @@
   transform: scaleX(1);
 }
 
+/* Homepage Editions feature */
+.home-editions {
+  padding: clamp(72px, 8vw, 112px) var(--padding) 0;
+  background: var(--bg);
+}
+
+.home-editions-link {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  align-items: center;
+  max-width: 1080px;
+  margin: 0 auto;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.home-editions-link.editorial-link {
+  background-image: none;
+}
+
+.home-editions-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.home-editions-copy {
+  min-width: 0;
+  padding: 24px 0 24px clamp(32px, 5vw, 72px);
+}
+
+.home-editions-eyebrow,
+.home-editions-featured,
+.home-editions-action {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.home-editions-eyebrow {
+  margin-bottom: 18px;
+  color: var(--text-muted);
+}
+
+.home-editions-copy h2 {
+  margin-bottom: 20px;
+  font-family: var(--font-display);
+  font-size: clamp(42px, 4.4vw, 60px);
+  font-weight: 400;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.home-editions-description {
+  max-width: 440px;
+  margin-bottom: 32px;
+  color: var(--text-muted);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.home-editions-featured {
+  margin-bottom: 10px;
+  color: var(--text-muted);
+  text-transform: none;
+}
+
+.home-editions-subtitle {
+  margin-bottom: 32px;
+  font-size: 20px;
+  line-height: 1.35;
+}
+
+.home-editions-action {
+  display: inline-block;
+  padding-bottom: 7px;
+  background-image: linear-gradient(#e8175d, #e8175d);
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  background-size: 0 1px;
+  transition: background-size 0.24s ease-out;
+}
+
+.home-editions-link:hover .home-editions-action,
+.home-editions-link:focus-visible .home-editions-action {
+  background-size: 100% 1px;
+}
+
+.home-editions-link:focus-visible {
+  outline: 2px solid #e8175d;
+  outline-offset: 8px;
+}
+
+@media (max-width: 900px) {
+  .home-editions-link {
+    grid-template-columns: 1fr;
+  }
+
+  .home-editions-copy {
+    padding: 28px 0 0;
+  }
+}
+
 /* Editorial links */
 .editorial-link {
   color: var(--text) !important;
