@@ -59,9 +59,17 @@
 }
 
 /* Homepage Editions feature */
+.case-studies:has(+ .home-editions) {
+  padding-bottom: 20px;
+}
+
 .home-editions {
-  padding: clamp(72px, 8vw, 112px) var(--padding) 0;
-  background: var(--bg);
+  padding: clamp(30px, 3.5vw, 52px) var(--padding) clamp(20px, 2.5vw, 36px);
+  background: #f7f7f7;
+}
+
+.home-editions + .portfolio-cta {
+  padding-top: clamp(32px, 5vw, 80px);
 }
 
 .home-editions-link {
@@ -160,6 +168,12 @@
 
   .home-editions-copy {
     padding: 28px 0 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .case-studies:has(+ .home-editions) {
+    padding-bottom: 24px !important;
   }
 }
 
