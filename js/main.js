@@ -58,17 +58,32 @@
   var btn  = document.getElementById('hamburger');
   var menu = document.getElementById('mobile-nav');
   if (!btn || !menu) return;
+  var editionsToggle = menu.querySelector('.mobile-submenu-toggle');
+  var editionsSubmenu = menu.querySelector('#mobile-editions-submenu');
+  var header = document.getElementById('header');
+
+  function closeEditions() {
+    if (!editionsToggle || !editionsSubmenu) return;
+    editionsToggle.setAttribute('aria-expanded', 'false');
+    editionsToggle.setAttribute('aria-label', 'Show Editions collections');
+    editionsToggle.querySelector('span').textContent = '+';
+    editionsSubmenu.hidden = true;
+    menu.classList.remove('submenu-open');
+  }
 
   function openMenu() {
     btn.setAttribute('aria-expanded', 'true');
     btn.classList.add('open');
+    if (header) header.classList.add('menu-open');
     menu.classList.add('open');
     document.body.style.overflow = 'hidden';
   }
 
   function closeMenu() {
+    closeEditions();
     btn.setAttribute('aria-expanded', 'false');
     btn.classList.remove('open');
+    if (header) header.classList.remove('menu-open');
     menu.classList.remove('open');
     document.body.style.overflow = '';
   }
@@ -78,6 +93,17 @@
     e.stopPropagation();
     menu.classList.contains('open') ? closeMenu() : openMenu();
   });
+
+  if (editionsToggle && editionsSubmenu) {
+    editionsToggle.addEventListener('click', function () {
+      var expanded = editionsToggle.getAttribute('aria-expanded') !== 'true';
+      editionsToggle.setAttribute('aria-expanded', String(expanded));
+      editionsToggle.setAttribute('aria-label', expanded ? 'Hide Editions collections' : 'Show Editions collections');
+      editionsToggle.querySelector('span').textContent = expanded ? '−' : '+';
+      editionsSubmenu.hidden = !expanded;
+      menu.classList.toggle('submenu-open', expanded);
+    });
+  }
 
   // Close on menu link click
   menu.querySelectorAll('a').forEach(function (a) {

@@ -10,10 +10,10 @@
   <link rel="stylesheet" href="../css/reset.css?v=3">
   <link rel="stylesheet" href="../css/variables.css?v=3">
   <link rel="stylesheet" href="../css/typography.css?v=3">
-  <link rel="stylesheet" href="../css/layout.css?v=3">
+  <link rel="stylesheet" href="../css/layout.css?v=6">
   <link rel="stylesheet" href="../css/components.css?v=3">
   <link rel="stylesheet" href="../css/animations.css?v=3">
-  <link rel="stylesheet" href="../css/responsive.css?v=3">
+  <link rel="stylesheet" href="../css/responsive.css?v=4">
   <style>
     .article-hero {
       min-height: 60vh;
@@ -145,6 +145,10 @@
       <a href="../index.html">Home</a>
       <a href="portfolio.html">Portfolio</a>
       <a href="lab.html">Lab</a>
+      <div class="nav-dropdown">
+        <a href="editions.html">Editions</a>
+        <div class="nav-dropdown-menu"><a href="travel-memories.html">Travel Memories</a></div>
+      </div>
       <a href="cabinet.html" class="active">The Cabinet</a>
       <a href="profilo.html">About</a>
       <a href="contatti.html">Contact</a>
@@ -155,6 +159,13 @@
     <a href="../index.html">Home</a>
     <a href="portfolio.html">Portfolio</a>
     <a href="lab.html">Lab</a>
+    <div class="mobile-nav-group">
+      <div class="mobile-nav-row">
+        <a href="editions.html">Editions</a>
+        <button type="button" class="mobile-submenu-toggle" aria-expanded="false" aria-controls="mobile-editions-submenu" aria-label="Show Editions collections"><span aria-hidden="true">+</span></button>
+      </div>
+      <div class="mobile-submenu" id="mobile-editions-submenu" hidden><a href="travel-memories.html">Travel Memories</a></div>
+    </div>
     <a href="cabinet.html">The Cabinet</a>
     <a href="profilo.html">About</a>
     <a href="contatti.html">Contact</a>
@@ -254,7 +265,7 @@
     </div>
   </footer>
 
-  <script src="../js/main.js?v=3"></script>
+  <script src="../js/main.js?v=4"></script>
   <script>
     document.addEventListener('contextmenu', function(e) {
       if (e.target.tagName === 'IMG') e.preventDefault();

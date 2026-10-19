@@ -156,6 +156,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://chiaraalduini.it/pages/editions.html</loc>
+    <lastmod>2026-10-19</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://chiaraalduini.it/pages/human-by-design.html</loc>
     <lastmod>2026-09-25</lastmod>
     <priority>0.7</priority>
@@ -183,6 +188,11 @@
   <url>
     <loc>https://chiaraalduini.it/pages/timemap.html</loc>
     <lastmod>2026-09-25</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://chiaraalduini.it/pages/travel-memories.html</loc>
+    <lastmod>2026-10-19</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
