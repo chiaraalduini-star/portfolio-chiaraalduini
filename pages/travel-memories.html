@@ -18,14 +18,29 @@
   <link rel="stylesheet" href="../css/responsive.css?v=4">
   <style>
     .edition-artwork-trigger {
+      position: relative;
       display: block;
       width: 100%;
       padding: 0;
       text-align: inherit;
       cursor: zoom-in;
     }
+    .edition-artwork-trigger::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: -28px;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background-color: var(--bg2);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b6860' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='10.5' cy='10.5' r='6.5'/%3E%3Cpath d='M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6'/%3E%3C/svg%3E");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 17px 17px;
+    }
     .edition-artwork-trigger:focus-visible {
-      outline: 2px solid var(--text);
+      outline: 2px solid #e8175d;
       outline-offset: 4px;
     }
     .edition-lightbox[hidden] { display: none; }
