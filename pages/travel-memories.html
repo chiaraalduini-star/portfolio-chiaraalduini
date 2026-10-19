@@ -16,6 +16,74 @@
   <link rel="stylesheet" href="../css/components.css?v=3">
   <link rel="stylesheet" href="../css/animations.css?v=3">
   <link rel="stylesheet" href="../css/responsive.css?v=4">
+  <style>
+    .edition-artwork-trigger {
+      display: block;
+      width: 100%;
+      padding: 0;
+      text-align: inherit;
+      cursor: zoom-in;
+    }
+    .edition-artwork-trigger:focus-visible {
+      outline: 2px solid var(--text);
+      outline-offset: 4px;
+    }
+    .edition-lightbox[hidden] { display: none; }
+    .edition-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 10001;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(20px, 4vw, 48px);
+      overflow: hidden;
+      background: rgba(17, 17, 16, 0.94);
+    }
+    .edition-lightbox-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: min(100%, 1000px);
+      max-height: 100%;
+    }
+    .edition-lightbox-image {
+      display: block;
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: calc(100vh - 136px);
+      max-height: calc(100dvh - 136px);
+      object-fit: contain;
+    }
+    .edition-lightbox-title {
+      margin-top: 16px;
+      color: var(--white);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    .edition-lightbox-close {
+      position: absolute;
+      top: max(16px, env(safe-area-inset-top));
+      right: max(16px, env(safe-area-inset-right));
+      z-index: 1;
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      color: var(--white);
+      font-size: 34px;
+      line-height: 1;
+    }
+    .edition-lightbox-close:focus-visible {
+      outline: 2px solid var(--white);
+      outline-offset: 2px;
+    }
+  </style>
   <script>window['ga-disable-G-3Y2FTS95M5']=true;window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{'ad_storage':'denied','analytics_storage':'denied','ad_user_data':'denied','ad_personalization':'denied'});</script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-3Y2FTS95M5"></script>
   <script>
@@ -80,14 +148,14 @@
         <h2 class="section-title" id="collection-heading">The Collection</h2>
       </div>
       <div class="edition-artworks">
-        <figure><picture><source srcset="../img/atene-print.webp" type="image/webp"><img src="../img/atene-print.jpg" alt="Travel Memories collage inspired by Athens" width="1200" height="1200" loading="lazy" decoding="async"></picture><figcaption>Athens</figcaption></figure>
-        <figure><picture><source srcset="../img/costa-azzurra-print.webp" type="image/webp"><img src="../img/costa-azzurra-print.jpg" alt="Travel Memories collage inspired by the Costa Azzurra" width="1200" height="1200" loading="lazy" decoding="async"></picture><figcaption>Costa Azzurra</figcaption></figure>
-        <figure><picture><source srcset="../img/istanbul-print.webp" type="image/webp"><img src="../img/istanbul-print.jpg" alt="Travel Memories collage inspired by Istanbul" width="1200" height="1200" loading="lazy" decoding="async"></picture><figcaption>Istanbul</figcaption></figure>
-        <figure><picture><source srcset="../img/lisbona-print.webp" type="image/webp"><img src="../img/lisbona-print.jpg" alt="Travel Memories collage inspired by Lisbon" width="1200" height="1200" loading="lazy" decoding="async"></picture><figcaption>Lisbon</figcaption></figure>
-        <figure><picture><source srcset="../img/marrakesh-print.webp" type="image/webp"><img src="../img/marrakesh-print.jpg" alt="Travel Memories collage inspired by Marrakesh" width="1200" height="1200" loading="lazy" decoding="async"></picture><figcaption>Marrakesh</figcaption></figure>
-        <figure><picture><source srcset="../img/muscate-print.webp" type="image/webp"><img src="../img/muscate-print.jpg" alt="Travel Memories collage inspired by Muscat" width="1200" height="1200" loading="lazy" decoding="async"></picture><figcaption>Muscat</figcaption></figure>
-        <figure><picture><source srcset="../img/paris-print.webp" type="image/webp"><img src="../img/paris-print.jpg" alt="Travel Memories collage inspired by Paris" width="1200" height="1200" loading="lazy" decoding="async"></picture><figcaption>Paris</figcaption></figure>
-        <figure><picture><source srcset="../img/tokyo-print.webp" type="image/webp"><img src="../img/tokyo-print.jpg" alt="Travel Memories collage inspired by Tokyo" width="1200" height="1200" loading="lazy" decoding="async"></picture><figcaption>Tokyo</figcaption></figure>
+        <figure><button type="button" class="edition-artwork-trigger" data-full-src="../img/atene-print.jpg" aria-label="Open Athens artwork"><picture><source srcset="../img/atene-print.webp" type="image/webp"><img src="../img/atene-print.jpg" alt="Travel Memories collage inspired by Athens" width="1200" height="1200" loading="lazy" decoding="async"></picture></button><figcaption>Athens</figcaption></figure>
+        <figure><button type="button" class="edition-artwork-trigger" data-full-src="../img/costa-azzurra-print.jpg" aria-label="Open Costa Azzurra artwork"><picture><source srcset="../img/costa-azzurra-print.webp" type="image/webp"><img src="../img/costa-azzurra-print.jpg" alt="Travel Memories collage inspired by the Costa Azzurra" width="1200" height="1200" loading="lazy" decoding="async"></picture></button><figcaption>Costa Azzurra</figcaption></figure>
+        <figure><button type="button" class="edition-artwork-trigger" data-full-src="../img/istanbul-print.jpg" aria-label="Open Istanbul artwork"><picture><source srcset="../img/istanbul-print.webp" type="image/webp"><img src="../img/istanbul-print.jpg" alt="Travel Memories collage inspired by Istanbul" width="1200" height="1200" loading="lazy" decoding="async"></picture></button><figcaption>Istanbul</figcaption></figure>
+        <figure><button type="button" class="edition-artwork-trigger" data-full-src="../img/lisbona-print.jpg" aria-label="Open Lisbon artwork"><picture><source srcset="../img/lisbona-print.webp" type="image/webp"><img src="../img/lisbona-print.jpg" alt="Travel Memories collage inspired by Lisbon" width="1200" height="1200" loading="lazy" decoding="async"></picture></button><figcaption>Lisbon</figcaption></figure>
+        <figure><button type="button" class="edition-artwork-trigger" data-full-src="../img/marrakesh-print.jpg" aria-label="Open Marrakesh artwork"><picture><source srcset="../img/marrakesh-print.webp" type="image/webp"><img src="../img/marrakesh-print.jpg" alt="Travel Memories collage inspired by Marrakesh" width="1200" height="1200" loading="lazy" decoding="async"></picture></button><figcaption>Marrakesh</figcaption></figure>
+        <figure><button type="button" class="edition-artwork-trigger" data-full-src="../img/muscate-print.jpg" aria-label="Open Muscat artwork"><picture><source srcset="../img/muscate-print.webp" type="image/webp"><img src="../img/muscate-print.jpg" alt="Travel Memories collage inspired by Muscat" width="1200" height="1200" loading="lazy" decoding="async"></picture></button><figcaption>Muscat</figcaption></figure>
+        <figure><button type="button" class="edition-artwork-trigger" data-full-src="../img/paris-print.jpg" aria-label="Open Paris artwork"><picture><source srcset="../img/paris-print.webp" type="image/webp"><img src="../img/paris-print.jpg" alt="Travel Memories collage inspired by Paris" width="1200" height="1200" loading="lazy" decoding="async"></picture></button><figcaption>Paris</figcaption></figure>
+        <figure><button type="button" class="edition-artwork-trigger" data-full-src="../img/tokyo-print.jpg" aria-label="Open Tokyo artwork"><picture><source srcset="../img/tokyo-print.webp" type="image/webp"><img src="../img/tokyo-print.jpg" alt="Travel Memories collage inspired by Tokyo" width="1200" height="1200" loading="lazy" decoding="async"></picture></button><figcaption>Tokyo</figcaption></figure>
       </div>
     </section>
 
@@ -126,6 +194,14 @@
     </div>
   </main>
 
+  <div class="edition-lightbox" id="edition-lightbox" role="dialog" aria-modal="true" aria-labelledby="edition-lightbox-title" hidden>
+    <button type="button" class="edition-lightbox-close" aria-label="Close artwork preview">&times;</button>
+    <figure class="edition-lightbox-content">
+      <img class="edition-lightbox-image" id="edition-lightbox-image" alt="" width="1200" height="1200">
+      <figcaption class="edition-lightbox-title" id="edition-lightbox-title"></figcaption>
+    </figure>
+  </div>
+
   <footer>
     <div class="footer-grid">
       <div>
@@ -163,6 +239,56 @@
   </footer>
 
   <script src="../js/main.js?v=4"></script>
+  <script>
+  (function () {
+    var gallery = document.querySelector('.edition-artworks');
+    var lightbox = document.getElementById('edition-lightbox');
+    var image = document.getElementById('edition-lightbox-image');
+    var title = document.getElementById('edition-lightbox-title');
+    var closeButton = lightbox.querySelector('.edition-lightbox-close');
+    var opener = null;
+    var previousOverflow = '';
+
+    function closeLightbox() {
+      if (lightbox.hidden) return;
+      lightbox.hidden = true;
+      document.body.style.overflow = previousOverflow;
+      image.removeAttribute('src');
+      image.alt = '';
+      title.textContent = '';
+      if (opener && opener.isConnected) opener.focus({ preventScroll: true });
+      opener = null;
+    }
+
+    gallery.addEventListener('click', function (event) {
+      var trigger = event.target.closest('.edition-artwork-trigger');
+      if (!trigger || !gallery.contains(trigger)) return;
+      opener = trigger;
+      previousOverflow = document.body.style.overflow;
+      image.src = trigger.dataset.fullSrc;
+      image.alt = trigger.querySelector('img').alt;
+      title.textContent = trigger.closest('figure').querySelector('figcaption').textContent.trim();
+      lightbox.hidden = false;
+      document.body.style.overflow = 'hidden';
+      closeButton.focus();
+    });
+
+    closeButton.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', function (event) {
+      if (event.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', function (event) {
+      if (lightbox.hidden) return;
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        closeLightbox();
+      } else if (event.key === 'Tab') {
+        event.preventDefault();
+        closeButton.focus();
+      }
+    });
+  }());
+  </script>
   <div id="cookie-banner" style="position:fixed;bottom:0;left:0;right:0;background:#1a1a1a;color:#fff;padding:20px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;z-index:9999;font-size:13px;line-height:1.5;flex-wrap:wrap;"><div style="flex:1;min-width:260px;"><p style="margin:0 0 4px 0;">This site uses Google Analytics to collect anonymous usage data. No personal data is collected without your consent. <a href="privacy.html" style="color:#e8175d;text-decoration:none;">Privacy Policy</a></p><p style="margin:0;opacity:0.6;font-size:11px;letter-spacing:0.04em;">Questo sito utilizza Google Analytics per raccogliere dati anonimi. Nessun dato personale viene raccolto senza il tuo consenso.</p></div><div style="display:flex;gap:12px;flex-shrink:0;"><button onclick="acceptCookies()" style="background:#e8175d;color:#fff;border:none;padding:10px 24px;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;">Accept</button><button onclick="declineCookies()" style="background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.3);padding:10px 24px;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;">Decline</button></div></div>
   <script>
   (function(){var c=localStorage.getItem('cookie-consent');if(c==='accepted'){enableGA();}else if(c){document.getElementById('cookie-banner').style.display='none';}})();
