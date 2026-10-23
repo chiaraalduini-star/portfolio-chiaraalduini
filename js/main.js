@@ -38,6 +38,19 @@
   }, true);
 }());
 
+// Count email-link intent only after Analytics consent; a click is not a sent enquiry.
+;(function () {
+  document.addEventListener('click', function (e) {
+    var target = e.target;
+    if (!(target instanceof Element)) return;
+    var link = target.closest('a[href^="mailto:"]');
+    if (!link || localStorage.getItem('cookie-consent') !== 'accepted' ||
+        window['ga-disable-G-3Y2FTS95M5'] !== false || typeof window.gtag !== 'function') return;
+
+    window.gtag('event', 'contact_email_click');
+  });
+}());
+
 // ── Scroll reveal ──
 ;(function () {
   var els = document.querySelectorAll('.reveal');
