@@ -670,6 +670,10 @@ footer {
   color: inherit;
   text-decoration: none;
 }
+.editions-feature:focus-visible {
+  outline: 2px solid #e8175d;
+  outline-offset: 4px;
+}
 .editions-feature .project-img {
   aspect-ratio: 1;
 }

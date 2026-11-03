@@ -65,7 +65,7 @@
 
 .home-editions {
   padding: clamp(30px, 3.5vw, 52px) var(--padding) clamp(20px, 2.5vw, 36px);
-  background: #f7f7f7;
+  background: #fbf0f4;
 }
 
 .home-editions + .portfolio-cta {
@@ -109,7 +109,7 @@
 
 .home-editions-eyebrow {
   margin-bottom: 18px;
-  color: var(--text-muted);
+  color: var(--text);
 }
 
 .home-editions-copy h2 {
